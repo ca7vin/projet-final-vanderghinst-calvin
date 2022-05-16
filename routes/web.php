@@ -21,7 +21,23 @@ Route::get('/', function () {
     $slides = Slider::all();
     $services = Service::all();
     return view('index', compact('slides', 'services'));
-});
+})->name("home");
+
+Route::get('/courses', function () {
+    return view('front/pages/courses-grid');
+})->name("courses");
+
+Route::get('events', function () {
+    return view('front/pages/classic-events');
+})->name("events");
+
+Route::get('news', function () {
+    return view('front/pages/classic-news');
+})->name("news");
+
+Route::get('contact', function () {
+    return view('front/pages/contact');
+})->name("contact");
 
 Route::get('/dashboard', function () {
     return view('dashboard');

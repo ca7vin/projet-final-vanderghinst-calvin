@@ -35,11 +35,11 @@
             </div>
             <nav class="main-navigation text-left hidden-xs hidden-sm">
                 <ul>
-                    <li><a href="#" class="">Home</a></li>
-                    <li><a href="#" class="">Courses</a></li>
-                    <li><a href="#" class="">Events</a></li>
-                    <li><a href="#" class="">News</a></li>
-                    <li><a href="#" class="">Contact</a></li>
+                    <li><a href="{{ Route('home') }}" class="">Home</a></li>
+                    <li><a href="{{ Route('courses') }}" class="">Courses</a></li>
+                    <li><a href="{{ Route('events') }}" class="">Events</a></li>
+                    <li><a href="{{ Route('news') }}" class="">News</a></li>
+                    <li><a href="{{ Route('contact') }}" class="">Contact</a></li>
                     <li><a href="#search"><i class="fa fa-search"></i></a></li>
                 </ul>
             </nav>

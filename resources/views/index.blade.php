@@ -5,7 +5,7 @@
             <div class="sidebar-menu-overlay"></div>
             <div class="sidebar-menu-inner">
                 @include('front/partials/header')
-				@include('front/partials/search')
+				{{-- @include('front/partials/search') --}}
 				@include('front/partials/slider')
 				@include('front/partials/introduction')
 				@include('front/partials/courses')
