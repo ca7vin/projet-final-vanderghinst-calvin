@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\RoleController;
@@ -80,3 +81,11 @@ Route::post('/back/profs/{id}/update', [ProfController::class, 'update'])->name(
 Route::post('/back/profs/{id}/delete', [ProfController::class, 'destroy'])->name('prof.destroy');
 // 
 Route::get('/back/s', [Controller::class, 'index'])->name('.index');
+// Course
+Route::get('/back/courses', [CourseController::class, 'index'])->name('course.index');
+Route::get('/back/courses/create', [CourseController::class, 'create'])->name('course.create');
+Route::post('/back/courses/store', [CourseController::class, 'store'])->name('course.store');
+Route::get('/back/courses/{id}/read', [CourseController::class, 'read'])->name('course.read');
+Route::get('/back/courses/{id}/edit', [CourseController::class, 'edit'])->name('course.edit');
+Route::post('/back/courses/{id}/update', [CourseController::class, 'update'])->name('course.update');
+Route::post('/back/courses/{id}/delete', [CourseController::class, 'destroy'])->name('course.destroy');
