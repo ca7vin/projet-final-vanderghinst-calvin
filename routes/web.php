@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
+use App\Models\Course;
 use App\Models\Service;
 use App\Models\Slider;
 
@@ -24,11 +25,13 @@ use App\Models\Slider;
 Route::get('/', function () {
     $slides = Slider::all();
     $services = Service::all();
-    return view('index', compact('slides', 'services'));
+    $popularcourses = Course::all()->random(4);
+    return view('index', compact('slides', 'services', 'popularcourses'));
 })->name("home");
 
 Route::get('/courses', function () {
-    return view('front/pages/courses-grid');
+    $courses = Course::all();
+    return view('front/pages/courses-grid', compact('courses'));
 })->name("courses");
 
 Route::get('/teachers', function () {

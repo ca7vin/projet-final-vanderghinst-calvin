@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('level');
             $table->string('start');
             $table->string('duration');
+            $table->string('price_color');
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -38,6 +39,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -50,6 +52,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -62,6 +65,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -74,6 +78,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -86,6 +91,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -98,6 +104,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -110,6 +117,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -122,6 +130,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -134,6 +143,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -146,6 +156,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -158,6 +169,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -170,6 +182,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -182,6 +195,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -194,6 +208,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -206,6 +221,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -218,6 +234,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -230,6 +247,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -242,6 +260,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -254,6 +273,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         
         DB::table('courses')->insert([
@@ -267,6 +287,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -279,6 +300,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -291,6 +313,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -303,6 +326,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -315,6 +339,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -323,10 +348,11 @@ class CourseSeeder extends Seeder
 
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #26',
-            'price' => '19.99 $',
+            'price' => 'Free',
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-yellow',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -339,6 +365,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -347,10 +374,11 @@ class CourseSeeder extends Seeder
 
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #28',
-            'price' => '19.99 $',
+            'price' => 'Free',
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-yellow',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -363,6 +391,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -375,6 +404,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -387,6 +417,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -395,10 +426,11 @@ class CourseSeeder extends Seeder
 
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #32',
-            'price' => '19.99 $',
+            'price' => 'Free',
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-yellow',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -411,6 +443,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -423,6 +456,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -435,6 +469,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -443,10 +478,11 @@ class CourseSeeder extends Seeder
 
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #36',
-            'price' => '19.99 $',
+            'price' => 'Free',
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-yellow',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -455,10 +491,11 @@ class CourseSeeder extends Seeder
 
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #37',
-            'price' => '19.99 $',
+            'price' => 'Free',
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-yellow',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -471,6 +508,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -483,6 +521,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         DB::table('courses')->insert([
             'prof' => 'Elias Aboutt',
@@ -495,6 +534,7 @@ class CourseSeeder extends Seeder
             'level' => 'Post Graduate',
             'start' => '01-09-2022',
             'duration' => '6 months',
+            'price_color' => 'price-red',
         ]);
         //
     }

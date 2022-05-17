@@ -38,6 +38,11 @@ class CourseController extends Controller
         $course->level = $request->level;
         $course->start = $request->start;
         $course->duration = $request->duration;
+        if ($course->price == "Free") {
+            $course->price_color = "price-yellow";
+        } else {
+            $course->price_color = "price-red";
+        }
         $course->save(); // store_anchor
         return redirect()->route("course.index")->with('message', "Successful storage !");
     }
@@ -72,6 +77,11 @@ class CourseController extends Controller
         $course->level = $request->level;
         $course->start = $request->start;
         $course->duration = $request->duration;
+        if ($course->price == "Free") {
+            $course->price_color = "price-yellow";
+        } else {
+            $course->price_color = "price-red";
+        }
         $course->save(); // update_anchor
         return redirect()->route("course.index")->with('message', "Successful update !");
     }

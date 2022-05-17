@@ -9,177 +9,26 @@
         </div>
         <div class="row">
             <div id="owl-courses">
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$19.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>How to become<br>a Powerful Speaker</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$49.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>Electrical &amp; Electronic <br>Engingering</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
+                @foreach ($popularcourses as $popularcourse)
+                    <div class="item course-item">
+                        <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
+                        <div class="down-content">
+                            <img src="http://placehold.it/44x44" alt="">
+                            <h6>{{ $popularcourse->prof }}</h6>
+                            <div class="{{ $popularcourse->price_color }}">
+                                <span>{{ $popularcourse->price }}</span>
+                                <div class="base"></div>
+                            </div>
+                            <a href="single-course.html">
+                                <h4>{{ $popularcourse->title }}</h4>
+                            </a>
+                            <p>{{ Illuminate\Support\Str::limit($popularcourse->description, 100) }}</p>
+                            <div class="text-button">
+                                <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$19.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>How to become<br>a Powerful Speaker</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-yellow">
-                            <span>Free</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>What can you do<br>With a Business Degree?</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$29.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>Fashion buying<br>and Product Management</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$19.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>How to become<br>a Powerful Speaker</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-yellow">
-                            <span>Free</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>How to become<br>a Powerful Speaker</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-yellow">
-                            <span>Free</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>What can you do<br>With a Business Degree?</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item course-item">
-                    <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
-                    <div class="down-content">
-                        <img src="http://placehold.it/44x44" alt="">
-                        <h6>Ernest Byrd</h6>
-                        <div class="price-red">
-                            <span>$29.99</span>
-                            <div class="base"></div>
-                        </div>
-                        <a href="single-course.html">
-                            <h4>Fashion buying<br>and Product Management</h4>
-                        </a>
-                        <p>Ugh chambray lumbersexual food truc artisan meditation sartorial post-ironic Wes
-                            Anderson.</p>
-                        <div class="text-button">
-                            <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

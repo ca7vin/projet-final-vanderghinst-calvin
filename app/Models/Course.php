@@ -18,6 +18,7 @@ class Course extends Model
         'level',
         'start',
         'duration',
+        'price_color',
     ]; // model_anchor
      
     protected $table = 'courses';
