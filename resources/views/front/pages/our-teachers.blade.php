@@ -5,7 +5,7 @@
             <div class="sidebar-menu-overlay"></div>
             <div class="sidebar-menu-inner">
 				@include('front/partials/header')
-				<div class="page-heading teachers-heading">
+				<div class="page-heading teachers-heading" style:>
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
