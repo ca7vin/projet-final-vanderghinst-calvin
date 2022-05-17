@@ -21,38 +21,6 @@
                             </div>
                         </div>
                         @endforeach
-                        {{-- <div class="col-md-6 col-sm-6">
-                            <div class="service-item">
-                                <i class="fa fa-graduation-cap"></i>
-                                <h4>Graduated Steps</h4>
-                                <div class="line-dec"></div>
-                                <p>Photo booth Banksy YOLO mixtape post-ironic they sold out all.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="service-item">
-                                <i class="fa fa-globe"></i>
-                                <h4>Global Interested</h4>
-                                <div class="line-dec"></div>
-                                <p>Photo booth Banksy YOLO mixtape post-ironic they sold out all.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="service-item">
-                                <i class="fa fa-clock-o"></i>
-                                <h4>Circular Clock</h4>
-                                <div class="line-dec"></div>
-                                <p>Photo booth Banksy YOLO mixtape post-ironic they sold out all.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="service-item last-service">
-                                <i class="fa fa-book"></i>
-                                <h4>Open Book</h4>
-                                <div class="line-dec"></div>
-                                <p>Photo booth Banksy YOLO mixtape post-ironic they sold out all.</p>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
                 {{-- FORM START --}}
@@ -96,10 +64,10 @@
                                 <div class="request-information">
                                     <div class="search-form">
                                         <div class="accent-button">
-                                            <a href="#">Log in</a>
+                                            <a href="{{ Route("login") }}">Log in</a>
                                         </div>
                                         <div class="accent-button" style='margin-top:20px !important;'>
-                                            <a href="#">Sign in</a>
+                                            <a href="{{ Route("register") }}">Sign in</a>
                                         </div>
                                     </div>
                                 </div>

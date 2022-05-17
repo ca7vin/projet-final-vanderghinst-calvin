@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Role extends Model
 {
     use HasFactory;
 
-     
     protected $fillable = [
-        'icon',
-        'title',
-        'text',
+        'name',
     ]; // model_anchor
      
-    protected $table = 'services';
+    protected $table = 'roles';
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

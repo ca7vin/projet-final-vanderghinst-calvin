@@ -2,7 +2,7 @@
     <div id="main-header" class="main-header header-sticky">
         <div class="inner-header container clearfix">
             <div class="logo">
-                <a href="index.html"><img src={{ asset('images/logo.png') }} alt=""></a>
+                <a href="{{ Route('home') }}"><img src={{ asset('images/logo.png') }} alt=""></a>
             </div>
             <div class="header-right-toggle pull-right hidden-md hidden-lg">
                 <a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a>

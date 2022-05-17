@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ProfController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Models\Service;
@@ -64,3 +67,16 @@ Route::get('/back/services/{id}/read', [ServiceController::class, 'read'])->name
 Route::get('/back/services/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
 Route::post('/back/services/{id}/update', [ServiceController::class, 'update'])->name('service.update');
 Route::post('/back/services/{id}/delete', [ServiceController::class, 'destroy'])->name('service.destroy');
+// Role
+Route::get('/back/roles', [RoleController::class, 'index'])->name('role.index');
+Route::get('/back/roles/{id}/read', [RoleController::class, 'read'])->name('role.read');
+// Prof
+Route::get('/back/profs', [ProfController::class, 'index'])->name('prof.index');
+Route::get('/back/profs/create', [ProfController::class, 'create'])->name('prof.create');
+Route::post('/back/profs/store', [ProfController::class, 'store'])->name('prof.store');
+Route::get('/back/profs/{id}/read', [ProfController::class, 'read'])->name('prof.read');
+Route::get('/back/profs/{id}/edit', [ProfController::class, 'edit'])->name('prof.edit');
+Route::post('/back/profs/{id}/update', [ProfController::class, 'update'])->name('prof.update');
+Route::post('/back/profs/{id}/delete', [ProfController::class, 'destroy'])->name('prof.destroy');
+// 
+Route::get('/back/s', [Controller::class, 'index'])->name('.index');
