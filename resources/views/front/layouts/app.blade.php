@@ -35,6 +35,23 @@
 
 	<script type="text/javascript" src={{ asset("js/plugins.js")}}></script>
 	<script type="text/javascript" src={{ asset("js/custom.js")}}></script>
+	
 
+
+    {{-- script gmaps --}}
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+            var mapCanvas = document.getElementById('map');
+            var mapOptions = {
+                center: new google.maps.LatLng(44.5403, -78.5463),
+                zoom: 8,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions)
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </body>
 </html>

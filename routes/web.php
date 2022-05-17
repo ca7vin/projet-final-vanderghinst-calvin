@@ -27,6 +27,10 @@ Route::get('/courses', function () {
     return view('front/pages/courses-grid');
 })->name("courses");
 
+Route::get('/teachers', function () {
+    return view('front/pages/our-teachers');
+})->name("teachers");
+
 Route::get('events', function () {
     return view('front/pages/classic-events');
 })->name("events");
