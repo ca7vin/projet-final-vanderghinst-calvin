@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="pre-featured">
                     <div class="info-text">
-                        <h4>showing {{$courses->firstItem()}}-{{$courses->lastItem()}} of 40 courses</h4>
+                        <h4>showing {{$courses->firstItem()}}-{{$courses->lastItem()}} of {{ $courses->total() }} courses</h4>
                     </div>
                     <div class="right-content">
                         <div class="input-select">

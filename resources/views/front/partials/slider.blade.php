@@ -17,7 +17,7 @@
                             <div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0"
                                 data-y="310" data-speed="1000" data-start="800" data-easing="Power4.easeOut"
                                 data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">
-                                <p>{{ $slide->textorange }}</p>
+                                <p>{!! $slide->text !!}</p>
                             </div>
                             <div class="tp-caption third-line lfb tp-resizeme start" data-x="left" data-hoffset="0"
                                 data-y="400" data-speed="1000" data-start="800" data-easing="Power4.easeOut"

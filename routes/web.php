@@ -11,6 +11,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Models\Course;
+use App\Models\Event;
 use App\Models\Post;
 use App\Models\Prof;
 use App\Models\Service;
@@ -46,7 +47,8 @@ Route::get('/teachers', function () {
 })->name("teachers");
 
 Route::get('events', function () {
-    return view('front/pages/classic-events');
+    $events = Event::paginate(6);
+    return view('front/pages/classic-events', compact('events'));
 })->name("events");
 
 Route::get('news', function () {

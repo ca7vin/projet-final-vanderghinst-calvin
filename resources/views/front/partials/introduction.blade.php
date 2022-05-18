@@ -32,8 +32,8 @@
                                     <h4>Request Information</h4>
                                 </div>
                                 <div class="search-form">
-                                    <input type="text" id="name" name="s" placeholder="Full Name" value="">
-                                    <input type="text" id="address" name="s" placeholder="E-mail Address" value="">
+                                    <input type="text" id="name" name="s" placeholder="Full Name" value="{{ Auth::user()->name }}">
+                                    <input type="text" id="address" name="s" placeholder="E-mail Address" value="{{ Auth::user()->email }}">
                                     <div class="select">
                                         <select name="mark" id="campus">
                                             <option value="-1">Campus of Interests</option>

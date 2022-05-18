@@ -17,7 +17,7 @@ class SliderSeeder extends Seeder
     {
         DB::table('sliders')->insert([
             'first' => 'first',
-            'image' => 'wallpaper1.jpeg',
+            'image' => 'wallpapercontact.jpg',
             'title' => 'Are you ready to study ?<br>We have the',
             'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',
             'textorange' => 'Solution',
@@ -26,7 +26,7 @@ class SliderSeeder extends Seeder
         ]);
         DB::table('sliders')->insert([
             'first' => 'second',
-            'image' => 'wallpaper2.png',
+            'image' => 'wallpaperevents.jpg',
             'title' => 'Next year more intresting!<br>Check next',
             'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',
             'textorange' => 'Features',
