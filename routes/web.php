@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\RedacteurController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
@@ -49,7 +50,7 @@ Route::get('events', function () {
 })->name("events");
 
 Route::get('news', function () {
-    $news = Post::all();
+    $news = Post::paginate(4);
     return view('front/pages/classic-news', compact('news'));
 })->name("news");
 
@@ -115,3 +116,11 @@ Route::get('/back/redacteurs/{id}/read', [RedacteurController::class, 'read'])->
 Route::get('/back/redacteurs/{id}/edit', [RedacteurController::class, 'edit'])->name('redacteur.edit');
 Route::post('/back/redacteurs/{id}/update', [RedacteurController::class, 'update'])->name('redacteur.update');
 Route::post('/back/redacteurs/{id}/delete', [RedacteurController::class, 'destroy'])->name('redacteur.destroy');
+// Event
+Route::get('/back/events', [EventController::class, 'index'])->name('event.index');
+Route::get('/back/events/create', [EventController::class, 'create'])->name('event.create');
+Route::post('/back/events/store', [EventController::class, 'store'])->name('event.store');
+Route::get('/back/events/{id}/read', [EventController::class, 'read'])->name('event.read');
+Route::get('/back/events/{id}/edit', [EventController::class, 'edit'])->name('event.edit');
+Route::post('/back/events/{id}/update', [EventController::class, 'update'])->name('event.update');
+Route::post('/back/events/{id}/delete', [EventController::class, 'destroy'])->name('event.destroy');

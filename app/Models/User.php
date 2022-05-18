@@ -58,5 +58,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Redacteur::class);
     }
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }
 

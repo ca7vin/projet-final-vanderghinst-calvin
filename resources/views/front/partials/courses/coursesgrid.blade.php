@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="pre-featured">
                     <div class="info-text">
-                        <h4>showing 1-9 of 40 courses</h4>
+                        <h4>showing {{$courses->firstItem()}}-{{$courses->lastItem()}} of 40 courses</h4>
                     </div>
                     <div class="right-content">
                         <div class="input-select">
@@ -23,12 +23,6 @@
                                 <option>Useless</option>
                                 <option>Important</option>
                             </select>
-                        </div>
-                        <div class="grid-list">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-list"></i></a></li>
-                                <li><a href="#"><i class="fa fa-th-large"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

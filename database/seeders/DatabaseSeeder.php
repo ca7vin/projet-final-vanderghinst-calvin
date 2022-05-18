@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             PostSeeder::class,
             UserSeeder::class,
+            EventSeeder::class,
         ]);
 
         // \App\Models\User::factory()->create([
