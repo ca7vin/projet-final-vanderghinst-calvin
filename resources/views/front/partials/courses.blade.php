@@ -11,10 +11,10 @@
             <div id="owl-courses">
                 @foreach ($popularcourses as $popularcourse)
                     <div class="item course-item">
-                        <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
+                        <a href="single-course.html"><img src="" alt=""></a>
                         <div class="down-content">
-                            <img src="http://placehold.it/44x44" alt="">
-                            <h6>{{ $popularcourse->prof }}</h6>
+                            <img src="{{ asset('images/' . $popularcourse->prof->user->image) }}" alt="">
+                            <h6>{{ $popularcourse->prof->user->name }}</h6>
                             <div class="{{ $popularcourse->price_color }}">
                                 <span>{{ $popularcourse->price }}</span>
                                 <div class="base"></div>

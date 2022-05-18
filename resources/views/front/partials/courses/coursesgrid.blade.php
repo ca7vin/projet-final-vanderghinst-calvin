@@ -40,8 +40,8 @@
                     <div class="item course-item">
                         <a href="single-course.html"><img src="http://placehold.it/345x235" alt=""></a>
                         <div class="down-content">
-                            <img src="http://placehold.it/44x44" alt="">
-                            <h6>{{ $course->prof }}</h6>
+                            <img src="{{ asset('images/' . $course->prof->user->image) }}" alt="">
+                            <h6>{{ $course->prof->user->name }}</h6>
                             <div class="{{ $course->price_color }}">
                                 <span>{{ $course->price }}</span>
                                 <div class="base"></div>

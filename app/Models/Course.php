@@ -10,7 +10,6 @@ class Course extends Model
     use HasFactory;
      
     protected $fillable = [
-        'prof',
         'title',
         'description',
         'discipline',
@@ -19,7 +18,13 @@ class Course extends Model
         'start',
         'duration',
         'price_color',
+        'course_id',
     ]; // model_anchor
      
     protected $table = 'courses';
+
+    public function prof()
+    {
+        return $this->belongsTo(Prof::class);
+    }
 }

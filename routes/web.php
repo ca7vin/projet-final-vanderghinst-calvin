@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RedacteurController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Models\Course;
+use App\Models\Post;
 use App\Models\Prof;
 use App\Models\Service;
 use App\Models\Slider;
@@ -28,7 +31,8 @@ Route::get('/', function () {
     $services = Service::all();
     $popularcourses = Course::all()->random(4);
     $popularteachers = Prof::all()->random(4);
-    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers'));
+    $lastnews = Post::all()->last()->take(2)->get();
+    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers', 'lastnews'));
 })->name("home");
 
 Route::get('/courses', function () {
@@ -94,3 +98,19 @@ Route::get('/back/courses/{id}/read', [CourseController::class, 'read'])->name('
 Route::get('/back/courses/{id}/edit', [CourseController::class, 'edit'])->name('course.edit');
 Route::post('/back/courses/{id}/update', [CourseController::class, 'update'])->name('course.update');
 Route::post('/back/courses/{id}/delete', [CourseController::class, 'destroy'])->name('course.destroy');
+// Post
+Route::get('/back/posts', [PostController::class, 'index'])->name('post.index');
+Route::get('/back/posts/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/back/posts/store', [PostController::class, 'store'])->name('post.store');
+Route::get('/back/posts/{id}/read', [PostController::class, 'read'])->name('post.read');
+Route::get('/back/posts/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::post('/back/posts/{id}/update', [PostController::class, 'update'])->name('post.update');
+Route::post('/back/posts/{id}/delete', [PostController::class, 'destroy'])->name('post.destroy');
+// Redacteur
+Route::get('/back/redacteurs', [RedacteurController::class, 'index'])->name('redacteur.index');
+Route::get('/back/redacteurs/create', [RedacteurController::class, 'create'])->name('redacteur.create');
+Route::post('/back/redacteurs/store', [RedacteurController::class, 'store'])->name('redacteur.store');
+Route::get('/back/redacteurs/{id}/read', [RedacteurController::class, 'read'])->name('redacteur.read');
+Route::get('/back/redacteurs/{id}/edit', [RedacteurController::class, 'edit'])->name('redacteur.edit');
+Route::post('/back/redacteurs/{id}/update', [RedacteurController::class, 'update'])->name('redacteur.update');
+Route::post('/back/redacteurs/{id}/delete', [RedacteurController::class, 'destroy'])->name('redacteur.destroy');

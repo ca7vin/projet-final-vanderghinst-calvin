@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId("role_id")->constrained("roles", "id");
             $table->foreignId("prof_id")->nullable()->constrained("profs", "id");
+            $table->foreignId("redacteur_id")->nullable()->constrained("redacteurs", "id");
             $table->rememberToken();
             $table->timestamps();
         });

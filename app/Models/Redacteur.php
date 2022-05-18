@@ -5,27 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Prof extends Model
+class Redacteur extends Model
 {
     use HasFactory;
      
     protected $fillable = [
-        'subject',
-        'bio_short',
-        'bio_long',
-        'phone',
-        'skype',
+        'name',
     ]; // model_anchor
      
-    protected $table = 'profs';
+    protected $table = 'redacteurs';
 
     public function user()
     {
         return $this->hasOne(User::class);
     }
 
-    public function courses()
+    public function posts()
     {
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Post::class);
     }
 }
