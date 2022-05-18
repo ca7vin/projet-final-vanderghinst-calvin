@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Models\Course;
+use App\Models\Prof;
 use App\Models\Service;
 use App\Models\Slider;
 
@@ -26,7 +27,8 @@ Route::get('/', function () {
     $slides = Slider::all();
     $services = Service::all();
     $popularcourses = Course::all()->random(4);
-    return view('index', compact('slides', 'services', 'popularcourses'));
+    $popularteachers = Prof::all()->random(4);
+    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers'));
 })->name("home");
 
 Route::get('/courses', function () {

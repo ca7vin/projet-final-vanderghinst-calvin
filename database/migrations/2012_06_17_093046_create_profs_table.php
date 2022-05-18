@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('subject');
             $table->string('bio_short');
-            $table->string('bio_long');
+            $table->text('bio_long');
             $table->string('phone');
             $table->string('skype');
             $table->timestamps();

@@ -19,8 +19,8 @@ class Prof extends Model
      
     protected $table = 'profs';
 
-    // public function users()
-    // {
-    //     return $this->hasMany(User::class);
-    // }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
