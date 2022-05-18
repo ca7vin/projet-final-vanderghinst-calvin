@@ -36,7 +36,7 @@ Route::get('/', function () {
 })->name("home");
 
 Route::get('/courses', function () {
-    $courses = Course::all();
+    $courses = Course::paginate(9);
     return view('front/pages/courses-grid', compact('courses'));
 })->name("courses");
 
@@ -49,7 +49,8 @@ Route::get('events', function () {
 })->name("events");
 
 Route::get('news', function () {
-    return view('front/pages/classic-news');
+    $news = Post::all();
+    return view('front/pages/classic-news', compact('news'));
 })->name("news");
 
 Route::get('contact', function () {

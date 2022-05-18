@@ -44,8 +44,8 @@
                             <div class="news-item">
                                 <a href="single-post.html"><img src="http://placehold.it/175x130" alt=""></a>
                                 <ul>
-                                    <li>{{ $lastnew->created_at->translatedFormat('d F Y') }}</li>
-                                    <li>By {{ $lastnew->redacteur->user->name }}</li>
+                                    <li>Posted : <em>{{ $lastnew->created_at->translatedFormat('d F Y') }}</em> </li>
+                                    <li>By <em>{{ $lastnew->redacteur->user->name }}</em></li>
                                     <li>2 Comments</li>
                                 </ul>
                                 <a href="single-post.html">
