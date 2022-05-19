@@ -1,21 +1,22 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1 class='my-5'>Events</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">Events</div>
         <table class='table'>
             <thead>
                 <tr>
-                    <th scope='col'>#</th>
-                    <th scope='col'>Action</th>
-                    <th scope='col'>start_time</th>
-                    <th scope='col'>end_time</th>
-                    <th scope='col'>title</th>
-                    <th scope='col'>description</th>
-                    <th scope='col'>image1</th>
-                    <th scope='col'>image2</th>
-                    <th scope='col'>image3</th>
-                    <th scope='col'>phone</th>
-                    <th scope='col'>email</th>
+                    <th class="text-uppercase" scope='col'>#</th>
+                    <th class="text-uppercase" scope='col'>start time</th>
+                    <th class="text-uppercase" scope='col'>end time</th>
+                    <th class="text-uppercase" scope='col'>title</th>
+                    <th class="text-uppercase" scope='col'>description</th>
+                    <th class="text-uppercase" scope='col'>image1</th>
+                    <th class="text-uppercase" scope='col'>image2</th>
+                    <th class="text-uppercase" scope='col'>image3</th>
+                    <th class="text-uppercase" scope='col'>phone</th>
+                    <th class="text-uppercase" scope='col'>email</th>
                 </tr> {{-- read_tr_anchor --}}
             </thead>
             <tbody>
@@ -25,9 +26,15 @@
                     <td>{{ $event->end_time }}</td>
                     <td>{{ $event->title }}</td>
                     <td>{{ $event->description }}</td>
-                    <td>{{ $event->image1 }}</td>
-                    <td>{{ $event->image2 }}</td>
-                    <td>{{ $event->image3 }}</td>
+                    <td>
+                        <img src="{{ asset('images/' . $event->image1) }}" alt="">
+                    </td>
+                    <td>
+                        <img src="{{ asset('images/' . $event->image2) }}" alt="">
+                    </td>
+                    <td>
+                        <img src="{{ asset('images/' . $event->image3) }}" alt="">
+                    </td>
                     <td>{{ $event->phone }}</td>
                     <td>{{ $event->email }}</td>
                     <td> {{-- read_td_anchor --}}
@@ -37,4 +44,5 @@
             </tbody>
         </table>
     </div>
+</section>
 @endsection

@@ -1,7 +1,5 @@
   <div class="sidebar">
     <div class="logo-details">
-      {{-- <i class='bx bxl-c-plus-plus icon'></i> --}}
-        {{-- <div class="logo_name">CodingLab</div> --}}
         <img class='logo_name' src="{{ asset('images/logo.png') }}" alt="">
         <i class='bx bx-menu' id="btn" ></i>
     </div>
@@ -24,6 +22,13 @@
           <span class="links_name">Banner</span>
         </a>
          <span class="tooltip">Banner</span>
+      </li>
+      <li>
+        <a href="{{ Route('event.index') }}">
+          <i class='bx bxs-calendar-event' ></i>
+          <span class="links_name">Event</span>
+        </a>
+         <span class="tooltip">Event</span>
       </li>
      <li>
        <a href="#">
