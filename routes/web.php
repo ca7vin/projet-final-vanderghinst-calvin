@@ -92,8 +92,6 @@ Route::get('/back/profs/{id}/read', [ProfController::class, 'read'])->name('prof
 Route::get('/back/profs/{id}/edit', [ProfController::class, 'edit'])->name('prof.edit');
 Route::post('/back/profs/{id}/update', [ProfController::class, 'update'])->name('prof.update');
 Route::post('/back/profs/{id}/delete', [ProfController::class, 'destroy'])->name('prof.destroy');
-// 
-Route::get('/back/s', [Controller::class, 'index'])->name('.index');
 // Course
 Route::get('/back/courses', [CourseController::class, 'index'])->name('course.index');
 Route::get('/back/courses/create', [CourseController::class, 'create'])->name('course.create');

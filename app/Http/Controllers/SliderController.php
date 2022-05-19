@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SliderController extends Controller
 {
@@ -22,7 +23,7 @@ class SliderController extends Controller
         $slider = new Slider;
         $request->validate([
          'first'=> 'required',
-         'image'=> 'required',
+        //  'image'=> 'required',
          'title'=> 'required',
          'text'=> 'required',
          'textorange'=> 'required',
@@ -30,13 +31,24 @@ class SliderController extends Controller
          'btnlink'=> 'required',
         ]); // store_validated_anchor;
         $slider->first = $request->first;
-        $slider->image = $request->image;
         $slider->title = $request->title;
         $slider->text = $request->text;
         $slider->textorange = $request->textorange;
         $slider->btntext = $request->btntext;
         $slider->btnlink = $request->btnlink;
-        $slider->save(); // store_anchor
+        // priorité display
+        if ($request->first === "1") {
+            Slider::where('first', "1")->update(['first' => "0"]);
+            $slider->first = "1";
+        }
+        // default image
+        if ($request->image === null) {
+            $slider->image = "wallpaper1.jpeg";
+        } else {
+            $slider->image = $request->image->hashName();;
+            $request->file('image')->storePublicly('images', 'public');
+        }
+        $slider->save(); // update_anchor
         return redirect()->route("slider.index")->with('message', "Successful storage !");
     }
     public function read($id)
@@ -54,7 +66,7 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         $request->validate([
          'first'=> 'required',
-         'image'=> 'required',
+        //  'image'=> 'required',
          'title'=> 'required',
          'text'=> 'required',
          'textorange'=> 'required',
@@ -62,12 +74,23 @@ class SliderController extends Controller
          'btnlink'=> 'required',
         ]); // update_validated_anchor;
         $slider->first = $request->first;
-        $slider->image = $request->image;
         $slider->title = $request->title;
         $slider->text = $request->text;
         $slider->textorange = $request->textorange;
         $slider->btntext = $request->btntext;
         $slider->btnlink = $request->btnlink;
+        // priorité display
+        if ($request->first === "1") {
+            Slider::where('first', "1")->update(['first' => "0"]);
+            $slider->first = "1";
+        }
+        // default image
+        if ($request->image === null) {
+            $slider->image = $slider->image;
+        } else {
+            $slider->image = $request->image->hashName();
+            $request->file('image')->storePublicly('images', 'public');
+        }
         $slider->save(); // update_anchor
         return redirect()->route("slider.index")->with('message', "Successful update !");
     }

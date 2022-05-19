@@ -7,14 +7,14 @@
             <table class='table'>
                 <thead>
                     <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>first</th>
-                        <th scope='col'>image</th>
-                        <th scope='col'>title</th>
-                        <th scope='col'>text</th>
-                        <th scope='col'>textorange</th>
-                        <th scope='col'>btntext</th>
-                        <th scope='col'>btnlink</th>
+                        <th class="text-uppercase" scope='col'>#</th>
+                        <th class="text-uppercase" scope='col'>first</th>
+                        <th class="text-uppercase" scope='col'>image</th>
+                        <th class="text-uppercase" scope='col'>title</th>
+                        <th class="text-uppercase" scope='col'>text</th>
+                        <th class="text-uppercase" scope='col'>textorange</th>
+                        <th class="text-uppercase" scope='col'>btntext</th>
+                        <th class="text-uppercase" scope='col'>btnlink</th>
                     </tr> {{-- read_tr_anchor --}}
                 </thead>
                 <tbody>

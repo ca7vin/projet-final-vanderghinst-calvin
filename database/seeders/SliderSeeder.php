@@ -16,7 +16,7 @@ class SliderSeeder extends Seeder
     public function run()
     {
         DB::table('sliders')->insert([
-            'first' => 'first',
+            'first' => true,
             'image' => 'wallpapercontact.jpg',
             'title' => 'Are you ready to study ?<br>We have the',
             'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',
@@ -25,7 +25,7 @@ class SliderSeeder extends Seeder
             'btnlink' => '#',
         ]);
         DB::table('sliders')->insert([
-            'first' => 'second',
+            'first' => false,
             'image' => 'wallpaperevents.jpg',
             'title' => 'Next year more intresting!<br>Check next',
             'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',

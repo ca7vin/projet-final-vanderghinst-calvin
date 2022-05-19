@@ -22,14 +22,14 @@
             <table class='table'>
                 <thead>
                     <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>first</th>
-                        <th class='w-25' scope='col'>image</th>
-                        <th scope='col'>title</th>
-                        <th scope='col'>text</th>
-                        <th scope='col'>textorange</th>
-                        <th scope='col'>btntext</th>
-                        <th scope='col'>btnlink</th>
+                        <th class='text-uppercase' scope='col'>#</th>
+                        <th class='text-uppercase' scope='col'>first</th>
+                        <th class='text-uppercase' class='w-25' scope='col'>image</th>
+                        <th class='text-uppercase' scope='col'>title</th>
+                        <th class='text-uppercase' scope='col'>text</th>
+                        <th class='text-uppercase' scope='col'>textorange</th>
+                        <th class='text-uppercase' scope='col'>btntext</th>
+                        <th class='text-uppercase' scope='col'>btnlink</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
@@ -51,7 +51,7 @@
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
-                                    <a class='btn btn-primary' href='{{ route('slider.edit', $slider->id) }}'
+                                    <a class='btn btn-primary mx-3' href='{{ route('slider.edit', $slider->id) }}'
                                         role='button'>Edit</a>
                                     <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
                                         role='button'>Read</a>
