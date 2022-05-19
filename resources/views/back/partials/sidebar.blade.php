@@ -1,21 +1,15 @@
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
+      {{-- <i class='bx bxl-c-plus-plus icon'></i> --}}
+        {{-- <div class="logo_name">CodingLab</div> --}}
+        <img class='logo_name' src="{{ asset('images/logo.png') }}" alt="">
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list p-0">
       <li>
-          <i class='bx bx-search' ></i>
+          <i class='bx bx-search'></i>
          <input type="text" placeholder="Search...">
          <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
       </li>
       <li>
        <a href="#">
@@ -24,6 +18,13 @@
        </a>
        <span class="tooltip">User</span>
      </li>
+      <li>
+        <a href="{{ Route('slider.index') }}">
+          <i class='bx bxs-image'></i>
+          <span class="links_name">Banner</span>
+        </a>
+         <span class="tooltip">Banner</span>
+      </li>
      <li>
        <a href="#">
          <i class='bx bx-chat' ></i>
