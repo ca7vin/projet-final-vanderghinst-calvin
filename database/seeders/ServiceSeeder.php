@@ -16,22 +16,22 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         DB::table('services')->insert([
-            'icon' => 'fa fa-graduation-cap',
+            'icon' => '<i class="fa fa-graduation-cap"></i>',
             'title' => 'Graduated Steps',
             'text' => 'Photo booth Banksy YOLO mixtape post-ironic they sold out all.',
         ]);
         DB::table('services')->insert([
-            'icon' => 'fa fa-globe',
+            'icon' => '<i class="fa fa-globe"></i>',
             'title' => 'Global Interested',
             'text' => 'Photo booth Banksy YOLO mixtape post-ironic they sold out all.',
         ]);
         DB::table('services')->insert([
-            'icon' => 'fa fa-clock-o',
+            'icon' => '<i class="fa fa-clock-o"></i>',
             'title' => 'Circular Clock',
             'text' => 'Photo booth Banksy YOLO mixtape post-ironic they sold out all.',
         ]);
         DB::table('services')->insert([
-            'icon' => 'fa fa-book',
+            'icon' => '<i class="fa fa-book"></i>',
             'title' => 'Open Book',
             'text' => 'Photo booth Banksy YOLO mixtape post-ironic they sold out all.',
         ]);

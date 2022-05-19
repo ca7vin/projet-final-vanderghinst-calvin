@@ -21,7 +21,7 @@ class CourseController extends Controller
     {
         $course = new Course;
         $request->validate([
-         'prof'=> 'required',
+        //  'prof'=> 'required',
          'title'=> 'required',
          'description'=> 'required',
          'discipline'=> 'required',
@@ -30,7 +30,11 @@ class CourseController extends Controller
          'start'=> 'required',
          'duration'=> 'required',
         ]); // store_validated_anchor;
-        $course->prof = $request->prof;
+        if (auth()->user()->role_id === 2) {
+            $course->prof_id = auth()->user()->prof->id;
+        } elseif (auth()->user()->role_id === 1) {
+            $course->prof_id = auth()->user()->id;
+        }
         $course->title = $request->title;
         $course->description = $request->description;
         $course->discipline = $request->discipline;
@@ -60,7 +64,6 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
         $request->validate([
-         'prof'=> 'required',
          'title'=> 'required',
          'description'=> 'required',
          'discipline'=> 'required',
@@ -69,7 +72,7 @@ class CourseController extends Controller
          'start'=> 'required',
          'duration'=> 'required',
         ]); // update_validated_anchor;
-        $course->prof = $request->prof;
+        $course->prof = $course->prof;
         $course->title = $request->title;
         $course->description = $request->description;
         $course->discipline = $request->discipline;

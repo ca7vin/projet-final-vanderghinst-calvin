@@ -1,12 +1,13 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1 class='my-5'>Profs</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">Teachers</div>
         <table class='table'>
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-                    <th scope='col'>Action</th>
                     <th scope='col'>subject</th>
                     <th scope='col'>bio_short</th>
                     <th scope='col'>bio_long</th>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IconController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\RedacteurController;
 use App\Http\Controllers\PostController;
@@ -124,3 +125,5 @@ Route::get('/back/events/{id}/read', [EventController::class, 'read'])->name('ev
 Route::get('/back/events/{id}/edit', [EventController::class, 'edit'])->name('event.edit');
 Route::post('/back/events/{id}/update', [EventController::class, 'update'])->name('event.update');
 Route::post('/back/events/{id}/delete', [EventController::class, 'destroy'])->name('event.destroy');
+// Icon
+Route::get('/back/icons', [IconController::class, 'index'])->name('icon.index');

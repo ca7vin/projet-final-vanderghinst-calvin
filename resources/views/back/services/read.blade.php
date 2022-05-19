@@ -1,12 +1,13 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1 class='my-5'>Services</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">Services</div>
         <table class='table'>
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-                    <th scope='col'>Action</th>
                     <th scope='col'>icon</th>
                     <th scope='col'>title</th>
                     <th scope='col'>text</th>
@@ -15,7 +16,9 @@
             <tbody>
                 <tr>
                     <th scope='row'>{{ $service->id }}</th>
-                    <td>{{ $service->icon }}</td>
+                    <td>
+                        {{ $service->icon }}
+                    </td>
                     <td>{{ $service->title }}</td>
                     <td>{{ $service->text }}</td>
                     <td> {{-- read_td_anchor --}}
@@ -25,4 +28,5 @@
             </tbody>
         </table>
     </div>
+    </section>
 @endsection

@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1>Posts</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">News</div>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -11,21 +13,22 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('post.update' , $post->id) }}' method='post'>
+        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('post.update' , $post->id) }}' method='post'>
             @csrf
-            <div>
-                <label for=''>title</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>title</label>
                 <input type='text' name='title' value='{{ $post->title }}'>
             </div>
-            <div>
-                <label for=''>text</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>text</label>
                 <input type='text' name='text' value='{{ $post->text }}'>
             </div>
-            <div>
-                <label for=''>quote</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>quote</label>
                 <input type='text' name='quote' value='{{ $post->quote }}'>
             </div>
-            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
+            <button class='btn btn-primary' type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>
+    </section>
 @endsection

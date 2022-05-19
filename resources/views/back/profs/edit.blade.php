@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1>Profs</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">Teachers</div>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -11,29 +13,30 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('prof.update' , $prof->id) }}' method='post'>
+        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('prof.update' , $prof->id) }}' method='post'>
             @csrf
-            <div>
-                <label for=''>subject</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>subject</label>
                 <input type='text' name='subject' value='{{ $prof->subject }}'>
             </div>
-            <div>
-                <label for=''>bio_short</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>bio short</label>
                 <input type='text' name='bio_short' value='{{ $prof->bio_short }}'>
             </div>
-            <div>
-                <label for=''>bio_long</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>bio long</label>
                 <input type='text' name='bio_long' value='{{ $prof->bio_long }}'>
             </div>
-            <div>
-                <label for=''>phone</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>phone</label>
                 <input type='text' name='phone' value='{{ $prof->phone }}'>
             </div>
-            <div>
-                <label for=''>skype</label>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>skype</label>
                 <input type='text' name='skype' value='{{ $prof->skype }}'>
             </div>
-            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
+            <button class='btn btn-primary mb-5' type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>
+    </section>
 @endsection

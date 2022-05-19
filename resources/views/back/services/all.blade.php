@@ -1,7 +1,9 @@
 @extends('back.layouts.app')
 @section('content')
-    <div class='container'>
-        <h1 class='my-5'>Services</h1>
+    @include('back/partials/sidebar')
+    <section class="home-section p-0">
+        <div class='container d-flex flex-column align-items-center justify-content-center'>
+            <div class="text">Services</div>
         @if (session()->has('message'))
             <div class='alert alert-success'>
                 {{ session()->get('message') }}
@@ -21,7 +23,6 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-                    <th scope='col'>Action</th>
                     <th scope='col'>icon</th>
                     <th scope='col'>title</th>
                     <th scope='col'>text</th>
@@ -31,16 +32,16 @@
                 @foreach ($services as $service)
                     <tr>
                         <th scope='row'>{{ $service->id }}</th>
-                        <td>{{ $service->icon }}</td>
+                        <td>{!! $service->icon !!}</td>
                         <td>{{ $service->title }}</td>
                         <td>{{ $service->text }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
                                 <form action='{{ route('service.destroy', $service->id) }}' method='post'>
                                     @csrf
-                                    <button class=btn btn-danger type=submit>Delete</button>
+                                    <button class="btn btn-danger" type=submit>Delete</button>
                                 </form>
-                                <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}' role='button'>Edit</a>
+                                <a class='btn btn-primary mx-3' href='{{ route('service.edit', $service->id) }}' role='button'>Edit</a>
                                 <a class='btn btn-primary' href='{{ route('service.read', $service->id) }}' role='button'>Read</a>
                             </div>
                         </td>
@@ -49,4 +50,5 @@
             </tbody>
         </table>
     </div>
+    </section>
 @endsection

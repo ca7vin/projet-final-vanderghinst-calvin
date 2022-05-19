@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Icon;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view("/back/services/all",compact("services"));
+        $icons = Icon::all();
+        return view("/back/services/all",compact("services", "icons"));
     }
     public function create()
     {
@@ -39,7 +41,8 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $service = Service::find($id);
-        return view("/back/services/edit",compact("service"));
+        $icons = Icon::all();
+        return view("/back/services/edit",compact("service", "icons"));
     }
     public function update($id, Request $request)
     {

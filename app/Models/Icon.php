@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Icon extends Model
 {
     use HasFactory;
-
      
     protected $fillable = [
-        // 'icon',
-        'title',
-        'text',
+        'name',
+        'icon',
+        'service_id',
     ]; // model_anchor
      
-    protected $table = 'services';
-    public function icon()
+    protected $table = 'icons';
+    public function service()
     {
-        return $this->hasOne(Icon::class);
+        return $this->belongsTo(Service::class);
     }
 }
