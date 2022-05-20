@@ -14,7 +14,7 @@
                         @foreach ($services as $service)
                         <div class="col-md-6 col-sm-6">
                             <div class="service-item">
-                                {!! $service->icon->icon !!}
+                                {!! $service->icon !!}
                                 <h4>{{ $service->title }}</h4>
                                 <div class="line-dec"></div>
                                 <p>{{ $service->text }}</p>

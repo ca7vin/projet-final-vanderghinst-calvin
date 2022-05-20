@@ -16,8 +16,4 @@ class Icon extends Model
     ]; // model_anchor
      
     protected $table = 'icons';
-    public function service()
-    {
-        return $this->belongsTo(Service::class);
-    }
 }

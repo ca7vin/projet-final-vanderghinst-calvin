@@ -11,14 +11,10 @@ class Service extends Model
 
      
     protected $fillable = [
-        // 'icon',
+        'icon',
         'title',
         'text',
     ]; // model_anchor
      
     protected $table = 'services';
-    public function icon()
-    {
-        return $this->hasOne(Icon::class);
-    }
 }
