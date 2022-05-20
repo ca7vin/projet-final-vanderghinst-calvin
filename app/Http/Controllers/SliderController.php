@@ -45,7 +45,7 @@ class SliderController extends Controller
         if ($request->image === null) {
             $slider->image = "wallpaper1.jpeg";
         } else {
-            $slider->image = $request->image->hashName();;
+            $slider->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
         }
         $slider->save(); // update_anchor

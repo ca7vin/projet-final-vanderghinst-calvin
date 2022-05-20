@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\UserController;
 use App\Models\Course;
 use App\Models\Event;
 use App\Models\Post;
@@ -127,3 +128,11 @@ Route::post('/back/events/{id}/update', [EventController::class, 'update'])->nam
 Route::post('/back/events/{id}/delete', [EventController::class, 'destroy'])->name('event.destroy');
 // Icon
 Route::get('/back/icons', [IconController::class, 'index'])->name('icon.index');
+// User
+Route::get('/back/users', [UserController::class, 'index'])->name('user.index');
+Route::get('/back/users/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/back/users/store', [UserController::class, 'store'])->name('user.store');
+Route::get('/back/users/{id}/read', [UserController::class, 'read'])->name('user.read');
+Route::get('/back/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/back/users/{id}/update', [UserController::class, 'update'])->name('user.update');
+Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');

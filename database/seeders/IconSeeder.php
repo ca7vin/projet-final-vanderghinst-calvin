@@ -18,22 +18,34 @@ class IconSeeder extends Seeder
         DB::table('icons')->insert([
             'name' => 'Graduation cap',
             'icon' => '<i class="fa fa-graduation-cap"></i>',
-            // 'service_id' => 1,
         ]);
         DB::table('icons')->insert([
             'name' => 'Globe',
             'icon' => '<i class="fa fa-globe"></i>',
-            // 'service_id' => 2,
         ]);
         DB::table('icons')->insert([
             'name' => 'Clock',
             'icon' => '<i class="fa fa-clock-o"></i>',
-            // 'service_id' => 3,
         ]);
         DB::table('icons')->insert([
             'name' => 'Book',
             'icon' => '<i class="fa fa-book"></i>',
-            // 'service_id' => 4,
+        ]);
+        DB::table('icons')->insert([
+            'name' => 'Database',
+            'icon' => '<i class="fa fa-database"></i>',
+        ]);
+        DB::table('icons')->insert([
+            'name' => 'Hourglass',
+            'icon' => '<i class="fa fa-building"></i>',
+        ]);
+        DB::table('icons')->insert([
+            'name' => 'Gear',
+            'icon' => '<i class="fa fa-thumbs-up"></i>',
+        ]);
+        DB::table('icons')->insert([
+            'name' => 'Chart',
+            'icon' => '<i class="fa fa-line-chart"></i>',
         ]);
         //
     }

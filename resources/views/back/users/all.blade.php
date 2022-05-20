@@ -3,7 +3,7 @@
     @include('back/partials/sidebar')
     <section class="home-section p-0">
         <div class='container d-flex flex-column align-items-center justify-content-center'>
-            <div class="text">Sliders</div>
+            <div class="text">Users</div>
             @if (session()->has('message'))
                 <div class='alert alert-success'>
                     {{ session()->get('message') }}
@@ -18,42 +18,38 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('slider.create') }}' role='button'>Create</a>
+            <a class='btn btn-success' href='{{ route('user.create') }}' role='button'>Create</a>
             <table class='table'>
                 <thead>
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
-                        <th class='text-uppercase' scope='col'>first</th>
-                        <th class='text-uppercase w-25' scope='col'>image</th>
-                        <th class='text-uppercase' scope='col'>title</th>
-                        <th class='text-uppercase' scope='col'>text</th>
-                        <th class='text-uppercase' scope='col'>textorange</th>
-                        <th class='text-uppercase' scope='col'>btntext</th>
-                        <th class='text-uppercase' scope='col'>btnlink</th>
+                        <th class='text-uppercase' scope='col'>image</th>
+                        <th class='text-uppercase' scope='col'>name</th>
+                        <th class='text-uppercase' scope='col'>email</th>
+                        <th class='text-uppercase' scope='col'>password</th>
+                        <th class='text-uppercase' scope='col'>role</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
-                    @foreach ($sliders as $slider)
+                    @foreach ($users as $user)
                         <tr>
-                            <th scope='row'>{{ $slider->id }}</th>
-                            <td>{{ $slider->first }}</td>
+                            <th scope='row'>{{ $user->id }}</th>
                             <td>
-                                <img class='w-100' src="{{ asset('images/' . $slider->image ) }}" alt="">
+                                <img class='w-100' src="{{ asset('images/' . $user->image ) }}" alt="">
                             </td>
-                            <td>{!! $slider->title !!}</td>
-                            <td>{!! $slider->text !!}</td>
-                            <td>{{ $slider->textorange }}</td>
-                            <td>{{ $slider->btntext }}</td>
-                            <td>{{ $slider->btnlink }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->password }}</td>
+                            <td>{{ $user->role->name }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
+                                    <form action='{{ route('user.destroy', $user->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
-                                    <a class='btn btn-primary mx-3' href='{{ route('slider.edit', $slider->id) }}'
+                                    <a class='btn btn-primary mx-3' href='{{ route('user.edit', $user->id) }}'
                                         role='button'>Edit</a>
-                                    <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
+                                    <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
                                         role='button'>Read</a>
                                 </div>
                             </td>

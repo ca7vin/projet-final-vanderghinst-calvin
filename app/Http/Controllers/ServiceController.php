@@ -17,7 +17,8 @@ class ServiceController extends Controller
     }
     public function create()
     {
-        return view("/back/services/create");
+        $icons = Icon::all();
+        return view("/back/services/create", compact("icons"));
     }
     public function store(Request $request)
     {
