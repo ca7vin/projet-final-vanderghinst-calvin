@@ -119,16 +119,21 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $prof = Prof::find($user->prof_id);
         if ($user->id === Auth::user()->id) {
             return redirect()->route("user.index")->with('error', "You cannot delete your own account !");
         } else {
             $user->delete();
-            $prof->delete();
             $destination = "img/" . $user ->image;
             if (File::exists($destination)) 
             {
                 File::delete($destination);
+            }
+            if ($user->role_id === 2) {
+                $prof = Prof::find($user->prof_id);
+                $prof->delete();
+            } elseif ($user->role_id === 3) {
+                $redacteur = Redacteur::find($user->redacteur_id);
+                $redacteur->delete();
             }
             return redirect()->route("user.index")->with('message', "Successful delete !");
         }
