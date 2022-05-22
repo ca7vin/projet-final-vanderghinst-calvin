@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
+                        <th class='text-uppercase' scope='col'>Writer</th>
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase' scope='col'>text</th>
                         <th class='text-uppercase' scope='col'>quote</th>
@@ -32,6 +33,13 @@
                     @foreach ($posts as $post)
                         <tr>
                             <th scope='row'>{{ $post->id }}</th>
+                            <td>
+                            @if ($post->redacteur)
+                            {{ $post->redacteur->user->name }}
+                            @else
+                            Administrateur
+                            @endif
+                            </td>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->text }}</td>
                             <td>{{ $post->quote }}</td>

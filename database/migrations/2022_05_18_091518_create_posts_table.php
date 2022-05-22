@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('text');
             $table->text('quote');
-            $table->foreignId("redacteur_id")->constrained("redacteurs", "id");
+            $table->foreignId("redacteur_id")->nullable()->constrained("redacteurs", "id");
             $table->timestamps();
         });
     }

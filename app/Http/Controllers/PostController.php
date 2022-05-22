@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -28,6 +29,11 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->text = $request->text;
         $post->quote = $request->quote;
+        if (Auth::user()->role_id === 3) {
+            $post->redacteur_id = Auth::user()->redacteur->id;
+        } elseif (Auth::user()->role_id === 1) {
+            $post->redacteur_id = null;
+        }
         $post->save(); // store_anchor
         return redirect()->route("post.index")->with('message', "Successful storage !");
     }
