@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -30,10 +31,10 @@ class CourseController extends Controller
          'start'=> 'required',
          'duration'=> 'required',
         ]); // store_validated_anchor;
-        if (auth()->user()->role_id === 2) {
-            $course->prof_id = auth()->user()->prof->id;
-        } elseif (auth()->user()->role_id === 1) {
-            $course->prof_id = auth()->user()->id;
+        if (Auth::user()->role_id === 2) {
+            $course->prof_id = Auth::user()->prof->id;
+        } elseif (Auth::user()->role_id === 1) {
+            $course->prof_id = null;
         }
         $course->title = $request->title;
         $course->description = $request->description;

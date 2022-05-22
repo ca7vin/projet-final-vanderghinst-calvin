@@ -37,7 +37,13 @@
                     @foreach ($courses as $course)
                         <tr>
                             <th scope='row'>{{ $course->id }}</th>
-                            <td>{{ $course->prof->user->name }}</td>
+                            <td>
+                            @if ($course->prof)
+                            {{ $course->prof->user->name }}
+                            @else
+                            Administrateur
+                            @endif
+                            </td>
                             <td>{{ $course->title }}</td>
                             <td>{{ $course->description }}</td>
                             <td>{{ $course->discipline }}</td>
