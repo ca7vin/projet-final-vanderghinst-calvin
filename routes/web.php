@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\IconController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\RedacteurController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Course;
 use App\Models\Event;
+use App\Models\Message;
 use App\Models\Post;
 use App\Models\Prof;
 use App\Models\Service;
@@ -59,7 +61,8 @@ Route::get('contact', function () {
 })->name("contact");
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $messages = Message::All();
+    return view('dashboard', compact('messages'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -135,4 +138,11 @@ Route::post('/back/users/store', [UserController::class, 'store'])->name('user.s
 Route::get('/back/users/{id}/read', [UserController::class, 'read'])->name('user.read');
 Route::get('/back/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/back/users/{id}/update', [UserController::class, 'update'])->name('user.update');
-Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');
+Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');// Message
+Route::get('/back/messages', [MessageController::class, 'index'])->name('message.index');
+Route::get('/back/messages/create', [MessageController::class, 'create'])->name('message.create');
+Route::post('/back/messages/store', [MessageController::class, 'store'])->name('message.store');
+Route::get('/back/messages/{id}/read', [MessageController::class, 'read'])->name('message.read');
+Route::get('/back/messages/{id}/edit', [MessageController::class, 'edit'])->name('message.edit');
+Route::post('/back/messages/{id}/update', [MessageController::class, 'update'])->name('message.update');
+Route::post('/back/messages/{id}/delete', [MessageController::class, 'destroy'])->name('message.destroy');

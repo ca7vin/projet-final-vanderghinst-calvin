@@ -10,6 +10,13 @@
               <span class="tooltip">Search</span>
           </li> --}}
           <li>
+              <a href="{{ Route('dashboard') }}">
+                <i class='bx bxs-home'></i>
+                  <span class="links_name">User</span>
+              </a>
+              <span class="tooltip">User</span>
+          </li>
+          <li>
               <a href="{{ Route('user.index') }}">
                   <i class='bx bx-user'></i>
                   <span class="links_name">User</span>
