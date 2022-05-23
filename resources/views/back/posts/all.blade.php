@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
+                        <th class='text-uppercase' scope='col'>Image</th>
                         <th class='text-uppercase' scope='col'>Writer</th>
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase' scope='col'>text</th>
@@ -33,6 +34,9 @@
                     @foreach ($posts as $post)
                         <tr>
                             <th scope='row'>{{ $post->id }}</th>
+                            <td>
+                                <img src="{{ asset('images/' . $post->image) }}" alt="">
+                            </td>
                             <td>
                             @if ($post->redacteur)
                             {{ $post->redacteur->user->name }}

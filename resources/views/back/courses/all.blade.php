@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th class="text-uppercase" scope='col'>#</th>
+                        <th class="text-uppercase" scope='col'>image</th>
                         <th class="text-uppercase" scope='col'>prof</th>
                         <th class="text-uppercase" scope='col'>title</th>
                         <th class="text-uppercase" scope='col'>description</th>
@@ -37,6 +38,9 @@
                     @foreach ($courses as $course)
                         <tr>
                             <th scope='row'>{{ $course->id }}</th>
+                            <td>
+                                <img src="{{ asset('images/' . $course->image) }}" alt="">
+                            </td>
                             <td>
                             @if ($course->prof)
                             {{ $course->prof->user->name }}

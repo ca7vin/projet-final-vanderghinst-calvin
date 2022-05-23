@@ -42,7 +42,7 @@
                     <div class="col-md-12">
                         @foreach ($lastnews as $lastnew)
                             <div class="news-item">
-                                <a href="{{ Route('post.onepage', $lastnew->id) }}"><img src="http://placehold.it/175x130" alt=""></a>
+                                <a href="{{ Route('post.onepage', $lastnew->id) }}"><img width='175px' height="130px" src="{{ asset('images/' . $lastnew->image) }}" alt=""></a>
                                 <ul>
                                     <li>Posted : <em>{{ $lastnew->created_at->translatedFormat('d F Y') }}</em> </li>
                                     <li>By <em>{{ $lastnew->redacteur->user->name }}</em></li>

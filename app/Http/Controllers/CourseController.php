@@ -48,6 +48,13 @@ class CourseController extends Controller
         } else {
             $course->price_color = "price-red";
         }
+        // default image
+        if ($request->image === null) {
+            $course->image = "courseImg.jpeg";
+        } else {
+            $course->image = $request->image->hashName();
+            $request->file('image')->storePublicly('images', 'public');
+        }
         $course->save(); // store_anchor
         return redirect()->route("course.index")->with('message', "Successful storage !");
     }
@@ -90,6 +97,13 @@ class CourseController extends Controller
             $course->price_color = "price-yellow";
         } else {
             $course->price_color = "price-red";
+        }
+        // default image
+        if ($request->image === null) {
+            $course->image = $course->image;
+        } else {
+            $course->image = $request->image->hashName();
+            $request->file('image')->storePublicly('images', 'public');
         }
         $course->save(); // update_anchor
         return redirect()->route("course.index")->with('message', "Successful update !");

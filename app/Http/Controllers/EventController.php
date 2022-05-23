@@ -71,6 +71,11 @@ class EventController extends Controller
         $event = Event::find($id);
         return view("/back/events/read",compact("event"));
     }
+    public function onepage($id)
+    {
+        $event = Event::find($id);
+        return view("/front/pages/single-event",compact("event"));
+    }
     public function edit($id)
     {
         $event = Event::find($id);

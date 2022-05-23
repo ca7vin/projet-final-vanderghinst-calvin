@@ -33,7 +33,7 @@
             @foreach ($courses as $course)
                 <div class="col-md-4">
                     <div class="item course-item">
-                        <a href="{{ Route('course.onepage', $course->id) }}"><img src="http://placehold.it/345x235" alt=""></a>
+                        <a href="{{ Route('course.onepage', $course->id) }}"><img src="{{ asset('images/' . $course->image) }}" alt=""></a>
                         <div class="down-content">
                             @if ($course->prof)
                             <img src="{{ asset('images/' . $course->prof->user->image) }}" alt="">

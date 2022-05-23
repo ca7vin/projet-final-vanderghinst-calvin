@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('start');
             $table->string('duration');
             $table->string('price_color');
+            $table->string('image');
             $table->foreignId("prof_id")->nullable()->constrained("profs", "id");
             $table->timestamps();
         });

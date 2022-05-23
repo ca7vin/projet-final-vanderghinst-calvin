@@ -5,7 +5,7 @@
                 <div class="classic-posts">
                     @foreach ($news as $new)
                         <div class="classic-item">
-                            <a href="{{ Route('post.onepage', $new->id) }}"><img src="http://placehold.it/770x410" alt=""></a>
+                            <a href="{{ Route('post.onepage', $new->id) }}"><img height='410px' width='770px' src="{{ asset('images/' . $new->image) }}" alt=""></a>
                             <ul>
                                 <li>Posted : <em>{{ $new->created_at->translatedFormat('d F Y') }}</em> </li>
                                 <li>By <em>

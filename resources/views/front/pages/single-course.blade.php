@@ -5,8 +5,8 @@
             <div class="sidebar-menu-overlay"></div>
             <div class="sidebar-menu-inner">
                 @include('front.partials.header')
-
-                <div class="page-heading" style='background-image:url({{ asset("images/wallpapercourses.jpg") }}) !important;'>
+                <div class="page-heading"
+                    style='background-image:url({{ asset('images/wallpapercourses.jpg') }}) !important;'>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -33,30 +33,37 @@
                                         <div class="col-md-12">
                                             <div class="item course-item">
                                                 <div class="up-content">
-                                                    <a href="single-course.html">
+                                                    <a href="{{ Route('course.onepage', $course->id) }}">
                                                         <h4>{{ $course->title }}</h4>
                                                     </a>
                                                     <p>Plaid you probably haven't heard of them fashion axe meditation</p>
-                                                    <img src={{ asset('images/' . $course->prof->user->image) }} alt="">
-                                                    <h6>Ernest Byrd</h6>
-                                                    <div class="{{ $course->price_color }}">
-                                                        <span>{{ $course->price }}</span>
-                                                        <div id="base"></div>
-                                                    </div>
+                                                    @if ($course->prof)
+                                                        <img src="{{ asset('images/' . $course->prof->user->image) }}"
+                                                            alt="">
+                                                    @else
+                                                        <img src="{{ asset('images/default.jpg') }}" alt="">
+                                                    @endif
+                                                    <h6>
+                                                        @if ($course->prof)
+                                                            {{ $course->prof->user->name }}
+                                                        @else
+                                                            Administrateur
+                                                        @endif
+                                                    </h6>
                                                 </div>
                                                 <div class="courses-slider">
                                                     <ul class="slides">
                                                         <li data-thumb="http://placehold.it/140x100">
-                                                            <img src="http://placehold.it/770x380" alt="" />
+                                                            <img src="{{ asset('images/' . $course->image) }}" alt="" />
                                                         </li>
                                                         <li data-thumb="http://placehold.it/140x100">
-                                                            <img src="http://placehold.it/770x380" alt="" />
+                                                            <img src="{{ asset('images/' . $course->image) }}" alt="" />
                                                         </li>
                                                         <li data-thumb="http://placehold.it/140x100">
-                                                            <img src="http://placehold.it/770x380" alt="" />
+                                                            <img src="{{ asset('images/' . $course->image) }}" alt="" />
                                                         </li>
                                                         <li data-thumb="http://placehold.it/140x100">
-                                                            <img src="http://placehold.it/770x380" alt="" />
+                                                            <img src="{{ asset('images/' . $course->image) }}" alt="" />
                                                         </li>
                                                     </ul>
                                                 </div>

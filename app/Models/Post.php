@@ -13,6 +13,7 @@ class Post extends Model
         'title',
         'text',
         'quote',
+        'image',
         'redacteur_id',
     ]; // model_anchor
      

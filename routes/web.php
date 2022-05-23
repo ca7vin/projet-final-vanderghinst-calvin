@@ -122,6 +122,7 @@ Route::get('/back/events', [EventController::class, 'index'])->name('event.index
 Route::get('/back/events/create', [EventController::class, 'create'])->name('event.create');
 Route::post('/back/events/store', [EventController::class, 'store'])->name('event.store');
 Route::get('/back/events/{id}/read', [EventController::class, 'read'])->name('event.read');
+Route::get('/events/{id}/onepage', [EventController::class, 'onepage'])->name('event.onepage');
 Route::get('/back/events/{id}/edit', [EventController::class, 'edit'])->name('event.edit');
 Route::post('/back/events/{id}/update', [EventController::class, 'update'])->name('event.update');
 Route::post('/back/events/{id}/delete', [EventController::class, 'destroy'])->name('event.destroy');

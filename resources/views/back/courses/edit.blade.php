@@ -47,6 +47,10 @@
                 <label class='text-uppercase' for=''>duration</label>
                 <input type='text' name='duration' value='{{ $course->duration }}'>
             </div>
+            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                <label class='text-uppercase' for=''>image</label>
+                <input type="file" name='image'>
+            </div>
             <button class='btn btn-primary mb-5' type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>

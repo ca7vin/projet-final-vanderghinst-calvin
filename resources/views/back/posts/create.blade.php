@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif
-            <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('post.store') }}' method='post'>
+            <form enctype="multipart/form-data" class='d-flex flex-column align-items-center justify-content-center' action='{{ route('post.store') }}' method='post'>
                 @csrf
                 <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
                     <label class='text-uppercase' for=''>title</label>
@@ -26,6 +26,10 @@
                 <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
                     <label class='text-uppercase' for=''>quote</label>
                     <input type='text' name='quote'>
+                </div>
+                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                    <label class='text-uppercase' for=''>image</label>
+                    <input type="file" name='image'>
                 </div>
                 <button class='btn btn-success mb-5' type='submit'>Create</button> {{-- create_blade_anchor --}}
             </form>

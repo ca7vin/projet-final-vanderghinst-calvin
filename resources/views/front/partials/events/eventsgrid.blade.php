@@ -54,7 +54,7 @@
                             <div class="date">
                                 <p>{!! $event->date !!}</p>
                             </div>
-                            <a href="single-teacher.html">
+                            <a href="{{ Route('event.onepage', $event->id) }}">
                                 <h4>{{ $event->title }}</h4>
                             </a>
                             <p>{{ Illuminate\Support\Str::limit($event->description, 100) }}</p>
