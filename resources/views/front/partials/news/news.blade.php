@@ -5,19 +5,25 @@
                 <div class="classic-posts">
                     @foreach ($news as $new)
                         <div class="classic-item">
-                            <a href="single-post.html"><img src="http://placehold.it/770x410" alt=""></a>
+                            <a href="{{ Route('post.onepage', $new->id) }}"><img src="http://placehold.it/770x410" alt=""></a>
                             <ul>
                                 <li>Posted : <em>{{ $new->created_at->translatedFormat('d F Y') }}</em> </li>
-                                <li>By <em>{{ $new->redacteur->user->name }}</em></li>
+                                <li>By <em>
+                                        @if ($new->redacteur)
+                                            {{ $new->redacteur->user->name }}
+                                        @else
+                                            Administrateur
+                                        @endif
+                                    </em></li>
                                 <li>Comments: <em>2</em></li>
                             </ul>
-                            <a href="single-post.html">
+                            <a href="{{ Route('post.onepage', $new->id) }}">
                                 <h4>{{ $new->title }}</h4>
                             </a>
                             <p>{{ Illuminate\Support\Str::limit($new->text, 250) }}</p>
                             <div class="buttons">
                                 <div class="accent-button">
-                                    <a href="single-post.html">Continue Reading</a>
+                                    <a href="{{ Route('post.onepage', $new->id) }}">Continue Reading</a>
                                 </div>
                                 <div class="second-button">
                                     <a href="#">Share <i class="fa fa-share-alt"></i></a>
@@ -48,34 +54,6 @@
                             <li><a href="#"><i class="fa fa-angle-right"></i>Read</a></li>
                             <li><a href="#"><i class="fa fa-angle-right"></i>Education</a></li>
                             <li><a href="#"><i class="fa fa-angle-right"></i>Finance</a></li>
-                        </ul>
-                    </div>
-                    <div class="recent-news">
-                        <div class="widget-heading">
-                            <h4>Recent News</h4>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="single-post.html"><img src="http://placehold.it/70x70" alt=""></a>
-                                <a href="single-post.html">
-                                    <h6>Visiting Artists: Giles Bailey</h6>
-                                </a>
-                                <span>7 October 2015</span>
-                            </li>
-                            <li>
-                                <a href="single-post.html"><img src="http://placehold.it/70x70" alt=""></a>
-                                <a href="single-post.html">
-                                    <h6>How Students use Rankings?</h6>
-                                </a>
-                                <span>7 October 2015</span>
-                            </li>
-                            <li>
-                                <a href="single-post.html"><img src="http://placehold.it/70x70" alt=""></a>
-                                <a href="single-post.html">
-                                    <h6>University Finder: Compare</h6>
-                                </a>
-                                <span>7 October 2015</span>
-                            </li>
                         </ul>
                     </div>
                     <div class="tags">

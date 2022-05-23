@@ -11,7 +11,8 @@
                 @include('front.partials.header')
 
 
-                <div class="page-heading teachers-heading">
+                <div class="page-heading teachers-heading"
+                    style='background-image:url({{ asset('images/wallpaperteachers.jpg') }}) !important;'>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -38,23 +39,42 @@
                                 <div class="single-teacher-item">
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <img src="http://placehold.it/370x275" alt="">
-                                            <div class="contact-form">
-                                                <h4>Contact me</h4>
-                                                <input type="text" id="name" name="s" placeholder="Full Name" value="">
-                                                <input type="text" id="address" name="s" placeholder="E-mail Address"
-                                                    value="">
-                                                <textarea id="message" class="message" name="message" placeholder="Write message"></textarea>
-                                                <div class="accent-button">
-                                                    <a href="#">Send Message</a>
-                                                </div>
-                                            </div>
+                                            <img src="{{ asset('images/' . $prof->user->image) }}" alt="">
+                                            @if (Route::has('login'))
+                                                @auth
+                                                    <div class="contact-form">
+                                                        <h4>Contact me</h4>
+                                                        <input type="text" id="name" name="s" placeholder="Full Name"
+                                                            value="{{ Auth::user()->name }}">
+                                                        <input type="text" id="address" name="s" placeholder="E-mail Address"
+                                                            value="{{ Auth::user()->email }}">
+                                                        <textarea id="message" class="message" name="message" placeholder="Write message"></textarea>
+                                                        <div class="accent-button">
+                                                            <a href="#">Send Message</a>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    @if (Route::has('login'))
+                                                        <div class='contact-form'>
+                                                            <h4>Contact me</h4>
+                                                            <div class='notLogin'>
+                                                                <div class="accent-button">
+                                                                    <a href="{{ Route('login') }}">Log in</a>
+                                                                </div>
+                                                                <div class="accent-button" style='margin-top:20px !important;'>
+                                                                    <a href="{{ Route('register') }}">Sign in</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                @endauth
+                                            @endif
                                         </div>
                                         <div class="col-md-7">
                                             <div class="right-info">
                                                 <div class="name">
-                                                    <h2>Samuel Delossantos</h2>
-                                                    <span>Math Teacher</span>
+                                                    <h2>{{ $prof->user->name }}</h2>
+                                                    <span>{{ $prof->subject }}</span>
                                                     <img src={{ asset('images/line-dec.png') }} alt="">
                                                 </div>
                                                 <div class="icons">
@@ -66,25 +86,15 @@
                                                     </ul>
                                                 </div>
                                                 <div class="description">
-                                                    <p>Vinyl keffiyeh gluten-free, health goth stumptown chambray typewriter
-                                                        ugh. McSweeney gastropub cardigan, banjo Thundercats bitters health
-                                                        goth tofu freegan. Pop-up Pinter 90's farm-to-table locavore seitan
-                                                        McSweeney's.</p>
+                                                    <p>{{ $prof->bio_short }}</p>
                                                     <h4>Biography</h4>
-                                                    <p><em>Food truck four loko swag, try-hard Williamsburg you probably
-                                                            haven heard of them pork belly bitters.</em><br><br>Vinyl
-                                                        keffiyeh gluten-free, health goth stumptown chambray typewriter ugh.
-                                                        McSweeney gastropub cardigan, banjo Thundercats bitters health goth
-                                                        tofu freegan. Pop-up Pinter 90's farm-to-table locavore seitan
-                                                        McSweeney's.<br><br>Thundercats Shoreditch polaroid biodiesel put a
-                                                        bird on it. McSweeney's stumptown blog vinyl, pop-up crucifix Tumblr
-                                                        messenger bag hella fap disrupt meh. Cred butcher gluten-free twee
-                                                        Pinterest tofu banh mi, mustache typewriter chia.</p>
+                                                    <p>{{ $prof->bio_long }}</p>
                                                     <ul>
-                                                        <li><i class="fa fa-phone"></i>910-213-7890</li>
+                                                        <li><i class="fa fa-phone"></i>{{ $prof->phone }}</li>
                                                         <li><i class="fa fa-envelope"></i><a href="#">
                                                                 samuel@delossantos.com</a></li>
-                                                        <li><i class="fa fa-skype"></i><a href="#">samueldelossantos1</a>
+                                                        <li><i class="fa fa-skype"></i><a
+                                                                href="#">{{ $prof->skype }}</a>
                                                         </li>
                                                     </ul>
                                                 </div>

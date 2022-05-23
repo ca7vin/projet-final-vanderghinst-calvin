@@ -11,7 +11,7 @@
             <div id="owl-courses">
                 @foreach ($popularcourses as $popularcourse)
                     <div class="item course-item">
-                        <a href="single-course.html"><img src="" alt=""></a>
+                        <a href="{{ Route('course.onepage', $popularcourse->id) }}"><img src="" alt=""></a>
                         <div class="down-content">
                             <img src="{{ asset('images/' . $popularcourse->prof->user->image) }}" alt="">
                             <h6>{{ $popularcourse->prof->user->name }}</h6>
@@ -19,12 +19,12 @@
                                 <span>{{ $popularcourse->price }}</span>
                                 <div class="base"></div>
                             </div>
-                            <a href="single-course.html">
+                            <a href="{{ Route('course.onepage', $popularcourse->id) }}">
                                 <h4>{{ $popularcourse->title }}</h4>
                             </a>
                             <p>{{ Illuminate\Support\Str::limit($popularcourse->description, 100) }}</p>
                             <div class="text-button">
-                                <a href="single-course.html">view more<i class="fa fa-arrow-right"></i></a>
+                                <a href="{{ Route('course.onepage', $popularcourse->id) }}">view more<i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

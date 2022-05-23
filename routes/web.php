@@ -44,10 +44,6 @@ Route::get('/courses', function () {
     return view('front/pages/courses-grid', compact('courses'));
 })->name("courses");
 
-Route::get('/teachers', function () {
-    return view('front/pages/our-teachers');
-})->name("teachers");
-
 Route::get('events', function () {
     $events = Event::paginate(6);
     return view('front/pages/classic-events', compact('events'));
@@ -91,6 +87,7 @@ Route::get('/back/profs', [ProfController::class, 'index'])->name('prof.index');
 Route::get('/back/profs/create', [ProfController::class, 'create'])->name('prof.create');
 Route::post('/back/profs/store', [ProfController::class, 'store'])->name('prof.store');
 Route::get('/back/profs/{id}/read', [ProfController::class, 'read'])->name('prof.read');
+Route::get('/profs/{id}/onepage', [ProfController::class, 'onepage'])->name('prof.onepage');
 Route::get('/back/profs/{id}/edit', [ProfController::class, 'edit'])->name('prof.edit');
 Route::post('/back/profs/{id}/update', [ProfController::class, 'update'])->name('prof.update');
 Route::post('/back/profs/{id}/delete', [ProfController::class, 'destroy'])->name('prof.destroy');
@@ -99,6 +96,7 @@ Route::get('/back/courses', [CourseController::class, 'index'])->name('course.in
 Route::get('/back/courses/create', [CourseController::class, 'create'])->name('course.create');
 Route::post('/back/courses/store', [CourseController::class, 'store'])->name('course.store');
 Route::get('/back/courses/{id}/read', [CourseController::class, 'read'])->name('course.read');
+Route::get('/courses/{id}/onepage', [CourseController::class, 'onepage'])->name('course.onepage');
 Route::get('/back/courses/{id}/edit', [CourseController::class, 'edit'])->name('course.edit');
 Route::post('/back/courses/{id}/update', [CourseController::class, 'update'])->name('course.update');
 Route::post('/back/courses/{id}/delete', [CourseController::class, 'destroy'])->name('course.destroy');
@@ -107,6 +105,7 @@ Route::get('/back/posts', [PostController::class, 'index'])->name('post.index');
 Route::get('/back/posts/create', [PostController::class, 'create'])->name('post.create');
 Route::post('/back/posts/store', [PostController::class, 'store'])->name('post.store');
 Route::get('/back/posts/{id}/read', [PostController::class, 'read'])->name('post.read');
+Route::get('/posts/{id}/onepage', [PostController::class, 'onepage'])->name('post.onepage');
 Route::get('/back/posts/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::post('/back/posts/{id}/update', [PostController::class, 'update'])->name('post.update');
 Route::post('/back/posts/{id}/delete', [PostController::class, 'destroy'])->name('post.destroy');

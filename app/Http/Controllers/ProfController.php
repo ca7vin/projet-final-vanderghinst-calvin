@@ -40,6 +40,11 @@ class ProfController extends Controller
         $prof = Prof::find($id);
         return view("/back/profs/read",compact("prof"));
     }
+    public function onepage($id)
+    {
+        $prof = Prof::find($id);
+        return view("/front/pages/single-teacher",compact("prof"));
+    }
     public function edit($id)
     {
         $prof = Prof::find($id);

@@ -42,13 +42,13 @@
                     <div class="col-md-12">
                         @foreach ($lastnews as $lastnew)
                             <div class="news-item">
-                                <a href="single-post.html"><img src="http://placehold.it/175x130" alt=""></a>
+                                <a href="{{ Route('post.onepage', $lastnew->id) }}"><img src="http://placehold.it/175x130" alt=""></a>
                                 <ul>
                                     <li>Posted : <em>{{ $lastnew->created_at->translatedFormat('d F Y') }}</em> </li>
                                     <li>By <em>{{ $lastnew->redacteur->user->name }}</em></li>
                                     <li>2 Comments</li>
                                 </ul>
-                                <a href="single-post.html">
+                                <a href="{{ Route('post.onepage', $lastnew->id) }}">
                                     <h4>{{ $lastnew->title }}</h4>
                                 </a>
                                 <p>{{ Illuminate\Support\Str::limit($lastnew->text, 100) }}

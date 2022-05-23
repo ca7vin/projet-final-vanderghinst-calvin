@@ -24,12 +24,11 @@
                         </div>
                     </div>
                     <div class="down-content">
-                        <a href="single-teacher.html">
+                        <a href="{{ Route('prof.onepage', $popularteacher->id) }}">
                             <h4>{{ $popularteacher->user->name }}</h4>
                         </a>
-                        <span>{{ $popularteacher->subjext }}</span>
-                        <p>{{ $popularteacher->short_bio }}
-                        </p>
+                        <span>{{ $popularteacher->subject }}</span>
+                        <p>{{ $popularteacher->bio_short }}</p>
                     </div>
                 </div>
             </div>

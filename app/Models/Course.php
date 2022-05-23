@@ -18,6 +18,7 @@ class Course extends Model
         'start',
         'duration',
         'price_color',
+        
         'course_id',
     ]; // model_anchor
      

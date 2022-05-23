@@ -39,13 +39,24 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'image' => 'default.jpg',
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role_id' => 4,
-        ]);
+        if ($request->image == null) {
+            $user = User::create([
+                'image' => 'default.jpg',
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role_id' => 4,
+            ]);
+        } elseif ($request->image != null) {
+            $user = User::create([
+                'image' => $request->image->hashName(),
+                $request->file('image')->storePublicly('images', 'public'),
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role_id' => 4,
+            ]);
+        }
 
         event(new Registered($user));
 

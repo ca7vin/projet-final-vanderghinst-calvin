@@ -47,6 +47,16 @@ p {
   line-height: 24px;
   color: #777777;
 }
+.notLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #852427;
+  padding: 20px;
+}
 .site-header {
   border-top: 5px solid #8d2729;
   position: relative;

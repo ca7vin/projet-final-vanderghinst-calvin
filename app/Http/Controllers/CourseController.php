@@ -56,6 +56,11 @@ class CourseController extends Controller
         $course = Course::find($id);
         return view("/back/courses/read",compact("course"));
     }
+    public function onepage($id)
+    {
+        $course = Course::find($id);
+        return view("/front/pages/single-course", compact("course"));
+    }
     public function edit($id)
     {
         $course = Course::find($id);

@@ -42,6 +42,11 @@ class PostController extends Controller
         $post = Post::find($id);
         return view("/back/posts/read",compact("post"));
     }
+    public function onepage($id)
+    {
+        $post = Post::find($id);
+        return view("/front/pages/single-post", compact("post"));
+    }
     public function edit($id)
     {
         $post = Post::find($id);
