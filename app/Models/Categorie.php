@@ -14,4 +14,8 @@ class Categorie extends Model
     ]; // model_anchor
      
     protected $table = 'categories';
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class);
+    }
 }
