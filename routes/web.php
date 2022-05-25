@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\IconController;
 use App\Http\Controllers\EventController;
@@ -150,3 +152,19 @@ Route::get('/back/messages/{id}/reply', [MessageController::class, 'reply'])->na
 Route::post('/back/messages/{id}/update', [MessageController::class, 'update'])->name('message.update');
 Route::post('/back/messages/{id}/updateReply', [MessageController::class, 'updateReply'])->name('message.updateReply');
 Route::post('/back/messages/{id}/delete', [MessageController::class, 'destroy'])->name('message.destroy');
+// Tag
+Route::get('/back/tags', [TagController::class, 'index'])->name('tag.index');
+Route::get('/back/tags/create', [TagController::class, 'create'])->name('tag.create');
+Route::post('/back/tags/store', [TagController::class, 'store'])->name('tag.store');
+Route::get('/back/tags/{id}/read', [TagController::class, 'read'])->name('tag.read');
+Route::get('/back/tags/{id}/edit', [TagController::class, 'edit'])->name('tag.edit');
+Route::post('/back/tags/{id}/update', [TagController::class, 'update'])->name('tag.update');
+Route::post('/back/tags/{id}/delete', [TagController::class, 'destroy'])->name('tag.destroy');
+// Categorie
+Route::get('/back/categories', [CategorieController::class, 'index'])->name('categorie.index');
+Route::get('/back/categories/create', [CategorieController::class, 'create'])->name('categorie.create');
+Route::post('/back/categories/store', [CategorieController::class, 'store'])->name('categorie.store');
+Route::get('/back/categories/{id}/read', [CategorieController::class, 'read'])->name('categorie.read');
+Route::get('/back/categories/{id}/edit', [CategorieController::class, 'edit'])->name('categorie.edit');
+Route::post('/back/categories/{id}/update', [CategorieController::class, 'update'])->name('categorie.update');
+Route::post('/back/categories/{id}/delete', [CategorieController::class, 'destroy'])->name('categorie.destroy');

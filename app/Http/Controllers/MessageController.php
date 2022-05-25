@@ -22,7 +22,6 @@ class MessageController extends Controller
         $message = new Message;
         $request->validate([
          'from'=> 'required',
-        //  'to'=> 'required',
          'content'=> 'required',
         ]); // store_validated_anchor;
         $message->from = $request->from;
@@ -36,7 +35,6 @@ class MessageController extends Controller
         $message = new Message;
         $request->validate([
          'from'=> 'required',
-        //  'to'=> 'required',
          'content'=> 'required',
         ]); // store_validated_anchor;
         $message->from = $request->from;

@@ -65,6 +65,20 @@
               </a>
               <span class="tooltip">Services</span>
           </li>
+          <li>
+              <a href="{{ Route('tag.index') }}">
+                <i class='bx bxs-purchase-tag'></i>
+                  <span class="links_name">Tags</span>
+              </a>
+              <span class="tooltip">Tags</span>
+          </li>
+          <li>
+              <a href="{{ Route('categorie.index') }}">
+                <i class='bx bxs-category'></i>
+                  <span class="links_name">Categories</span>
+              </a>
+              <span class="tooltip">Categories</span>
+          </li>
           <li class="profile">
               <div class="profile-details">
                   <!--<img src="profile.jpg" alt="profileImg">-->
