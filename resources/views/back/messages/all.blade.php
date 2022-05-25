@@ -36,6 +36,7 @@
                         <td>{{ $message->content }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
+                                <a class='btn btn-success' href='{{ route('message.reply', $message->id) }}' role='button'>Reply</a>
                             </div>
                         </td>
                     </tr>

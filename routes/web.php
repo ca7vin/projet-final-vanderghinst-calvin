@@ -145,5 +145,6 @@ Route::get('/back/messages/create', [MessageController::class, 'create'])->name(
 Route::post('/back/messages/store', [MessageController::class, 'store'])->name('message.store');
 Route::get('/back/messages/{id}/read', [MessageController::class, 'read'])->name('message.read');
 Route::get('/back/messages/{id}/edit', [MessageController::class, 'edit'])->name('message.edit');
+Route::get('/back/messages/{id}/reply', [MessageController::class, 'reply'])->name('message.reply');
 Route::post('/back/messages/{id}/update', [MessageController::class, 'update'])->name('message.update');
 Route::post('/back/messages/{id}/delete', [MessageController::class, 'destroy'])->name('message.destroy');

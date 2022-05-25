@@ -41,6 +41,11 @@ class MessageController extends Controller
         $message = Message::find($id);
         return view("/back/messages/edit",compact("message"));
     }
+    public function reply($id)
+    {
+        $message = Message::find($id);
+        return view("/back/messages/reply",compact("message"));
+    }
     public function update($id, Request $request)
     {
         $message = Message::find($id);
