@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class CourseController extends Controller
     }
     public function create()
     {
-        return view("/back/courses/create");
+        $categories = Categorie::all();
+        return view("/back/courses/create",compact("categories"));
     }
     public function store(Request $request)
     {
@@ -56,6 +58,9 @@ class CourseController extends Controller
             $request->file('image')->storePublicly('images', 'public');
         }
         $course->save(); // store_anchor
+        $course->categories()->attach($request->categories, [
+            'course_id' => $course->id,
+        ]);
         return redirect()->route("course.index")->with('message', "Successful storage !");
     }
     public function read($id)

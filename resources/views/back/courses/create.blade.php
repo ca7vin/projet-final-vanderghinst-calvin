@@ -13,7 +13,8 @@
                     </ul>
                 </div>
             @endif
-            <form enctype="multipart/form-data" class='d-flex flex-column align-items-center justify-content-center' action='{{ route('course.store') }}' method='post'>
+            <form enctype="multipart/form-data" class='d-flex flex-column align-items-center justify-content-center'
+                action='{{ route('course.store') }}' method='post'>
                 @csrf
                 {{-- <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
                     <label class='text-uppercase' for=''>prof</label>
@@ -51,7 +52,15 @@
                     <label class='text-uppercase' for=''>image</label>
                     <input type="file" name='image'>
                 </div>
-                <button class='btn btn-success mb-5' type='submit'>Create</button> {{-- create_blade_anchor --}}
+                <label class='text-uppercase mt-3' for=''>categories</label>
+                @foreach ($categories as $categorie)
+                    <div class='form-check'>
+                        <input type='checkbox' id='checkbox{{ $categorie->id }}' class='form-check-input' name='categories[]'
+                            value='{{ $categorie->id }}'>
+                        <label for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+                    </div>
+                @endforeach
+                <button class='btn btn-success my-5' type='submit'>Create</button> {{-- create_blade_anchor --}}
             </form>
         </div>
     </section>

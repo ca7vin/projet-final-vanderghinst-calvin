@@ -4,17 +4,17 @@
             <div class="col-md-12">
                 <div class="pre-featured">
                     <div class="info-text">
-                        <h4>showing {{ $courses->firstItem() }}-{{ $courses->lastItem() }} of {{ $courses->total() }}
+                        <h4>showing {{ $courses->firstItem() }}-{{ $courses->lastItem() }} of
+                            {{ $courses->total() }}
                             courses</h4>
                     </div>
                     <div class="right-content">
                         <div class="input-select">
                             <select name="category" id="category">
                                 <option value="-1">Select Category</option>
-                                <option>Free</option>
-                                <option>Timing</option>
-                                <option>Mostly</option>
-                                <option>Latest</option>
+                                @foreach ($categories as $categorie)
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="input-select">
@@ -33,13 +33,14 @@
             @foreach ($courses as $course)
                 <div class="col-md-4">
                     <div class="item course-item">
-                        <a href="{{ Route('course.onepage', $course->id) }}"><img src="{{ asset('images/' . $course->image) }}" alt=""></a>
+                        <a href="{{ Route('course.onepage', $course->id) }}"><img
+                                src="{{ asset('images/' . $course->image) }}" alt=""></a>
                         <div class="down-content">
                             @if ($course->prof)
-                            <img src="{{ asset('images/' . $course->prof->user->image) }}" alt="">
+                                <img src="{{ asset('images/' . $course->prof->user->image) }}" alt="">
                             @else
-                            <img src="{{ asset('images/default.jpg') }}" alt="">
-                                @endif
+                                <img src="{{ asset('images/default.jpg') }}" alt="">
+                            @endif
                             <h6>
                                 @if ($course->prof)
                                     {{ $course->prof->user->name }}
@@ -56,7 +57,8 @@
                             </a>
                             <p>{{ Illuminate\Support\Str::limit($course->description, 100) }}</p>
                             <div class="text-button">
-                                <a href="{{ Route('course.onepage', $course->id) }}">view more<i class="fa fa-arrow-right"></i></a>
+                                <a href="{{ Route('course.onepage', $course->id) }}">view more<i
+                                        class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

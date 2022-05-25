@@ -15,6 +15,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
+use App\Models\Categorie;
 use App\Models\Course;
 use App\Models\Event;
 use App\Models\Message;
@@ -45,7 +46,8 @@ Route::get('/', function () {
 
 Route::get('/courses', function () {
     $courses = Course::paginate(9);
-    return view('front/pages/courses-grid', compact('courses'));
+    $categories = Categorie::all();
+    return view('front/pages/courses-grid', compact('courses', 'categories'));
 })->name("courses");
 
 Route::get('events', function () {
@@ -55,7 +57,8 @@ Route::get('events', function () {
 
 Route::get('news', function () {
     $news = Post::paginate(4);
-    return view('front/pages/classic-news', compact('news'));
+    $categories = Categorie::all();
+    return view('front/pages/classic-news', compact('news', 'categories'));
 })->name("news");
 
 Route::get('contact', function () {
