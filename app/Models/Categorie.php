@@ -18,4 +18,8 @@ class Categorie extends Model
     {
         return $this->belongsToMany(Course::class);
     }
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }

@@ -23,4 +23,8 @@ class Post extends Model
     {
         return $this->belongsTo(Redacteur::class);
     }
+    public function categories()
+    {
+        return $this->belongsToMany(Categorie::class);
+    }
 }

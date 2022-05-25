@@ -32,6 +32,7 @@
                         <th class="text-uppercase" scope='col'>level</th>
                         <th class="text-uppercase" scope='col'>start</th>
                         <th class="text-uppercase" scope='col'>duration</th>
+                        <th class="text-uppercase" scope='col'>category</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
@@ -42,19 +43,26 @@
                                 <img src="{{ asset('images/' . $course->image) }}" alt="">
                             </td>
                             <td>
-                            @if ($course->prof)
-                            {{ $course->prof->user->name }}
-                            @else
-                            Administrateur
-                            @endif
+                                @if ($course->prof)
+                                    {{ $course->prof->user->name }}
+                                @else
+                                    Administrateur
+                                @endif
                             </td>
                             <td>{{ $course->title }}</td>
-                            <td>{!! (Str::words($course->description, '12')) !!}</td>
+                            <td>{!! Str::words($course->description, '12') !!}</td>
                             <td>{{ $course->discipline }}</td>
                             <td>{{ $course->price }}</td>
                             <td>{{ $course->level }}</td>
                             <td>{{ $course->start }}</td>
                             <td>{{ $course->duration }}</td>
+                            <td>
+                                <ul>
+                                    @foreach ($course->categories as $categorie)
+                                        <li>{{ $categorie->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
                                     <form action='{{ route('course.destroy', $course->id) }}' method='post'>

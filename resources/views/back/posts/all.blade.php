@@ -28,6 +28,7 @@
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase' scope='col'>text</th>
                         <th class='text-uppercase' scope='col'>quote</th>
+                        <th class='text-uppercase' scope='col'>category</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
@@ -47,6 +48,13 @@
                             <td>{{ $post->title }}</td>
                             <td>{!! (Str::words($post->text, '12')) !!}</td>
                             <td>{{ $post->quote }}</td>
+                            <td>
+                                <ul>
+                                    @foreach ($post->categories as $categorie)
+                                        <li>{{ $categorie->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
                                     <form action='{{ route('post.destroy', $post->id) }}' method='post'>
