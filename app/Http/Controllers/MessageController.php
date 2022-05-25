@@ -31,6 +31,20 @@ class MessageController extends Controller
         $message->save(); // store_anchor
         return redirect()->back()->with('message', "Message bien envoyé !");
     }
+    public function store2(Request $request)
+    {
+        $message = new Message;
+        $request->validate([
+         'from'=> 'required',
+        //  'to'=> 'required',
+         'content'=> 'required',
+        ]); // store_validated_anchor;
+        $message->from = $request->from;
+        $message->to = $request->to;
+        $message->content = $request->content;
+        $message->save(); // store_anchor
+        return redirect()->route('message.index')->with('message', "Message bien envoyé !");
+    }
     public function read($id)
     {
         $message = Message::find($id);
@@ -44,6 +58,8 @@ class MessageController extends Controller
     public function reply($id)
     {
         $message = Message::find($id);
+        $message->read = true;
+        $message->save();
         return view("/back/messages/reply",compact("message"));
     }
     public function update($id, Request $request)

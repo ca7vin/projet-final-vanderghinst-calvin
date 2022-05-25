@@ -49,7 +49,7 @@
                             @endif
                             </td>
                             <td>{{ $course->title }}</td>
-                            <td>{{ $course->description }}</td>
+                            <td>{!! (Str::words($course->description, '12')) !!}</td>
                             <td>{{ $course->discipline }}</td>
                             <td>{{ $course->price }}</td>
                             <td>{{ $course->level }}</td>

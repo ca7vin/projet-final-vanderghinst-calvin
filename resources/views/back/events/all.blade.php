@@ -41,7 +41,7 @@
                         <td>{{ $event->start_time }}</td>
                         <td>{{ $event->end_time }}</td>
                         <td>{{ $event->title }}</td>
-                        <td>{{ $event->description }}</td>
+                        <td>{!! (Str::words($event->description, '12')) !!}</td>
                         <td>
                             <img src="{{ asset('images/' . $event->image1) }}" alt="">
                         </td>

@@ -13,7 +13,7 @@
                 </ul>
             </div>
         @endif
-        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('message.store') }}' method='post'>
+        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('message.store2') }}' method='post'>
             @csrf
             <div class="d-flex flex-column align-items-center justify-content-center mb-3">
                 <label class="text-uppercase" for=''>from</label>

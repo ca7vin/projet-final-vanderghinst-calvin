@@ -13,6 +13,7 @@ class Message extends Model
         'from',
         'to',
         'content',
+        'read',
     ]; // model_anchor
      
     protected $table = 'messages';

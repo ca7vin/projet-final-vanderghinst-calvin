@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('content');
+            $table->boolean('read')->default(false);
             $table->timestamps();
         });
     }

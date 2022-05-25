@@ -45,7 +45,7 @@
                             @endif
                             </td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->text }}</td>
+                            <td>{!! (Str::words($post->text, '12')) !!}</td>
                             <td>{{ $post->quote }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
