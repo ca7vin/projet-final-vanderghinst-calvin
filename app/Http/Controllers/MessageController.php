@@ -22,14 +22,14 @@ class MessageController extends Controller
         $message = new Message;
         $request->validate([
          'from'=> 'required',
-         'to'=> 'required',
+        //  'to'=> 'required',
          'content'=> 'required',
         ]); // store_validated_anchor;
         $message->from = $request->from;
         $message->to = $request->to;
         $message->content = $request->content;
         $message->save(); // store_anchor
-        return redirect()->route("message.index")->with('message', "Successful storage !");
+        return redirect()->back()->with('message', "Message bien envoyé !");
     }
     public function read($id)
     {

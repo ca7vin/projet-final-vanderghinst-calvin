@@ -12,9 +12,9 @@
           <li>
               <a href="{{ Route('dashboard') }}">
                 <i class='bx bxs-home'></i>
-                  <span class="links_name">User</span>
+                  <span class="links_name">Home</span>
               </a>
-              <span class="tooltip">User</span>
+              <span class="tooltip">Home</span>
           </li>
           <li>
               <a href="{{ Route('user.index') }}">

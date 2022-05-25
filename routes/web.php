@@ -138,7 +138,8 @@ Route::post('/back/users/store', [UserController::class, 'store'])->name('user.s
 Route::get('/back/users/{id}/read', [UserController::class, 'read'])->name('user.read');
 Route::get('/back/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/back/users/{id}/update', [UserController::class, 'update'])->name('user.update');
-Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');// Message
+Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');
+// Message
 Route::get('/back/messages', [MessageController::class, 'index'])->name('message.index');
 Route::get('/back/messages/create', [MessageController::class, 'create'])->name('message.create');
 Route::post('/back/messages/store', [MessageController::class, 'store'])->name('message.store');

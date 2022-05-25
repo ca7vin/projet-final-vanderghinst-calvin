@@ -31,7 +31,20 @@
                         </div>
                     </div>
                 </div>
-
+                @if (session()->has('message'))
+                    <div class='alert alert-success d-flex align-items-center justify-content-center'>
+                        <p style='text-align: center !important;'>{{ session()->get('message') }}</p>
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class='alert alert-danger d-flex align-items-center justify-content-center'>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <section class="single-teacher">
                     <div class="container">
                         <div class="row">
@@ -42,17 +55,25 @@
                                             <img src="{{ asset('images/' . $prof->user->image) }}" alt="">
                                             @if (Route::has('login'))
                                                 @auth
-                                                    <div class="contact-form">
-                                                        <h4>Contact me</h4>
-                                                        <input type="text" id="name" name="s" placeholder="Full Name"
-                                                            value="{{ Auth::user()->name }}">
-                                                        <input type="text" id="address" name="s" placeholder="E-mail Address"
-                                                            value="{{ Auth::user()->email }}">
-                                                        <textarea id="message" class="message" name="message" placeholder="Write message"></textarea>
-                                                        <div class="accent-button">
-                                                            <a href="#">Send Message</a>
+                                                    <form class='d-flex flex-column align-items-center justify-content-center'
+                                                        action='{{ route('message.store') }}' method='post'>
+                                                        @csrf
+                                                        <div class="contact-form">
+                                                            <h4>Contact me</h4>
+                                                            <input style='display: none !important;' type="text" id="name"
+                                                                name="to" placeholder="Full Name"
+                                                                value="{{ $prof->user->email }}">
+                                                            <input type="text" id="name" name="user" placeholder="Full Name"
+                                                                value="{{ Auth::user()->name }}">
+                                                            <input type="text" id="address" name="from"
+                                                                placeholder="E-mail Address"
+                                                                value="{{ Auth::user()->email }}">
+                                                            <textarea id="message" class="message" name="content" placeholder="Write message"></textarea>
                                                         </div>
-                                                    </div>
+                                                        <button class='btn' type='submit'
+                                                            style='background-color:#F5A425 !important; color:white !important;'>Send
+                                                            a message</button>
+                                                    </form>
                                                 @else
                                                     @if (Route::has('login'))
                                                         <div class='contact-form'>
