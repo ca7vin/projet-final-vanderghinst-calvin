@@ -23,7 +23,7 @@ use App\Models\Post;
 use App\Models\Prof;
 use App\Models\Service;
 use App\Models\Slider;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +49,18 @@ Route::get('/courses', function () {
     $categories = Categorie::all();
     return view('front/pages/courses-grid', compact('courses', 'categories'));
 })->name("courses");
+
+global $actualCat;
+Route::post('/courses/findCat', function (Request $request) {
+    $actualCat = $request->category;
+    $categories = Categorie::all();
+    $courses = Course::whereHas('categories', function($element) use ($actualCat) {
+        $element->where('categories.id', $actualCat);
+    })->paginate(9);
+    return view('front/pages/courses-grid', compact('courses', 'categories', 'actualCat'));
+})->name("filterCat");
+
+// Route
 
 Route::get('events', function () {
     $events = Event::paginate(6);

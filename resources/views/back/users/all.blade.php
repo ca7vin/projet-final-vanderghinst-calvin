@@ -35,11 +35,11 @@
                         <tr>
                             <th scope='row'>{{ $user->id }}</th>
                             <td>
-                                <img class='w-100' src="{{ asset('images/' . $user->image ) }}" alt="">
+                                <img class='' src="{{ asset('images/' . $user->image ) }}" alt="">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->password }}</td>
+                            <td>{{ Illuminate\Support\Str::limit($user->password, 15) }}</td>
                             <td>{{ $user->role->name }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
@@ -51,6 +51,10 @@
                                         role='button'>Edit</a>
                                     <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
                                         role='button'>Read</a>
+                                        @if ($user->role_id == 2)
+                                        <a class='btn btn-warning mx-3' href='{{ route('prof.read', $user->prof->id) }}'
+                                            role='button'>Teacher</a>
+                                        @endif
                                 </div>
                             </td>
                         </tr>

@@ -51,13 +51,13 @@
               </a>
               <span class="tooltip">News</span>
           </li>
-          <li>
+          {{-- <li>
               <a href="{{ Route('prof.index') }}">
                 <i class='bx bxs-user-badge'></i>
                   <span class="links_name">Teachers</span>
               </a>
               <span class="tooltip">Teachers</span>
-          </li>
+          </li> --}}
           <li>
               <a href="{{ Route('service.index') }}">
                 <i class='bx bxs-bookmarks'></i>

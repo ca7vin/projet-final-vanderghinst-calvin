@@ -23,8 +23,10 @@
                     <td>{{ $prof->bio_long }}</td>
                     <td>{{ $prof->phone }}</td>
                     <td>{{ $prof->skype }}</td>
-                    <td> {{-- read_td_anchor --}}
+                    <td class='d-flex align-items-center justify-content-around'> {{-- read_td_anchor --}}
                         <a class='btn btn-primary' href='{{ route('prof.index') }}' role='button'>Back</a>
+                        <a class='btn btn-warning mx-3' href='{{ route('prof.edit', $prof->id) }}'
+                            role='button'>Edit</a>
                     </td>
                 </tr>
             </tbody>

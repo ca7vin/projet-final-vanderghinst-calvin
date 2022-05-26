@@ -10,20 +10,15 @@
                     </div>
                     <div class="right-content">
                         <div class="input-select">
-                            <select name="category" id="category">
-                                <option value="-1">Select Category</option>
-                                @foreach ($categories as $categorie)
-                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="input-select">
-                            <select name="sorted" id="sorted">
-                                <option value="-1">Sorted by</option>
-                                <option>Price</option>
-                                <option>Useless</option>
-                                <option>Important</option>
-                            </select>
+                            <form action="{{ Route('filterCat') }}" id="formFilterCat" method="POST">
+                                @csrf
+                                <select name="category" id="category" onchange="document.getElementById('formFilterCat').submit()">
+                                    <option value="-1">Select Category</option>
+                                    @foreach ($categories as $categorie)
+                                        <option value="{{ $categorie->id }}"><a href="{{ Route('filterCat', $categorie->id) }}">{{ $categorie->name }}</a></option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </div>
