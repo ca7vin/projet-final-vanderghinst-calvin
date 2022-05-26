@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             CategorieCourseSeeder::class,
             PostSeeder::class,
             CategoriePostSeeder::class,
+            PostTagSeeder::class,
             UserSeeder::class,
             EventSeeder::class,
             IconSeeder::class,

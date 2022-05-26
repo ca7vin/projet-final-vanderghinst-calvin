@@ -29,6 +29,7 @@
                         <th class='text-uppercase' scope='col'>text</th>
                         <th class='text-uppercase' scope='col'>quote</th>
                         <th class='text-uppercase' scope='col'>category</th>
+                        <th class='text-uppercase' scope='col'>tag</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
@@ -52,6 +53,13 @@
                                 <ul>
                                     @foreach ($post->categories as $categorie)
                                         <li>{{ $categorie->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    @foreach ($post->tags as $tag)
+                                        <li>{{ $tag->name }}</li>
                                     @endforeach
                                 </ul>
                             </td>

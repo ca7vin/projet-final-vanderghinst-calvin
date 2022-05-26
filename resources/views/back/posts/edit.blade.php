@@ -31,7 +31,23 @@
                 <label class='text-uppercase' for=''>image</label>
                 <input type="file" name='image'>
             </div>
-            <button class='btn btn-primary' type='submit'>Update</button> {{-- update_blade_anchor --}}
+            <label class='text-uppercase mt-3' for=''>categories</label>
+            @foreach ($categories as $categorie)
+                <div class='form-check'>
+                    <input type='checkbox' id='checkbox{{ $categorie->id }}' class='form-check-input' name='categories[]'
+                        value='{{ $categorie->id }}'>
+                    <label for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+                </div>
+            @endforeach
+            <label class='text-uppercase mt-3' for=''>tags</label>
+            @foreach ($tags as $tag)
+                <div class='form-check'>
+                    <input type='checkbox' id='checkbox{{ $tag->id }}' class='form-check-input' name='tags[]'
+                        value='{{ $tag->id }}'>
+                    <label for='checkbox{{ $tag->id }}'>{{ $tag->name }}</label>
+                </div>
+            @endforeach
+            <button class='btn btn-primary my-5' type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>
     </section>

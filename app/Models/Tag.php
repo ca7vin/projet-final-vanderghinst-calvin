@@ -14,4 +14,8 @@ class Tag extends Model
     ]; // model_anchor
      
     protected $table = 'tags';
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }
