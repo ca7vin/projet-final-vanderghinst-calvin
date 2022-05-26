@@ -22,4 +22,8 @@ class Categorie extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
 }

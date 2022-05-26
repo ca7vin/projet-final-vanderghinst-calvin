@@ -5,7 +5,8 @@
                 <div class="classic-posts">
                     @foreach ($news as $new)
                         <div class="classic-item">
-                            <a href="{{ Route('post.onepage', $new->id) }}"><img height='410px' width='770px' src="{{ asset('images/' . $new->image) }}" alt=""></a>
+                            <a href="{{ Route('post.onepage', $new->id) }}"><img height='410px' width='770px'
+                                    src="{{ asset('images/' . $new->image) }}" alt=""></a>
                             <ul>
                                 <li>Posted : <em>{{ $new->created_at->translatedFormat('d F Y') }}</em> </li>
                                 <li>By <em>
@@ -48,28 +49,27 @@
                             <h4>Categories</h4>
                         </div>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Design</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>International</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Learning</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Read</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Education</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Finance</a></li>
+                            @foreach ($categories as $categorie)
+                            <form action="{{ Route('filterCatPost') }}" method="POST">
+                                @csrf
+                                    <input name='category' type="text" class="hidden" value={{ $categorie->id }}>
+                                    <li><button class='btn' style='background-color:transparent !important;'><i class="fa fa-angle-right"></i>{{ $categorie->name }}</button></li>
+                                </form>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="tags">
                         <div class="widget-heading">
                             <h4>Tags</h4>
                         </div>
-                        <ul>
-                            <li><a href="#">Photography</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Envanto</a></li>
-                            <li><a href="#">Course</a></li>
-                            <li><a href="#">Education</a></li>
-                            <li><a href="#">College</a></li>
-                            <li><a href="#">Teachers</a></li>
-                            <li><a href="#">Read</a></li>
-                            <li><a href="#">Excursions</a></li>
+                        <ul class='list-group'>
+                            @foreach ($tags as $tag)
+                            <form action="{{ Route('filterTagPost') }}" method="POST">
+                                @csrf
+                                    <input name='category' type="text" class="hidden" value={{ $tag->id }}>
+                                    <li><button class='btn' style='background-color:#F5A425 !important;'><i class="fa fa-angle-right"></i>{{ $tag->name }}</button></li>
+                                </form>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

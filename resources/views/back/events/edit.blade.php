@@ -59,6 +59,14 @@
                 <label class='text-uppercase' for=''>image3</label>
                 <input type="file" name='image3'>
             </div>
+            <label class='text-uppercase mt-3' for=''>categories</label>
+            @foreach ($categories as $categorie)
+                <div class='form-check'>
+                    <input type='checkbox' id='checkbox{{ $categorie->id }}' class='form-check-input' name='categories[]'
+                        value='{{ $categorie->id }}'>
+                    <label for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+                </div>
+            @endforeach
             <button type='submit' class='btn btn-primary mb-5'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>

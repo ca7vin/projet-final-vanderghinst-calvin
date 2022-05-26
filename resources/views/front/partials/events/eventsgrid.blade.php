@@ -8,21 +8,15 @@
                     </div>
                     <div class="right-content">
                         <div class="input-select">
-                            <select name="mark" id="mark">
-                                <option value="-1">Select Category</option>
-                                <option>Free</option>
-                                <option>Timing</option>
-                                <option>Mostly</option>
-                                <option>Latest</option>
-                            </select>
-                        </div>
-                        <div class="input-select">
-                            <select name="mark" id="mark">
-                                <option value="-1">Sorted by</option>
-                                <option>Price</option>
-                                <option>Useless</option>
-                                <option>Important</option>
-                            </select>
+                            <form action="{{ Route('filterCatEvent') }}" id="formFilterCat" method="POST">
+                                @csrf
+                                <select name="category" id="category" onchange="document.getElementById('formFilterCat').submit()">
+                                    <option value="-1">Select Category</option>
+                                    @foreach ($categories as $categorie)
+                                        <option value="{{ $categorie->id }}"><a href="{{ Route('filterCatEvent', $categorie->id) }}">{{ $categorie->name }}</a></option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </div>

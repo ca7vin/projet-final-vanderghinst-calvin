@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             PostTagSeeder::class,
             UserSeeder::class,
             EventSeeder::class,
+            CategorieEventSeeder::class,
             IconSeeder::class,
         ]);
 

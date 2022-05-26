@@ -23,6 +23,7 @@ use App\Models\Post;
 use App\Models\Prof;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -50,27 +51,60 @@ Route::get('/courses', function () {
     return view('front/pages/courses-grid', compact('courses', 'categories'));
 })->name("courses");
 
-global $actualCat;
+global $actualCatCourse;
 Route::post('/courses/findCat', function (Request $request) {
-    $actualCat = $request->category;
+    $actualCatCourse = $request->category;
     $categories = Categorie::all();
-    $courses = Course::whereHas('categories', function($element) use ($actualCat) {
-        $element->where('categories.id', $actualCat);
+    $courses = Course::whereHas('categories', function($element) use ($actualCatCourse) {
+        $element->where('categories.id', $actualCatCourse);
     })->paginate(9);
-    return view('front/pages/courses-grid', compact('courses', 'categories', 'actualCat'));
-})->name("filterCat");
+    return view('front/pages/courses-grid', compact('courses', 'categories', 'actualCatCourse'));
+})->name("filterCatCourse");
 
+global $actualCatEvent;
+Route::post('/events/findCat', function (Request $request) {
+    $actualCatEvent = $request->category;
+    $categories = Categorie::all();
+    $events = Event::whereHas('categories', function($element) use ($actualCatEvent) {
+        $element->where('categories.id', $actualCatEvent);
+    })->paginate(6);
+    return view('front/pages/classic-events', compact('events', 'categories', 'actualCatEvent'));
+})->name("filterCatEvent");
+
+global $actualCatPost;
+Route::post('/posts/findCat', function (Request $request) {
+    $actualCatPost = $request->category;
+    $categories = Categorie::all();
+    $tags = Tag::all();
+    $news = Post::whereHas('categories', function($element) use ($actualCatPost) {
+        $element->where('categories.id', $actualCatPost);
+    })->paginate(4);
+    return view('front/pages/classic-news', compact('news', 'categories', 'actualCatPost', 'tags'));
+})->name("filterCatPost");
+
+global $actualTagPost;
+Route::post('/posts/findTag', function (Request $request) {
+    $actualTagPost = $request->tag;
+    $categories = Categorie::all();
+    $tags = Tag::all();
+    $news = Post::whereHas('tags', function($element) use ($actualTagPost) {
+        $element->where('tags.id', $actualTagPost);
+    })->paginate(4);
+    return view('front/pages/classic-news', compact('news', 'tags', 'actualTagPost', 'categories'));
+})->name("filterTagPost");
 // Route
 
 Route::get('events', function () {
     $events = Event::paginate(6);
-    return view('front/pages/classic-events', compact('events'));
+    $categories = Categorie::all();
+    return view('front/pages/classic-events', compact('events', 'categories'));
 })->name("events");
 
 Route::get('news', function () {
     $news = Post::paginate(4);
     $categories = Categorie::all();
-    return view('front/pages/classic-news', compact('news', 'categories'));
+    $tags = Tag::all();
+    return view('front/pages/classic-news', compact('news', 'categories', 'tags'));
 })->name("news");
 
 Route::get('contact', function () {

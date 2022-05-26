@@ -32,6 +32,7 @@
                     <th class='text-uppercase' scope='col'>image3</th>
                     <th class='text-uppercase' scope='col'>phone</th>
                     <th class='text-uppercase' scope='col'>email</th>
+                    <th class='text-uppercase' scope='col'>categories</th>
                 </tr> {{-- all_tr_anchor --}}
             </thead>
             <tbody>
@@ -53,6 +54,13 @@
                         </td>
                         <td>{{ $event->phone }}</td>
                         <td>{{ $event->email }}</td>
+                        <td>
+                            <ul>
+                                @foreach ($event->categories as $categorie)
+                                    <li>{{ $categorie->name }}</li>
+                                @endforeach
+                            </ul>
+                        </td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
                                 <form action='{{ route('event.destroy', $event->id) }}' method='post'>

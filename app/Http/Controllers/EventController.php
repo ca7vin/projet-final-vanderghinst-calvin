@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class EventController extends Controller
     }
     public function create()
     {
-        return view("/back/events/create");
+        $categories = Categorie::all();
+        return view("/back/events/create", compact("categories"));
     }
     public function store(Request $request)
     {
@@ -64,6 +66,9 @@ class EventController extends Controller
         $event->location = $request->location;
         $event->date = $request->date;
         $event->save(); // store_anchor
+        $event->categories()->attach($request->categories, [
+            'event_id' => $event->id,
+        ]);
         return redirect()->route("event.index")->with('message', "Successful storage !");
     }
     public function read($id)
@@ -79,7 +84,8 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
-        return view("/back/events/edit",compact("event"));
+        $categories = Categorie::all();
+        return view("/back/events/edit",compact("event", "categories"));
     }
     public function update($id, Request $request)
     {
@@ -132,11 +138,15 @@ class EventController extends Controller
             $event->location = $request->location;
         }
         $event->save(); // update_anchor
+        $event->categories()->sync($request->categories, [
+            'event_id' => $event->id,
+        ]);
         return redirect()->route("event.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {
         $event = Event::find($id);
+        $event->categories()->detach();
         $event->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

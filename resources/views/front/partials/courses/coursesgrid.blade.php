@@ -10,12 +10,12 @@
                     </div>
                     <div class="right-content">
                         <div class="input-select">
-                            <form action="{{ Route('filterCat') }}" id="formFilterCat" method="POST">
+                            <form action="{{ Route('filterCatCourse') }}" id="formFilterCat" method="POST">
                                 @csrf
                                 <select name="category" id="category" onchange="document.getElementById('formFilterCat').submit()">
                                     <option value="-1">Select Category</option>
                                     @foreach ($categories as $categorie)
-                                        <option value="{{ $categorie->id }}"><a href="{{ Route('filterCat', $categorie->id) }}">{{ $categorie->name }}</a></option>
+                                        <option value="{{ $categorie->id }}"><a href="{{ Route('filterCatCourse', $categorie->id) }}">{{ $categorie->name }}</a></option>
                                     @endforeach
                                 </select>
                             </form>
