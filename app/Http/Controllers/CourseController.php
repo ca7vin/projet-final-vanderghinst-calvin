@@ -76,7 +76,8 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::find($id);
-        return view("/back/courses/edit",compact("course"));
+        $categories = Categorie::all();
+        return view("/back/courses/edit",compact("course", "categories"));
     }
     public function update($id, Request $request)
     {
@@ -90,7 +91,11 @@ class CourseController extends Controller
          'start'=> 'required',
          'duration'=> 'required',
         ]); // update_validated_anchor;
-        $course->prof = $course->prof;
+        if (Auth::user()->role_id === 2) {
+            $course->prof_id = Auth::user()->prof->id;
+        } elseif (Auth::user()->role_id === 1) {
+            $course->prof_id = null;
+        }
         $course->title = $request->title;
         $course->description = $request->description;
         $course->discipline = $request->discipline;
@@ -111,11 +116,15 @@ class CourseController extends Controller
             $request->file('image')->storePublicly('images', 'public');
         }
         $course->save(); // update_anchor
+        $course->categories()->sync($request->categories, [
+            'course_id' => $course->id,
+        ]);
         return redirect()->route("course.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {
         $course = Course::find($id);
+        $course->categories()->detach();
         $course->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }
