@@ -24,7 +24,7 @@
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
                         <th class='text-uppercase' scope='col'>first</th>
-                        <th class='text-uppercase w-25' scope='col'>image</th>
+                        <th class='text-uppercase col-2' scope='col'>image</th>
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase' scope='col'>text</th>
                         <th class='text-uppercase' scope='col'>textorange</th>
@@ -36,9 +36,15 @@
                     @foreach ($sliders as $slider)
                         <tr>
                             <th scope='row'>{{ $slider->id }}</th>
-                            <td>{{ $slider->first }}</td>
                             <td>
-                                <img class='w-100' src="{{ asset('images/' . $slider->image ) }}" alt="">
+                                @if ($slider->first == 1)
+                                    <i class='bx bxs-check-square'></i>
+                                @else
+                                    <i class='bx bxs-no-entry'></i>
+                                @endif
+                            </td>
+                            <td>
+                                <img src="{{ asset('images/' . $slider->image) }}" alt="">
                             </td>
                             <td>{!! $slider->title !!}</td>
                             <td>{!! $slider->text !!}</td>

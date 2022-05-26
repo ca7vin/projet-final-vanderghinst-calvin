@@ -16,8 +16,8 @@ class EventSeeder extends Seeder
     public function run()
     {
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #1',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -30,8 +30,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #2',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -44,8 +44,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #3',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -58,8 +58,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #4',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -72,8 +72,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #5',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -86,8 +86,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #6',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -100,8 +100,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #7',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -114,8 +114,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #8',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -128,8 +128,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #9',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -142,8 +142,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #10',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -156,8 +156,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #11',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',
@@ -170,8 +170,8 @@ class EventSeeder extends Seeder
             'date' => "8 <span>may</span>"
         ]);
         DB::table('events')->insert([
-            'start_time' => '08 may 2020 - 12:00',
-            'end_time' => '08 may 2020 - 18:00',
+            'start_time' => '12:00',
+            'end_time' => '18:00',
             'title' => 'Event #12',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit est fugit, nam quae maxime! Qui praesentium, reiciendis nulla earum nisi accusantium perspiciatis ex culpa, beatae consectetur assumenda, saepe magni! Magnam expedita, ratione accusamus quod sequi modi unde. Beatae perspiciatis quae voluptate ea voluptas soluta sunt dolor quod tempore iste possimus, voluptatem molestiae porro et ipsa, culpa non dolores alias sequi nemo magni expedita dolorum aut. Maiores, sit impedit debitis expedita accusamus culpa architecto saepe consectetur labore consequatur corporis mollitia accusantium vel nobis veritatis at? Illo deserunt eius vitae iusto debitis doloremque doloribus eum reprehenderit nam porro! Numquam tempore laboriosam, aspernatur perferendis dolor autem modi dolorum praesentium laborum ut quod explicabo non. Distinctio nulla quasi et vel vero excepturi itaque eos ducimus, similique fuga quod aspernatur blanditiis assumenda asperiores. Dolorum nostrum commodi at reprehenderit consectetur quia accusantium, deserunt facilis cupiditate quasi voluptate quos laudantium nemo odit nobis eos saepe id officiis in quisquam eveniet. Ex fugiat minus quos beatae vero consectetur architecto aspernatur, totam numquam porro molestias. ',
             'image1' => 'event3.jpg',

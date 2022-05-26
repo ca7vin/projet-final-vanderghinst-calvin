@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
-                        <th class='text-uppercase' scope='col'>image</th>
+                        <th class='text-uppercase col-1' scope='col'>image</th>
                         <th class='text-uppercase' scope='col'>name</th>
                         <th class='text-uppercase' scope='col'>email</th>
                         <th class='text-uppercase' scope='col'>password</th>
@@ -35,7 +35,7 @@
                         <tr>
                             <th scope='row'>{{ $user->id }}</th>
                             <td>
-                                <img class='' src="{{ asset('images/' . $user->image ) }}" alt="">
+                                <img src="{{ asset('images/' . $user->image ) }}" alt="">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>

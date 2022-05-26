@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th class="text-uppercase" scope='col'>#</th>
-                        <th class="text-uppercase" scope='col'>image</th>
+                        <th class="text-uppercase col-1" scope='col'>image</th>
                         <th class="text-uppercase" scope='col'>prof</th>
                         <th class="text-uppercase" scope='col'>title</th>
                         <th class="text-uppercase" scope='col'>description</th>

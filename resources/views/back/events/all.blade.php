@@ -23,35 +23,35 @@
             <thead>
                 <tr>
                     <th class='text-uppercase' scope='col'>#</th>
-                    <th class='text-uppercase' scope='col'>start time</th>
-                    <th class='text-uppercase' scope='col'>end time</th>
+                    <th class='text-uppercase col-1' scope='col'>image1</th>
+                    <th class='text-uppercase ' scope='col'>start</th>
+                    <th class='text-uppercase ' scope='col'>end</th>
                     <th class='text-uppercase' scope='col'>title</th>
-                    <th class='text-uppercase' scope='col'>description</th>
-                    <th class='text-uppercase' scope='col'>image1</th>
-                    <th class='text-uppercase' scope='col'>image2</th>
-                    <th class='text-uppercase' scope='col'>image3</th>
+                    <th class='text-uppercase col-2' scope='col'>description</th>
+                    {{-- <th class='text-uppercase col-1' scope='col'>image2</th> --}}
+                    {{-- <th class='text-uppercase col-1' scope='col'>image3</th> --}}
                     <th class='text-uppercase' scope='col'>phone</th>
                     <th class='text-uppercase' scope='col'>email</th>
-                    <th class='text-uppercase' scope='col'>categories</th>
+                    <th class='text-uppercase col-1' scope='col'>categories</th>
                 </tr> {{-- all_tr_anchor --}}
             </thead>
             <tbody>
                 @foreach ($events as $event)
                     <tr>
                         <th scope='row'>{{ $event->id }}</th>
+                        <td>
+                            <img src="{{ asset('images/' . $event->image1) }}" alt="">
+                        </td>
                         <td>{{ $event->start_time }}</td>
                         <td>{{ $event->end_time }}</td>
                         <td>{{ $event->title }}</td>
                         <td>{!! (Str::words($event->description, '12')) !!}</td>
-                        <td>
-                            <img src="{{ asset('images/' . $event->image1) }}" alt="">
-                        </td>
-                        <td>
+                        {{-- <td>
                             <img src="{{ asset('images/' . $event->image2) }}" alt="">
-                        </td>
-                        <td>
+                        </td> --}}
+                        {{-- <td>
                             <img src="{{ asset('images/' . $event->image3) }}" alt="">
-                        </td>
+                        </td> --}}
                         <td>{{ $event->phone }}</td>
                         <td>{{ $event->email }}</td>
                         <td>

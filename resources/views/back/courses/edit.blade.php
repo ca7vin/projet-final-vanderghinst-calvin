@@ -1,66 +1,75 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back/partials/sidebar')
-    <section class="home-section p-0">
+    <section class="home-section p-5">
         <div class='container d-flex flex-column align-items-center justify-content-center'>
             <div class="text">Courses</div>
-        @if ($errors->any())
-            <div class='alert alert-danger'>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('course.update' , $course->id) }}' method='post'>
-            @csrf
-            {{-- <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>prof</label>
-                <input type='text' name='prof' value='{{ $course->prof->user->name }}'>
-            </div> --}}
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>title</label>
-                <input type='text' name='title' value='{{ $course->title }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>description</label>
-                <input type='text' name='description' value='{{ $course->description }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>discipline</label>
-                <input type='text' name='discipline' value='{{ $course->discipline }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>price</label>
-                <input type='text' name='price' value='{{ $course->price }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>level</label>
-                <input type='text' name='level' value='{{ $course->level }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>start</label>
-                <input type='date' name='start' value='{{ $course->start }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>duration</label>
-                <input type='text' name='duration' value='{{ $course->duration }}'>
-            </div>
-            <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                <label class='text-uppercase' for=''>image</label>
-                <input type="file" name='image'>
-            </div>
-            <label class='text-uppercase mt-3' for=''>categories</label>
-                @foreach ($categories as $categorie)
-                    <div class='form-check'>
-                        <input type='checkbox' id='checkbox{{ $categorie->id }}' class='form-check-input' name='categories[]'
-                            value='{{ $categorie->id }}'>
-                        <label for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+            @if ($errors->any())
+                <div class='alert alert-danger'>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded'
+                action='{{ route('course.update', $course->id) }}' method='post' style='background-color:#A12C2F'>
+                @csrf
+                <div class="row">
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>title</label>
+                            <input class='form-control' type='text' name='title' value="{{ $course->title }}">
+                        </div>
+                        <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>description</label>
+                            <textarea class='form-control' cols="25" rows="10" type='text' name='description'>{{ $course->description }}</textarea>
+                        </div>
+                        <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>discipline</label>
+                            <input type='text' name='discipline' value="{{ $course->discipline }}">
+                        </div>
                     </div>
-                @endforeach
-            <button class='btn btn-primary my-5' type='submit'>Update</button> {{-- update_blade_anchor --}}
-        </form>
-    </div>
-</section>
+                    <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+                        <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>price</label>
+                            <input class='form-control' type='text' name='price' value="{{ $course->price }}">
+                        </div>
+                        <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>level</label>
+                            <input class='form-control' type='text' name='level' value="{{ $course->level }}">
+                        </div>
+                        <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>start</label>
+                            <input class='form-control' type='date' name='start' value="{{ $course->start }}">
+                        </div>
+                        <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                            <label class='text-uppercase text-white mb-2' for=''>duration</label>
+                            <input class='form-control' type='text' name='duration' value="{{ $course->duration }}">
+                        </div>
+                        <div class='d-flex flex-column align-items-center justify-content-center'>
+                            <label class='text-uppercase text-white mb-2' for=''>image</label>
+                            <input class='text-white' type="file" name='image'>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-start justify-content-center rounded p-3">
+                        <label class='text-uppercase text-white mb-2 w-100' for=''>categories</label>
+                        @foreach ($categories as $categorie)
+                            <div class='form-check'>
+                                @if ($course->categories->contains($categorie))
+                                    <input class='form-check-input' type='checkbox' name='categories[]' value="{{ $categorie->id }}" checked>
+                                @else
+                                    <input class='form-check-input' type='checkbox' name='categories[]' value="{{ $categorie->id }}">
+                                @endif
+                                <label class='text-white' for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="row mx-5">
+                    <button class='btn btn-dark mx-5 mt-3 mb-2' type='submit'>Update</button> {{-- create_blade_anchor --}}
+                </div>
+            </form>
+    </section>
 @endsection
