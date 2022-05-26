@@ -1134,6 +1134,10 @@ section.our-skills .fourth-item .fill-bar {
   background-color: #a12c2f;
   color: #ffffff;
 }
+.classic-posts .classic-item .accent-button a {
+  background-color: #a12c2f;
+  color: #ffffff;
+}
 .classic-posts .classic-item .second-button {
   display: inline-block;
   margin-left: 15px;
@@ -4326,6 +4330,16 @@ section.testimonials-page #owl-testimonials .owl-buttons .owl-prev:hover:after {
   display: inline-block;
 }
 .accent-button a {
+  background-color: #f5a425;
+  padding: 15px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #222222;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+.accent-button button {
   background-color: #f5a425;
   padding: 15px 30px;
   font-family: 'Montserrat', sans-serif;

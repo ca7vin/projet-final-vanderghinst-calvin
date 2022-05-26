@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\MessageController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\RedacteurController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
@@ -217,3 +219,13 @@ Route::get('/back/categories/{id}/read', [CategorieController::class, 'read'])->
 Route::get('/back/categories/{id}/edit', [CategorieController::class, 'edit'])->name('categorie.edit');
 Route::post('/back/categories/{id}/update', [CategorieController::class, 'update'])->name('categorie.update');
 Route::post('/back/categories/{id}/delete', [CategorieController::class, 'destroy'])->name('categorie.destroy');
+// Email
+Route::get('/back/emails', [EmailController::class, 'index'])->name('email.index');
+Route::get('/back/emails/create', [EmailController::class, 'create'])->name('email.create');
+Route::post('/back/emails/store', [EmailController::class, 'store'])->name('email.store');
+Route::get('/back/emails/{id}/read', [EmailController::class, 'read'])->name('email.read');
+Route::get('/back/emails/{id}/edit', [EmailController::class, 'edit'])->name('email.edit');
+Route::post('/back/emails/{id}/update', [EmailController::class, 'update'])->name('email.update');
+Route::post('/back/emails/{id}/delete', [EmailController::class, 'destroy'])->name('email.destroy');
+// MAIL
+Route::post('/contact-form', [NewsletterController::class, 'storeContactForm'])->name('contact-form.store');

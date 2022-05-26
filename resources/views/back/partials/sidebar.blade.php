@@ -51,13 +51,13 @@
               </a>
               <span class="tooltip">News</span>
           </li>
-          {{-- <li>
-              <a href="{{ Route('prof.index') }}">
-                <i class='bx bxs-user-badge'></i>
-                  <span class="links_name">Teachers</span>
+          <li>
+              <a href="{{ Route('email.index') }}">
+                <i class='bx bx-mail-send'></i>
+                  <span class="links_name">Email</span>
               </a>
-              <span class="tooltip">Teachers</span>
-          </li> --}}
+              <span class="tooltip">Email</span>
+          </li>
           <li>
               <a href="{{ Route('service.index') }}">
                 <i class='bx bxs-bookmarks'></i>

@@ -1,4 +1,15 @@
 <footer>
+    @if (session()->has('success'))
+        <div class='alert alert-success' style='display:flex !important; align-items:center !important; justify-content:center !important;'>
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class='alert alert-danger' style='display:flex !important; align-items:center !important; justify-content:center !important;'>
+            {{ session()->get('error') }}
+        </div>
+    @endif
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -50,16 +61,19 @@
             </div>
             <div class="col-md-3">
                 <div class="footer-widget">
-                    <div class="newsletters">
-                        <h2>Newsletters</h2>
-                        <div class="line-dec"></div>
-                        <p>Subsrcibe to our newsletter for latest updates about our site for universe.</p>
-                        <input type="text" class="email" name="s" placeholder="Email Address..."
-                            value="">
-                        <div class="accent-button">
-                            <a href="#">Subscribe</a>
+                    <form action="{{ Route('contact-form.store') }}" method='POST'>
+                        @csrf
+                        <div class="newsletters">
+                            <h2>Newsletters</h2>
+                            <div class="line-dec"></div>
+                            <p>Subsrcibe to our newsletter for latest updates about our site for universe.</p>
+                            <input type="text" class="email" name="email" placeholder="Email Address..."
+                                value="">
+                            <div class="accent-button">
+                                <button action='submit'>Subscribe</a>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
