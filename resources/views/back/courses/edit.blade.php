@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back/partials/sidebar')
-    <section class="home-section p-5">
+    <section class="home-section p-0">
         <div class='container d-flex flex-column align-items-center justify-content-center'>
             <div class="text">Courses</div>
             @if ($errors->any())
@@ -24,7 +24,7 @@
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class='text-uppercase text-white mb-2' for=''>description</label>
-                            <textarea class='form-control' cols="25" rows="10" type='text' name='description'>{{ $course->description }}</textarea>
+                            <textarea style='width:227.6px;' class='form-control' cols="25" rows="10" type='text' name='description'>{{ $course->description }}</textarea>
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class='text-uppercase text-white mb-2' for=''>discipline</label>

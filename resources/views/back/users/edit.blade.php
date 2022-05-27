@@ -13,35 +13,43 @@
                     </ul>
                 </div>
             @endif
-            <form class="d-flex flex-column align-items-center justify-content-center"
-                action='{{ route('user.store', $user->id) }}' method='post'>
+            <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('user.update', $user->id) }}'
+                method='post' enctype="multipart/form-data">
                 @csrf
-                <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                    <label class="text-uppercase" for=''>name</label>
-                    <input type='text' name='name' value='{{ $user->name }}'>
+                <div class="row">
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center mb-3">
+                            <label class="text-uppercase text-white mb-2" for=''>name</label>
+                            <input type='text' name='name' value="{{ $user->name }}">
+                        </div>
+                        <div class="d-flex flex-column align-items-start justify-content-center mb-3">
+                            <label class="text-uppercase text-white mb-2" for=''>email</label>
+                            <input type='text' name='email' value="{{ $user->email }}">
+                        </div>
+                        <div class="d-flex flex-column align-items-start justify-content-center mb-3">
+                            <label class="text-uppercase text-white mb-2" for=''>password</label>
+                            <input type='password' name='password' value="{{ $user->name }}">
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+                            <label class="text-uppercase text-white mb-2" for="inputGroupSelect01">Role</label>
+                            <select name='role_id' class="form-select" id="inputGroupSelect01">
+                                <option value="null" selected>Choose...</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class='d-flex flex-column align-items-center justify-content-center'>
+                            <label class='text-uppercase text-white mb-2' for=''>image</label>
+                            <input class='text-white' type="file" name='image'>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                    <label class="text-uppercase" for=''>email</label>
-                    <input type='text' name='email' value='{{ $user->email }}'>
+                <div class="row mx-5">
+                    <button class="btn btn-dark mt-3 mb-2" type='submit'>Update</button> {{-- create_blade_anchor --}}
                 </div>
-                <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                    <label class="text-uppercase" for=''>password</label>
-                    <input type='text' name='password' value='{{ $user->password }}'>
-                </div>
-                <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                        <label class="text-uppercase" for="inputGroupSelect01">Role</label>
-                        <select name='role_id' class="form-select" id="inputGroupSelect01">
-                          <option selected>{{ $user->role->name }}</option>
-                          @foreach ($roles as $role)
-                          <option value="{{ $role->id }}">{{ $role->name }}</option>
-                          @endforeach
-                        </select>
-                </div>
-                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-                    <label class='text-uppercase' for=''>image</label>
-                    <input type="file" name='image'>
-                </div>
-                <button class='btn btn-success' type='submit'>Create</button> {{-- update_blade_anchor --}}
             </form>
         </div>
     </section>
