@@ -79,13 +79,13 @@
               </a>
               <span class="tooltip">Categories</span>
           </li>
-          <li>
+          {{-- <li>
               <a href="{{ Route('demande.index') }}">
                 <i class='bx bx-question-mark'></i>
                   <span class="links_name">Rendez-vous</span>
               </a>
               <span class="tooltip">Rendez-vous</span>
-          </li>
+          </li> --}}
           <li class="profile">
               <div class="profile-details">
                   <!--<img src="profile.jpg" alt="profileImg">-->
