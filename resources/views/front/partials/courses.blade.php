@@ -11,7 +11,7 @@
             <div id="owl-courses">
                 @foreach ($popularcourses as $popularcourse)
                     <div class="item course-item">
-                        <a href="{{ Route('course.onepage', $popularcourse->id) }}"><img src="" alt=""></a>
+                        <a href="{{ Route('course.onepage', $popularcourse->id) }}"><img src="{{ asset('images/' . $popularcourse->image) }}" alt=""></a>
                         <div class="down-content">
                             <img src="{{ asset('images/' . $popularcourse->prof->user->image) }}" alt="">
                             <h6>{{ $popularcourse->prof->user->name }}</h6>

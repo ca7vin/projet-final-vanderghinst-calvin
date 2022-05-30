@@ -15,7 +15,7 @@
                                     authentic Truffaut put a bird on it, pug ethical tousled photo booth
                                     gluten-free cliche bicycle rights four dollar toast single-origin coffee
                                     taxidermy.</p>
-                                <img src="http://placehold.it/66x66" alt="">
+                                <img src="{{ asset('images/default.jpg') }}" alt="">
                                 <h4>Caroll m. davis</h4>
                                 <span>Web Designer</span>
                             </div>
@@ -25,7 +25,7 @@
                                     authentic Truffaut put a bird on it, pug ethical tousled photo booth
                                     gluten-free cliche bicycle rights four dollar toast single-origin coffee
                                     taxidermy.</p>
-                                <img src="http://placehold.it/66x66" alt="">
+                                <img src="{{ asset('images/default.jpg') }}" alt="">
                                 <h4>Peter j. smith</h4>
                                 <span>Web Designer</span>
                             </div>

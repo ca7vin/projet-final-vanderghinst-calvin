@@ -598,7 +598,8 @@ nav.responsive-menu a {
   }
 }
 footer {
-  background-image: url(../images/footer-bg.png);
+  /* background-image: url(../images/footer-bg.png); */
+  background-color: #1f272b;
   width: 100%;
   background-size: cover;
   padding: 90px 0px 0px 0px;

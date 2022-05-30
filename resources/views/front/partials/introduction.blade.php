@@ -12,14 +12,14 @@
                     </div>
                     <div class="row">
                         @foreach ($services as $service)
-                        <div class="col-md-6 col-sm-6">
-                            <div class="service-item">
-                                {!! $service->icon !!}
-                                <h4>{{ $service->title }}</h4>
-                                <div class="line-dec"></div>
-                                <p>{{ $service->text }}</p>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    {!! $service->icon !!}
+                                    <h4>{{ $service->title }}</h4>
+                                    <div class="line-dec"></div>
+                                    <p>{{ $service->text }}</p>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -31,31 +31,47 @@
                                 <div class="widget-heading">
                                     <h4>Request Information</h4>
                                 </div>
-                                <div class="search-form">
-                                    <input type="text" id="name" name="s" placeholder="Full Name" value="{{ Auth::user()->name }}">
-                                    <input type="text" id="address" name="s" placeholder="E-mail Address" value="{{ Auth::user()->email }}">
-                                    <div class="select">
-                                        <select name="mark" id="campus">
-                                            <option value="-1">Campus of Interests</option>
-                                            <option>Nearby</option>
-                                            <option>High Classes</option>
-                                            <option>Short Time</option>
-                                            <option>Long Time</option>
-                                        </select>
+                                <form action="{{ Route('demande.store') }}" method='POST'>
+                                    @csrf
+                                    <div class="search-form">
+                                        @if (session()->has('message'))
+                                            <div class='alert alert-success'
+                                                style='display:flex !important; align-items:center !important; justify-content:center !important;'>
+                                                {{ session()->get('message') }}
+                                            </div>
+                                        @endif
+                                        @if (session()->has('error'))
+                                            <div class='alert alert-danger'
+                                                style='display:flex !important; align-items:center !important; justify-content:center !important;'>
+                                                {{ session()->get('error') }}
+                                            </div>
+                                        @endif
+                                        <input type="text" name="from" placeholder="Full Name"
+                                            value="{{ Auth::user()->name }}">
+                                        <input type="text" id="address" name="" placeholder="E-mail Address"
+                                            value="{{ Auth::user()->email }}">
+                                        <div class="select">
+                                            <select name="content" id="about">
+                                                <option value="-1">Categories</option>
+                                                @foreach ($categories as $categorie)
+                                                    <option value="{{ $categorie->name }}">{{ $categorie->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="select">
+                                            <select name="to" id="to">
+                                                <option value="-1">Courses</option>
+                                                @foreach ($courses as $course)
+                                                    <option value="{{ $course->prof->user->name }}">{{ $course->title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="accent-button">
+                                            <button type="submit" style='border: none !important; margin-top: 20px !important;'>Submit Request</button>
+                                        </div>
                                     </div>
-                                    <div class="select">
-                                        <select name="mark" id="program">
-                                            <option value="-1">Program of Interests</option>
-                                            <option>Wroking Process</option>
-                                            <option>Archivements</option>
-                                            <option>Social</option>
-                                            <option>Profits</option>
-                                        </select>
-                                    </div>
-                                    <div class="accent-button">
-                                        <a href="#">Submit Request</a>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     @else
@@ -64,10 +80,10 @@
                                 <div class="request-information">
                                     <div class="search-form">
                                         <div class="accent-button">
-                                            <a href="{{ Route("login") }}">Log in</a>
+                                            <a href="{{ Route('login') }}">Log in</a>
                                         </div>
                                         <div class="accent-button" style='margin-top:20px !important;'>
-                                            <a href="{{ Route("register") }}">Sign in</a>
+                                            <a href="{{ Route('register') }}">Sign in</a>
                                         </div>
                                     </div>
                                 </div>

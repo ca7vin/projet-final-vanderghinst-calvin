@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\RdvCourseController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\TagController;
@@ -13,12 +15,14 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfController;
+use App\Http\Controllers\RequestCourseController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Categorie;
 use App\Models\Course;
+use App\Models\Demande;
 use App\Models\Event;
 use App\Models\Message;
 use App\Models\Post;
@@ -44,7 +48,9 @@ Route::get('/', function () {
     $popularcourses = Course::all()->random(4);
     $popularteachers = Prof::all()->random(4);
     $lastnews = Post::all()->last()->take(2)->get();
-    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers', 'lastnews'));
+    $categories = Categorie::all();
+    $courses = Course::all();
+    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers', 'lastnews', 'categories', 'courses'));
 })->name("home");
 
 Route::get('/courses', function () {
@@ -115,7 +121,8 @@ Route::get('contact', function () {
 
 Route::get('/dashboard', function () {
     $messages = Message::All();
-    return view('dashboard', compact('messages'));
+    $demandes = Demande::all();
+    return view('dashboard', compact('messages', 'demandes'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -229,3 +236,13 @@ Route::post('/back/emails/{id}/update', [EmailController::class, 'update'])->nam
 Route::post('/back/emails/{id}/delete', [EmailController::class, 'destroy'])->name('email.destroy');
 // MAIL
 Route::post('/contact-form', [NewsletterController::class, 'storeContactForm'])->name('contact-form.store');
+// Demande
+Route::get('/back/demandes', [DemandeController::class, 'index'])->name('demande.index');
+Route::get('/back/demandes/create', [DemandeController::class, 'create'])->name('demande.create');
+Route::post('/back/demandes/store', [DemandeController::class, 'store'])->name('demande.store');
+Route::post('/back/demandes/store2', [DemandeController::class, 'store2'])->name('demande.store2');
+Route::get('/back/demandes/{id}/read', [DemandeController::class, 'read'])->name('demande.read');
+Route::get('/back/demandes/{id}/edit', [DemandeController::class, 'edit'])->name('demande.edit');
+Route::get('/back/demandes/{id}/reply', [DemandeController::class, 'reply'])->name('demande.reply');
+Route::post('/back/demandes/{id}/update', [DemandeController::class, 'update'])->name('demande.update');
+Route::post('/back/demandes/{id}/delete', [DemandeController::class, 'destroy'])->name('demande.destroy');
