@@ -43,7 +43,7 @@
                         <div class="down-content">
                             <ul>
                                 <li><i class="fa fa-map-marker"></i>{{ $event->location }}</li>
-                                <li><i class="fa fa-clock-o"></i>{{ $event->start_time }}<br>{{ $event->end_time }}</li>
+                                <li><i class="fa fa-clock-o"></i>{{ $event->start_time }} - {{ $event->end_time }}</li>
                             </ul>
                             <div class="date">
                                 <p>{!! $event->date !!}</p>

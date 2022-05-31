@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
@@ -12,6 +14,10 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
+        foreach ($events as $event) {
+            $event->date = str_replace("[", "<span>", $event->date);
+            $event->date = str_replace("]", "</span>", $event->date);
+        } 
         return view("/back/events/all",compact("events"));
     }
     public function create()
@@ -22,14 +28,12 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $event = new Event;
+        $users = User::all();
         $request->validate([
          'start_time'=> 'required',
          'end_time'=> 'required',
          'title'=> 'required',
          'description'=> 'required',
-        //  'image1'=> 'required',
-        //  'image2'=> 'required',
-        //  'image3'=> 'required',
          'phone'=> 'required',
          'email'=> 'required',
          'date'=> 'required',
@@ -66,6 +70,14 @@ class EventController extends Controller
         $event->location = $request->location;
         $event->date = $request->date;
         $event->save(); // store_anchor
+        foreach ($users as $user) {
+            Mail::send('emails.event', array( 
+                'email' => $user->email, 
+            ), function($message) use ($user){ 
+                $message->to($user->email, 'Admin'); 
+                $message->from('ca7vin@gmail.com');
+            });
+        }
         $event->categories()->attach($request->categories, [
             'event_id' => $event->id,
         ]);

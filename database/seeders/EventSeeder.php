@@ -27,7 +27,7 @@ class EventSeeder extends Seeder
             'email' => 'event1@gmail.com',
             'user_id' => 1,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -41,7 +41,7 @@ class EventSeeder extends Seeder
             'email' => 'event3@gmail.com',
             'user_id' => 2,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -55,7 +55,7 @@ class EventSeeder extends Seeder
             'email' => 'event3@gmail.com',
             'user_id' => 3,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -69,7 +69,7 @@ class EventSeeder extends Seeder
             'email' => 'event4@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -83,7 +83,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -97,7 +97,7 @@ class EventSeeder extends Seeder
             'email' => 'event6@gmail.com',
             'user_id' => 5,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -111,7 +111,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -125,7 +125,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -139,7 +139,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -153,7 +153,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -167,7 +167,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         DB::table('events')->insert([
             'start_time' => '12:00',
@@ -181,7 +181,7 @@ class EventSeeder extends Seeder
             'email' => 'event5@gmail.com',
             'user_id' => 4,
             'location' => "Brussels North",
-            'date' => "8 <span>may</span>"
+            'date' => "8 [may]"
         ]);
         //
     }

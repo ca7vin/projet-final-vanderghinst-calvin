@@ -106,6 +106,10 @@ Route::post('/posts/findTag', function (Request $request) {
 Route::get('events', function () {
     $events = Event::paginate(6);
     $categories = Categorie::all();
+    foreach ($events as $event) {
+            $event->date = str_replace("[", "<span>", $event->date);
+            $event->date = str_replace("]", "</span>", $event->date);
+        } 
     return view('front/pages/classic-events', compact('events', 'categories'));
 })->name("events");
 

@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-                    <th class='text-uppercase' scope='col'>name</th>
+                    <th class='text-uppercase col-8' scope='col'>name</th>
                 </tr> {{-- all_tr_anchor --}}
             </thead>
             <tbody>

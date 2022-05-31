@@ -7,7 +7,11 @@
                         <h4>Location Map</h4>
                     </div>
                     <div class="content-map">
-                        <div id="map"></div>
+                        <div id="map">
+                            <iframe width="450" height="350" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q={{ $maps[0]->address }}&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
