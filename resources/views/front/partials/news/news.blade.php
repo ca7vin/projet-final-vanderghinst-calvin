@@ -66,7 +66,7 @@
                             @foreach ($tags as $tag)
                             <form action="{{ Route('filterTagPost') }}" method="POST">
                                 @csrf
-                                    <input name='category' type="text" class="hidden" value={{ $tag->id }}>
+                                    <input name='tag' type="text" class="hidden" value={{ $tag->id }}>
                                     <li><button class='btn' style='background-color:#F5A425 !important;'><i class="fa fa-angle-right"></i>{{ $tag->name }}</button></li>
                                 </form>
                             @endforeach
