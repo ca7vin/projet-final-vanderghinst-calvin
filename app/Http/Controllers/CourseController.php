@@ -62,6 +62,7 @@ class CourseController extends Controller
             $course->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
         }
+        $course->status = false;
         $course->save(); // store_anchor
         $course->categories()->attach($request->categories, [
             'course_id' => $course->id,
@@ -120,6 +121,11 @@ class CourseController extends Controller
         } else {
             $course->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
+        }
+        if (Auth::user()->role_id === 2) {
+            $course->status = $course->status;
+        } else if (Auth::user()->role_id === 1) {
+            $course->status = $request->status;
         }
         $course->save(); // update_anchor
         $course->categories()->sync($request->categories, [

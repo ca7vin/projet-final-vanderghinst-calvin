@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->boolean('favori');
+            $table->boolean('status')->default(false);
             $table->string('title');
             $table->text('description');
             $table->string('discipline');

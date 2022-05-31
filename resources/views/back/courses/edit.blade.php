@@ -16,6 +16,25 @@
             <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded'
                 action='{{ route('course.update', $course->id) }}' method='post' style='background-color:#A12C2F'>
                 @csrf
+                @if (auth()->user()->role->name == 'Administrateur')
+                <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
+                    <label class='text-uppercase text-white mb-2 text-center' for=''>Status ?</label>
+                    <div class="d-flex align-items-center justify-content-around mb-3 px-5">
+                        <div class="form-check">
+                            <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault">
+                            <label class="form-check-label text-white" for="flexCheckDefault">
+                                Accepted
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input name='status' class="form-check-input" type="radio" value=0 id="flexCheckChecked" checked>
+                            <label class="form-check-label text-white" for="flexCheckChecked">
+                                Pending
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                @endif
                 <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
                     <label class='text-uppercase text-white mb-2 text-center' for=''>Favori ?</label>
                     <div class="d-flex align-items-center justify-content-around mb-3 px-5">

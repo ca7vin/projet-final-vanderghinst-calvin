@@ -33,6 +33,24 @@
                         </div>
                     </div>
                 </div>
+                @endif
+                <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
+                    <label class='text-uppercase text-white mb-2 text-center' for=''>Display in first ?</label>
+                    <div class="d-flex align-items-center justify-content-around mb-3 px-5">
+                        <div class="form-check">
+                            <input name='first' class="form-check-input" type="radio" value=1 id="flexCheckDefault">
+                            <label class="form-check-label text-white" for="flexCheckDefault">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input name='first' class="form-check-input" type="radio" value=0 id="flexCheckChecked" checked>
+                            <label class="form-check-label text-white" for="flexCheckChecked">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-6 d-flex flex-column align-items-center justify-content-center">
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>

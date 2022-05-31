@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($courses as $course)
+            @foreach ($courses->where("status", "==", true)  as $course)
                 <div class="col-md-4">
                     <div class="item course-item">
                         <a href="{{ Route('course.onepage', $course->id) }}"><img

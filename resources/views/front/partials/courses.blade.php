@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div id="owl-courses">
-                @foreach ($popularcourses as $popularcourse)
+                @foreach ($popularcourses->where("status", "==", 1) as $popularcourse)
                     <div class="item course-item">
                         <a href="{{ Route('course.onepage', $popularcourse->id) }}"><img
                                 src="{{ asset('images/' . $popularcourse->image) }}" alt=""></a>

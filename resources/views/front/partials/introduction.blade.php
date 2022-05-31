@@ -62,8 +62,12 @@
                                             <select name="to" id="to">
                                                 <option value="-1">Courses</option>
                                                 @foreach ($courses as $course)
+                                                    @if ($course->prof)
                                                     <option value="{{ $course->prof->user->name }}">{{ $course->title }}
                                                     </option>
+                                                    @else
+                                                    <option value="Administrateur">{{ $course->title }}
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
