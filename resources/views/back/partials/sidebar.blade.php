@@ -79,13 +79,14 @@
               </a>
               <span class="tooltip">Categories</span>
           </li>
-          {{-- <li>
-              <a href="{{ Route('demande.index') }}">
-                <i class='bx bx-question-mark'></i>
-                  <span class="links_name">Rendez-vous</span>
+          <li>
+              <a href="{{ Route('contact.index') }}">
+                <i class='bx bxs-contact'></i>
+                  <span class="links_name">Contact</span>
               </a>
-              <span class="tooltip">Rendez-vous</span>
-          </li> --}}
+              <span class="tooltip">Contact</span>
+          </li>
+          
           <li class="profile">
               <div class="profile-details">
                   <!--<img src="profile.jpg" alt="profileImg">-->

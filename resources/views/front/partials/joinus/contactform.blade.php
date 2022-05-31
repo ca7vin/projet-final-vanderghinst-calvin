@@ -9,7 +9,7 @@
                     <div class="content-map">
                         <div id="map">
                             <iframe width="450" height="350" id="gmap_canvas"
-                                src="https://maps.google.com/maps?q={{ $maps[0]->address }}&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                src="https://maps.google.com/maps?q={{ $contact[0]->adress }}&t=&z=17&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                         </div>
                     </div>
@@ -23,10 +23,10 @@
                     <div class="message-content">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" id="name" name="s" placeholder="Full Name" value="">
+                                <input type="text" id="name" name="" placeholder="Full Name" value="">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" id="address" name="s" placeholder="E-mail Address"
+                                <input type="text" id="address" name="" placeholder="E-mail Address"
                                     value="">
                             </div>
                             <div class="col-md-12">

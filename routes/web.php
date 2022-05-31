@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\RdvCourseController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Categorie;
+use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Demande;
 use App\Models\Event;
@@ -121,7 +123,8 @@ Route::get('news', function () {
 })->name("news");
 
 Route::get('contact', function () {
-    return view('front/pages/contact');
+    $contact = Contact::all();
+    return view('front/pages/contact', compact('contact'));
 })->name("contact");
 
 Route::get('/dashboard', function () {
@@ -259,3 +262,7 @@ Route::get('/back/commentaires/{id}/read', [CommentaireController::class, 'read'
 Route::get('/back/commentaires/{id}/edit', [CommentaireController::class, 'edit'])->name('commentaire.edit');
 Route::post('/back/commentaires/{id}/update', [CommentaireController::class, 'update'])->name('commentaire.update');
 Route::post('/back/commentaires/{id}/delete', [CommentaireController::class, 'destroy'])->name('commentaire.destroy');
+// Contact
+Route::get('/back/contacts', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/back/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
+Route::post('/back/contacts/{id}/update', [ContactController::class, 'update'])->name('contact.update');
