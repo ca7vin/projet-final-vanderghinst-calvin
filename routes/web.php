@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\RdvCourseController;
 use App\Http\Controllers\EmailController;
@@ -246,3 +247,11 @@ Route::get('/back/demandes/{id}/edit', [DemandeController::class, 'edit'])->name
 Route::get('/back/demandes/{id}/reply', [DemandeController::class, 'reply'])->name('demande.reply');
 Route::post('/back/demandes/{id}/update', [DemandeController::class, 'update'])->name('demande.update');
 Route::post('/back/demandes/{id}/delete', [DemandeController::class, 'destroy'])->name('demande.destroy');
+// Commentaire
+Route::get('/back/commentaires', [CommentaireController::class, 'index'])->name('commentaire.index');
+Route::get('/back/commentaires/create', [CommentaireController::class, 'create'])->name('commentaire.create');
+Route::post('/back/commentaires/store', [CommentaireController::class, 'store'])->name('commentaire.store');
+Route::get('/back/commentaires/{id}/read', [CommentaireController::class, 'read'])->name('commentaire.read');
+Route::get('/back/commentaires/{id}/edit', [CommentaireController::class, 'edit'])->name('commentaire.edit');
+Route::post('/back/commentaires/{id}/update', [CommentaireController::class, 'update'])->name('commentaire.update');
+Route::post('/back/commentaires/{id}/delete', [CommentaireController::class, 'destroy'])->name('commentaire.destroy');

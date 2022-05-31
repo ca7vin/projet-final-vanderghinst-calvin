@@ -29,8 +29,8 @@
                             <div class="col-md-8">
                                 <div class="classic-posts">
                                     <div class="single-item">
-                                        
-                                            <img src="{{ asset('images/' . $post->image) }}" alt="">
+
+                                        <img src="{{ asset('images/' . $post->image) }}" alt="">
 
                                         <ul>
                                             <li>Posted: <em>{{ $post->created_at->translatedFormat('d F Y') }}</em></li>
@@ -67,79 +67,68 @@
                                     <div class="heading">
                                         <h2>Comments</h2>
                                     </div>
-                                    <div class="comment-item">
-                                        <img src="http://placehold.it/54x54" alt="">
-                                        <h4>John Smith</h4>
-                                        <span>1 hour ago</span>
-                                        <div class="reply-button">
-                                            <a href="#">Reply</a>
+                                    @foreach ($post->commentaires as $commentaire)
+                                        <div class="comment-item">
+                                            <img src="http://placehold.it/54x54" alt="">
+                                            <h4>{{ $commentaire->user->name }}</h4>
+                                            <span>{{ \Carbon\Carbon::parse($commentaire->created_at)->diffForHumans() }}</span>
+                                            <div class="reply-button">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                            <p>{{ $commentaire->content }}</p>
                                         </div>
-                                        <p>Blue Bottle occupy fanny pack hashtag, cronut brunch PBR Odd Future. Brooklyn
-                                            cray fap Meggings quinoa 8-bit, blog actually roof party master cleanse iPhone
-                                            four dollar toast.Tofu dreamcatcher 90's letterpress vinyl megging</p>
-                                    </div>
-                                    <div class="comment-item replied-comment">
-                                        <img src="http://placehold.it/54x54" alt="">
-                                        <h4>Endris Flenderno</h4>
-                                        <span>1 hour ago</span>
-                                        <div class="reply-button">
-                                            <a href="#">Reply</a>
-                                        </div>
-                                        <p>Blue Bottle occupy fanny pack hashtag, cronut brunch PBR Odd Future. Brooklyn
-                                            cray fap Meggings quinoa 8-bit, blog actually roof party master cleanse iPhone
-                                            four dollar toast.Tofu dreamcatcher 90's letterpress vinyl megging</p>
-                                    </div>
-                                    <div class="comment-item replied-comment">
-                                        <img src="http://placehold.it/54x54" alt="">
-                                        <h4>Marcos Marrison</h4>
-                                        <span>1 hour ago</span>
-                                        <div class="reply-button">
-                                            <a href="#">Reply</a>
-                                        </div>
-                                        <p>Blue Bottle occupy fanny pack hashtag, cronut brunch PBR Odd Future. Brooklyn
-                                            cray fap Meggings quinoa 8-bit, blog actually roof party master cleanse iPhone
-                                            four dollar toast.Tofu dreamcatcher 90's letterpress vinyl megging</p>
-                                    </div>
-                                    <div class="comment-item">
-                                        <img src="http://placehold.it/54x54" alt="">
-                                        <h4>Robert Landerson</h4>
-                                        <span>1 hour ago</span>
-                                        <div class="reply-button">
-                                            <a href="#">Reply</a>
-                                        </div>
-                                        <p>Blue Bottle occupy fanny pack hashtag, cronut brunch PBR Odd Future. Brooklyn
-                                            cray fap Meggings quinoa 8-bit, blog actually roof party master cleanse iPhone
-                                            four dollar toast.Tofu dreamcatcher 90's letterpress vinyl megging</p>
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <div class="leave-comment">
-                                    <div class="heading">
-                                        <h2>Leave a comment</h2>
-                                    </div>
-                                    <div class="comment-form">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="text" id="name" name="s" placeholder="Full Name" value="">
+                                    @if (Route::has('login'))
+                                        @auth
+                                            <div class="heading">
+                                                <h2>Leave a comment</h2>
                                             </div>
-                                            <div class="col-md-6">
-                                                <input type="text" id="address" name="s" placeholder="E-mail Address"
-                                                    value="">
+                                            <div class="comment-form">
+                                                <form action="{{ route('commentaire.store') }}" method='POST'>
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="col-md-6" style='display:none !important;'>
+                                                            <input type="text" id="name" name="post_id" placeholder=""
+                                                                value="{{ $post->id }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="name" name="" placeholder="Full Name"
+                                                                value="{{ Auth::user()->name }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="address" name=""
+                                                                placeholder="E-mail Address"
+                                                                value="{{ Auth::user()->email }}">
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <textarea id="message" class="message" name="content" placeholder="Write comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accent-button">
+                                                        <button style='border:none !important;' type='submit'>submit comment</button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="col-md-12">
-                                                <textarea id="message" class="message" name="message" placeholder="Write comment"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="accent-button">
-                                            <a href="#">Submit Comment</a>
-                                        </div>
-                                    </div>
+                                        @else
+                                            @if (Route::has('login'))
+                                                <div
+                                                    style='display:flex !important; align-items:center !important; justify-content:center !important; background-color:#A12C2F;padding:20px !important;'>
+                                                    <div class="accent-button" style='margin-right: 15px !important;'>
+                                                        <a href="{{ Route('login') }}">Log in</a>
+                                                    </div>
+                                                    <div class="accent-button">
+                                                        <a href="{{ Route('register') }}">Sign in</a>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endauth
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="side-bar">
-                                    <div class="search-box">
-                                        <input type="text" class="search" name="s" placeholder="Search..." value="">
-                                    </div>
                                     <div class="categories">
                                         <div class="widget-heading">
                                             <h4>Categories</h4>
