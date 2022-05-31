@@ -69,7 +69,7 @@
                                     </div>
                                     @foreach ($post->commentaires as $commentaire)
                                         <div class="comment-item">
-                                            <img src="http://placehold.it/54x54" alt="">
+                                            <img style='width:54px !important;' src="{{ asset('images/' . $commentaire->user->image) }}" alt="">
                                             <h4>{{ $commentaire->user->name }}</h4>
                                             <span>{{ \Carbon\Carbon::parse($commentaire->created_at)->diffForHumans() }}</span>
                                             <div class="reply-button">
@@ -98,8 +98,7 @@
                                                                 value="{{ Auth::user()->name }}">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="address" name=""
-                                                                placeholder="E-mail Address"
+                                                            <input type="text" id="address" name="" placeholder="E-mail Address"
                                                                 value="{{ Auth::user()->email }}">
                                                         </div>
                                                         <div class="col-md-12">
@@ -107,7 +106,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="accent-button">
-                                                        <button style='border:none !important;' type='submit'>submit comment</button>
+                                                        <button style='border:none !important;' type='submit'>submit
+                                                            comment</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -134,12 +134,17 @@
                                             <h4>Categories</h4>
                                         </div>
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>Design</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>International</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>Learning</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>Read</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>Education</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i>Finance</a></li>
+                                            @foreach ($post->categories as $categorie)
+                                                <form action="{{ Route('filterCatPost') }}" method="POST">
+                                                    @csrf
+                                                    <input name='category' type="text" class="hidden"
+                                                        value={{ $categorie->id }}>
+                                                    <li><button class='btn'
+                                                            style='background-color:transparent !important;'><i
+                                                                class="fa fa-angle-right"></i>{{ $categorie->name }}</button>
+                                                    </li>
+                                                </form>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class="tags">
@@ -147,15 +152,16 @@
                                             <h4>Tags</h4>
                                         </div>
                                         <ul>
-                                            <li><a href="#">Photography</a></li>
-                                            <li><a href="#">Design</a></li>
-                                            <li><a href="#">Envanto</a></li>
-                                            <li><a href="#">Course</a></li>
-                                            <li><a href="#">Education</a></li>
-                                            <li><a href="#">College</a></li>
-                                            <li><a href="#">Teachers</a></li>
-                                            <li><a href="#">Read</a></li>
-                                            <li><a href="#">Excursions</a></li>
+                                            @foreach ($post->tags as $tag)
+                                                <form action="{{ Route('filterTagPost') }}" method="POST">
+                                                    @csrf
+                                                    <input name='tag' type="text" class="hidden"
+                                                        value={{ $tag->id }}>
+                                                    <li><button class='btn' style='background-color:#F5A425 !important;'><i
+                                                                class="fa fa-angle-right"></i>{{ $tag->name }}</button>
+                                                    </li>
+                                                </form>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>

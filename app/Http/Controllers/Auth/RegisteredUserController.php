@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Email;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -47,6 +49,10 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
                 'role_id' => 4,
             ]);
+            $input = $request->all(); 
+            $email = Email::create([
+                'email' => $request->email,
+            ]);
         } elseif ($request->image != null) {
             $user = User::create([
                 'image' => $request->image->hashName(),
@@ -56,12 +62,21 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
                 'role_id' => 4,
             ]);
+            $input = $request->all(); 
+            $email = Email::create([
+                'email' => $request->email,
+            ]);
         }
-
+        $email->save();
         event(new Registered($user));
 
         Auth::login($user);
-
+        Mail::send('emails.newsletter', array( 
+            'email' => $input['email'], 
+        ), function($message) use ($request){ 
+            $message->to($request->email, 'Admin'); 
+            $message->from('ca7vin@gmail.com');
+        }); 
         return redirect(RouteServiceProvider::HOME);
     }
 }

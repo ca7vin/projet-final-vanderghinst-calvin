@@ -33,7 +33,7 @@ class ProfController extends Controller
         $prof->phone = $request->phone;
         $prof->skype = $request->skype;
         $prof->save(); // store_anchor
-        return redirect()->route("prof.index")->with('message', "Successful storage !");
+        return redirect()->route("user.index")->with('message', "Successful storage !");
     }
     public function read($id)
     {
@@ -66,7 +66,7 @@ class ProfController extends Controller
         $prof->phone = $request->phone;
         $prof->skype = $request->skype;
         $prof->save(); // update_anchor
-        return redirect()->route("prof.index")->with('message', "Successful update !");
+        return redirect()->route("user.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

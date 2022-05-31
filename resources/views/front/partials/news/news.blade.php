@@ -16,7 +16,7 @@
                                             Administrateur
                                         @endif
                                     </em></li>
-                                <li>Comments: <em>2</em></li>
+                                <li>Comments: <em>{{ $new->commentaires->count() }}</em></li>
                             </ul>
                             <a href="{{ Route('post.onepage', $new->id) }}">
                                 <h4>{{ $new->title }}</h4>
@@ -42,7 +42,7 @@
             <div class="col-md-4">
                 <div class="side-bar">
                     <div class="search-box">
-                        <input type="text" class="search" name="s" placeholder="Search..." value="">
+                        <input type="text" class="search" name="" id="monInput" onkeyup="chercher()" placeholder="Search..." value="">
                     </div>
                     <div class="categories">
                         <div class="widget-heading">

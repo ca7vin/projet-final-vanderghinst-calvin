@@ -52,7 +52,7 @@
                                     <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
                                         role='button'>Read</a>
                                         @if ($user->role_id == 2)
-                                        <a class='btn btn-warning mx-3' href='{{ route('prof.read', $user->prof->id) }}'
+                                        <a class='btn btn-dark mx-3' href='{{ route('prof.read', $user->prof->id) }}'
                                             role='button'>Teacher</a>
                                         @endif
                                 </div>

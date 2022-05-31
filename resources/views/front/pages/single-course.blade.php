@@ -94,12 +94,16 @@
                                         <h4>Categories</h4>
                                     </div>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Design</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>International</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Learning</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Read</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Education</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Finance</a></li>
+                                        @foreach ($course->categories as $categorie)
+                                            <form action="{{ Route('filterCatPost') }}" method="POST">
+                                                @csrf
+                                                <input name='category' type="text" class="hidden"
+                                                    value={{ $categorie->id }}>
+                                                <li><button class='btn' style='background-color:transparent !important;'><i
+                                                            class="fa fa-angle-right"></i>{{ $categorie->name }}</button>
+                                                </li>
+                                            </form>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

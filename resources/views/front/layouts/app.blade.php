@@ -35,6 +35,7 @@
 
 	<script type="text/javascript" src={{ asset("js/plugins.js")}}></script>
 	<script type="text/javascript" src={{ asset("js/custom.js")}}></script>
+	<script type="text/javascript" src={{ asset("js/perso.js")}}></script>
 	
 
 

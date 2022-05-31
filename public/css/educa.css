@@ -76,6 +76,7 @@ p {
 }
 .site-header .header-info ul {
   float: right;
+  display:flex;
   padding-bottom: 20px;
   list-style: none;
 }
@@ -185,6 +186,27 @@ p {
   letter-spacing: 2px;
   display: inline-block;
 }
+.site-header .header-info ul li:nth-last-child(2) a {
+  background-color: #a12c2f;
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+.site-header .header-info ul li button {
+  background-color: #a12c2f;
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+  display: inline-block;
+  border: none;
+}
 .site-header .main-header .logo {
   float: left;
   line-height: 130px;
@@ -237,7 +259,7 @@ nav.main-navigation ul {
 nav.main-navigation ul li {
   position: relative;
   display: inline-block;
-  padding: 25px 15px;
+  padding: 25px 15px !important;
 }
 nav.main-navigation ul li ul.sub-menu {
   text-align: left;

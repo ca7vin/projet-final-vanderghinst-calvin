@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Email;
 use App\Models\Prof;
 use App\Models\Redacteur;
 use App\Models\Role;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -28,6 +30,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
+        $email = new Email();
+        $input = $request->all(); 
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -67,8 +71,21 @@ class UserController extends Controller
             $user->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
         }
+        // mail
+        $email->email = $request->email;
+        if (Email::where('email', $request->email)->exists()) {
+            return redirect('/back/users')->with(['error' => 'This Email is already registered !']);
+        } else {
+            Mail::send('emails.newsletter', array( 
+                'email' => $input['email'], 
+            ), function($message) use ($request){ 
+                $message->to($request->email, 'Admin'); 
+                $message->from('ca7vin@gmail.com');
+            }); 
+        $email->save();
         $user->save();
         return redirect('/back/users')->with('success', 'User created successfully');
+    }
     }
 
     public function edit($id)

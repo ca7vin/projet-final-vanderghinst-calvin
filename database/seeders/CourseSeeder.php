@@ -18,6 +18,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #1',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #1',
@@ -32,6 +33,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #2',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #2',
@@ -46,6 +48,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #3',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #3',
@@ -60,6 +63,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #4',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #4',
@@ -74,6 +78,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #5',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #5',
@@ -88,6 +93,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #6',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #6',
@@ -102,6 +108,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #7',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #7',
@@ -116,6 +123,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #8',
+            'favori' => true,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #8',
@@ -130,6 +138,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #9',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #9',
@@ -144,6 +153,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #10',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #10',
@@ -158,6 +168,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #11',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #11',
@@ -172,6 +183,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #12',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #12',
@@ -186,6 +198,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #13',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #13',
@@ -200,6 +213,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #14',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #14',
@@ -214,6 +228,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #15',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #15',
@@ -228,6 +243,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #16',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #16',
@@ -242,6 +258,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #17',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #17',
@@ -256,6 +273,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #18',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #18',
@@ -270,6 +288,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #19',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #19',
@@ -284,6 +303,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #20',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #20',
@@ -299,6 +319,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #21',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #21',
@@ -313,6 +334,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #22',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #22',
@@ -327,6 +349,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #23',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #23',
@@ -341,6 +364,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #24',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #24',
@@ -355,6 +379,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #25',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #25',
@@ -369,6 +394,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #26',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #26',
@@ -383,6 +409,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #27',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #27',
@@ -397,6 +424,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #28',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #28',
@@ -411,6 +439,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #29',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #29',
@@ -425,6 +454,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #30',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #30',
@@ -439,6 +469,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #31',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #31',
@@ -453,6 +484,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #32',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #32',
@@ -467,6 +499,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #33',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #33',
@@ -481,6 +514,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #34',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #34',
@@ -495,6 +529,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #35',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #35',
@@ -509,6 +544,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #36',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #36',
@@ -523,6 +559,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #37',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #37',
@@ -537,6 +574,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #38',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #38',
@@ -551,6 +589,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #39',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #39',
@@ -565,6 +604,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             // 'prof' => 'Elias Aboutt',
             'title' => 'Cours #40',
+            'favori' => false,
             'description' => 'Banjo fanny pack mixtape austin meh portland fashion axe cardigan freegan 3 wolf moon. pop up viral letterpress next level ethical scenester trust funde chia. Chia tilde williamsburg etsy, craft beer banksy high life deep v fanny pack. Mlks Kickstarter Wes Anderson before they sold out. Health goth seitan hashtag, Thundercats McSweeney\'s quinoa Pitchfork Tumblr flannel. Gentrify flannel fanny pack retro.
             McSweeney\'s Carles squid, Wes Anderson pork belly post-ironic pop-up cardigan tattooed Marfa listiclete small Godard locavore plaid, mlkshk mumblecore viral Pinterest fingerstache four loko ugh Neutra banh mi food truck fap authentic. Whatever ennui McSweeney\'s forage salvia trust fund.',
             'discipline' => 'Discipline #40',

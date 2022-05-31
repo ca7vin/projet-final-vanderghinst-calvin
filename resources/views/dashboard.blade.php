@@ -8,7 +8,7 @@
         <div class="text">Dashboard</div>
         <h2 class="mb-3">Vous êtes connecté en tant que <strong>{{ auth()->user()->name }}</strong>
             (<em>{{ auth()->user()->role->name }})</em></h2>
-            <img class='rounded-circle mb-3' style='width:120px !important;' src="{{ asset('images/' . auth()->user()->image) }}" alt="">
+            <img class='rounded-circle mb-3' style='width:120px !important;border: solid 5px #A12C2F !important;' src="{{ asset('images/' . auth()->user()->image) }}" alt="">
         <a class='btn btn-dark' href='{{ route('message.index') }}' role='button'>Vous avez
             {{ $messages->where('to', '==', auth()->user()->email)->count() }} message(s)</a>
         @if (auth()->user()->prof)

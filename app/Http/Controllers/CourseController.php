@@ -39,6 +39,11 @@ class CourseController extends Controller
             $course->prof_id = null;
         }
         $course->title = $request->title;
+        if (Course::all()->where('favori', '==', 1)->count() >= 8) {
+            $course->favori = 0;
+        } else {
+            $course->favori = $request->favori;
+        }
         $course->description = $request->description;
         $course->discipline = $request->discipline;
         $course->price = $request->price;
@@ -91,12 +96,13 @@ class CourseController extends Controller
          'start'=> 'required',
          'duration'=> 'required',
         ]); // update_validated_anchor;
-        if (Auth::user()->role_id === 2) {
-            $course->prof_id = Auth::user()->prof->id;
-        } elseif (Auth::user()->role_id === 1) {
-            $course->prof_id = null;
-        }
+        $course->prof_id = $course->prof_id;
         $course->title = $request->title;
+        if (Course::all()->where('favori', '==', 1)->count() >= 8) {
+            $course->favori = 0;
+        } else {
+            $course->favori = $request->favori;
+        }
         $course->description = $request->description;
         $course->discipline = $request->discipline;
         $course->price = $request->price;

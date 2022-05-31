@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th class="text-uppercase" scope='col'>#</th>
+                        <th class="text-uppercase" scope='col'>favori</th>
                         <th class="text-uppercase col-1" scope='col'>image</th>
                         <th class="text-uppercase" scope='col'>prof</th>
                         <th class="text-uppercase" scope='col'>title</th>
@@ -39,6 +40,14 @@
                     @foreach ($courses as $course)
                         <tr>
                             <th scope='row'>{{ $course->id }}</th>
+                            <td>
+                                @if ($course->favori == 1)
+                                    <i style='color:rgb(250, 229, 0) !important;' class='bx bxs-star'></i>
+                                @else
+                                    <i class='bx bx-star'></i>
+                                @endif
+                                </a>
+                            </td>
                             <td>
                                 <img src="{{ asset('images/' . $course->image) }}" alt="">
                             </td>

@@ -23,6 +23,7 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
+                    <th scope='col'>name</th>
                     <th scope='col'>subject</th>
                     <th scope='col'>bio short</th>
                     <th scope='col'>bio long</th>
@@ -34,6 +35,7 @@
                 @foreach ($profs as $prof)
                     <tr>
                         <th scope='row'>{{ $prof->id }}</th>
+                        <td>{{ $prof->user->name }}</td>
                         <td>{{ $prof->subject }}</td>
                         <td>{!! (Str::words($prof->bio_short, '12')) !!}</td>
                         <td>{!! (Str::words($prof->bio_long, '12')) !!}</td>

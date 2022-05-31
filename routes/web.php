@@ -46,8 +46,8 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     $slides = Slider::all();
     $services = Service::all();
-    $popularcourses = Course::all()->random(4);
-    $popularteachers = Prof::all()->random(4);
+    $popularcourses = Course::all()->where("favori", "==", 1)->random(4);
+    $popularteachers = Prof::all();
     $lastnews = Post::all()->last()->take(2)->get();
     $categories = Categorie::all();
     $courses = Course::all();
