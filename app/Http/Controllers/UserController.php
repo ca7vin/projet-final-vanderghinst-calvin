@@ -23,6 +23,7 @@ class UserController extends Controller
 
     public function create()
     {
+        $this->authorize('create', User::class);
         $roles=Role::all();
         return view('/back/users/create', compact('roles'));
     }
@@ -98,6 +99,7 @@ class UserController extends Controller
     public function update($id, Request $request)
     {
         $user = User::find($id);
+        $this->authorize('update', $user);
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id,
@@ -136,6 +138,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $this->authorize('delete', $user);
         if ($user->id === Auth::user()->id) {
             return redirect()->route("user.index")->with('error', "You cannot delete your own account !");
         } else {

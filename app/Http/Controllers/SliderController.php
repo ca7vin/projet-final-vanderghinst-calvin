@@ -26,6 +26,7 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $slider = new Slider;
+        $this->authorize('create', Slider::class);
         $request->validate([
          'first'=> 'required',
         //  'image'=> 'required',
@@ -69,6 +70,7 @@ class SliderController extends Controller
     public function update($id, Request $request)
     {
         $slider = Slider::find($id);
+        $this->authorize('update', $slider);
         $request->validate([
          'first'=> 'required',
         //  'image'=> 'required',
@@ -102,6 +104,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::find($id);
+        $this->authorize('delete', $slider);
         $slider->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

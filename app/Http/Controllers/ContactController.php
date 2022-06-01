@@ -21,6 +21,7 @@ class ContactController extends Controller
     public function update($id, Request $request)
     {
         $contact = Contact::find($id);
+        $this->authorize('update', $contact);
         $request->validate([
          'adress'=> 'required',
          'phone'=> 'required',

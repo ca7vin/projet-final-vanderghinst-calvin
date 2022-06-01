@@ -20,6 +20,7 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         $categorie = new Categorie;
+        $this->authorize('create', Categorie::class);
         $request->validate([
          'name'=> 'required',
         ]); // store_validated_anchor;
@@ -40,6 +41,7 @@ class CategorieController extends Controller
     public function update($id, Request $request)
     {
         $categorie = Categorie::find($id);
+        $this->authorize('update', $categorie);
         $request->validate([
          'name'=> 'required',
         ]); // update_validated_anchor;
@@ -50,6 +52,7 @@ class CategorieController extends Controller
     public function destroy($id)
     {
         $categorie = Categorie::find($id);
+        $this->authorize('delete', $categorie);
         $categorie->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

@@ -18,7 +18,9 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('course.create') }}' role='button'>Create</a>
+            @can('create', App\Models\Course::class)
+                <a class='btn btn-success' href='{{ route('course.create') }}' role='button'>Create</a>
+            @endcan
             <table class='table'>
                 <thead>
                     <tr>
@@ -83,12 +85,16 @@
                             </td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('course.destroy', $course->id) }}' method='post'>
-                                        @csrf
-                                        <button class='btn btn-danger' type=submit>Delete</button>
-                                    </form>
-                                    <a class='btn btn-primary mx-3' href='{{ route('course.edit', $course->id) }}'
-                                        role='button'>Edit</a>
+                                    @can('delete', $course)
+                                        <form action='{{ route('course.destroy', $course->id) }}' method='post'>
+                                            @csrf
+                                            <button class='btn btn-danger' type=submit>Delete</button>
+                                        </form>
+                                    @endcan
+                                    @can('update', $course)
+                                        <a class='btn btn-primary mx-3' href='{{ route('course.edit', $course->id) }}'
+                                            role='button'>Edit</a>
+                                    @endcan
                                     <a class='btn btn-primary' href='{{ route('course.read', $course->id) }}'
                                         role='button'>Read</a>
                                 </div>

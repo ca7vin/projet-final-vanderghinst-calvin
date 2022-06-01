@@ -20,6 +20,7 @@ class EmailController extends Controller
     public function store(Request $request)
     {
         $email = new Email;
+        $this->authorize('create', Email::class);
         $request->validate([
          'email'=> 'required',
         ]); // store_validated_anchor;
@@ -40,6 +41,7 @@ class EmailController extends Controller
     public function update($id, Request $request)
     {
         $email = Email::find($id);
+        $this->authorize('update', $email);
         $request->validate([
          'mail'=> 'required',
         ]); // update_validated_anchor;
@@ -50,6 +52,7 @@ class EmailController extends Controller
     public function destroy($id)
     {
         $email = Email::find($id);
+        $this->authorize('delete', $email);
         $email->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

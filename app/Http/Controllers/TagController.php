@@ -20,6 +20,7 @@ class TagController extends Controller
     public function store(Request $request)
     {
         $tag = new Tag;
+        $this->authorize('create', Tag::class);
         $request->validate([
          'name'=> 'required',
         ]); // store_validated_anchor;
@@ -40,6 +41,7 @@ class TagController extends Controller
     public function update($id, Request $request)
     {
         $tag = Tag::find($id);
+        $this->authorize('update', $tag);
         $request->validate([
          'name'=> 'required',
         ]); // update_validated_anchor;
@@ -50,6 +52,7 @@ class TagController extends Controller
     public function destroy($id)
     {
         $tag = Tag::find($id);
+        $this->authorize('delete', $tag);
         $tag->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

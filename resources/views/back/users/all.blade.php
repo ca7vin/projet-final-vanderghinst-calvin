@@ -18,7 +18,9 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('user.create') }}' role='button'>Create</a>
+            @can('create', App\User::class)
+                <a class='btn btn-success' href='{{ route('user.create') }}' role='button'>Create</a>
+            @endcan
             <table class='table'>
                 <thead>
                     <tr>
@@ -35,7 +37,7 @@
                         <tr>
                             <th scope='row'>{{ $user->id }}</th>
                             <td>
-                                <img src="{{ asset('images/' . $user->image ) }}" alt="">
+                                <img src="{{ asset('images/' . $user->image) }}" alt="">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
@@ -43,18 +45,22 @@
                             <td>{{ $user->role->name }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('user.destroy', $user->id) }}' method='post'>
-                                        @csrf
-                                        <button class='btn btn-danger' type=submit>Delete</button>
-                                    </form>
+                                    @can('delete', $user)
+                                        <form action='{{ route('user.destroy', $user->id) }}' method='post'>
+                                            @csrf
+                                            <button class='btn btn-danger' type=submit>Delete</button>
+                                        </form>
+                                    @endcan
+                                    @can('update', $user)
                                     <a class='btn btn-primary mx-3' href='{{ route('user.edit', $user->id) }}'
                                         role='button'>Edit</a>
+                                    @endcan
                                     <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
                                         role='button'>Read</a>
-                                        @if ($user->role_id == 2)
+                                    @if ($user->role_id == 2)
                                         <a class='btn btn-dark mx-3' href='{{ route('prof.read', $user->prof->id) }}'
                                             role='button'>Teacher</a>
-                                        @endif
+                                    @endif
                                 </div>
                             </td>
                         </tr>

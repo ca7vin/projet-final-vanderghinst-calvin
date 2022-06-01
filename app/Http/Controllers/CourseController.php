@@ -23,6 +23,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $course = new Course;
+        $this->authorize('create', Course::class);
         $request->validate([
         //  'prof'=> 'required',
          'title'=> 'required',
@@ -88,6 +89,7 @@ class CourseController extends Controller
     public function update($id, Request $request)
     {
         $course = Course::find($id);
+        $this->authorize('update', $course);
         $request->validate([
          'title'=> 'required',
          'description'=> 'required',
@@ -137,6 +139,7 @@ class CourseController extends Controller
     public function destroy($id)
     {
         $course = Course::find($id);
+        $this->authorize('delete', $course);
         $course->categories()->detach();
         $course->delete();
         return redirect()->back()->with('message', "Successful delete !");

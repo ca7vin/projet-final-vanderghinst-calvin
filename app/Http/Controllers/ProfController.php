@@ -20,6 +20,7 @@ class ProfController extends Controller
     public function store(Request $request)
     {
         $prof = new Prof;
+        $this->authorize('create', Prof::class);
         $request->validate([
          'subject'=> 'required',
          'bio_short'=> 'required',
@@ -53,6 +54,7 @@ class ProfController extends Controller
     public function update($id, Request $request)
     {
         $prof = Prof::find($id);
+        $this->authorize('update', $prof);
         $request->validate([
          'subject'=> 'required',
          'bio_short'=> 'required',
@@ -71,6 +73,7 @@ class ProfController extends Controller
     public function destroy($id)
     {
         $prof = Prof::find($id);
+        $this->authorize('delete', $prof);
         $prof->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

@@ -185,6 +185,7 @@ Route::get('/posts/{id}/onepage', [PostController::class, 'onepage'])->name('pos
 Route::get('/back/posts/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::post('/back/posts/{id}/update', [PostController::class, 'update'])->name('post.update');
 Route::post('/back/posts/{id}/delete', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/back/posts/search', [PostController::class, 'search'])->name('search');
 // Redacteur
 Route::get('/back/redacteurs', [RedacteurController::class, 'index'])->name('redacteur.index');
 Route::get('/back/redacteurs/create', [RedacteurController::class, 'create'])->name('redacteur.create');

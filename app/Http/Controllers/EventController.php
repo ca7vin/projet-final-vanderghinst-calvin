@@ -29,6 +29,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $event = new Event;
+        $this->authorize('create', Event::class);
         $emails = Email::all();
         $request->validate([
          'start_time'=> 'required',
@@ -103,6 +104,7 @@ class EventController extends Controller
     public function update($id, Request $request)
     {
         $event = Event::find($id);
+        $this->authorize('update', $event);
         $request->validate([
          'start_time'=> 'required',
          'end_time'=> 'required',
@@ -159,6 +161,7 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
+        $this->authorize('delete', $event);
         $event->categories()->detach();
         $event->delete();
         return redirect()->back()->with('message', "Successful delete !");

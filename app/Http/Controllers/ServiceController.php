@@ -23,6 +23,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $service = new Service;
+        $this->authorize('create', Service::class);
         $request->validate([
          'icon'=> 'required',
          'title'=> 'required',
@@ -48,6 +49,7 @@ class ServiceController extends Controller
     public function update($id, Request $request)
     {
         $service = Service::find($id);
+        $this->authorize('update', $service);
         $request->validate([
          'icon'=> 'required',
          'title'=> 'required',
@@ -62,6 +64,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::find($id);
+        $this->authorize('delete', $service);
         $service->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }

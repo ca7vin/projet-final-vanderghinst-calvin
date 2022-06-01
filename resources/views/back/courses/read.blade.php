@@ -21,7 +21,7 @@
             <tbody>
                 <tr>
                     <th scope='row'>{{ $course->id }}</th>
-                    <td>{{ $course->prof }}</td>
+                    <td>{{ $course->prof->user->name }}</td>
                     <td>{{ $course->title }}</td>
                     <td>{{ $course->description }}</td>
                     <td>{{ $course->discipline }}</td>

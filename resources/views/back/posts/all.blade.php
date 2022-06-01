@@ -18,7 +18,9 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('post.create') }}' role='button'>Create</a>
+            @can('create', App\Models\Post::class)
+                <a class='btn btn-success' href='{{ route('post.create') }}' role='button'>Create</a>
+            @endcan
             <table class='table'>
                 <thead>
                     <tr>
@@ -48,14 +50,14 @@
                                 @endif
                             </td>
                             <td>
-                            @if ($post->redacteur)
-                            {{ $post->redacteur->user->name }}
-                            @else
-                            Administrateur
-                            @endif
+                                @if ($post->redacteur)
+                                    {{ $post->redacteur->user->name }}
+                                @else
+                                    Administrateur
+                                @endif
                             </td>
                             <td>{{ $post->title }}</td>
-                            <td>{!! (Str::words($post->text, '12')) !!}</td>
+                            <td>{!! Str::words($post->text, '12') !!}</td>
                             <td>{{ $post->quote }}</td>
                             <td>
                                 <ul>
@@ -73,12 +75,16 @@
                             </td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('post.destroy', $post->id) }}' method='post'>
-                                        @csrf
-                                        <button class="btn btn-danger" type=submit>Delete</button>
-                                    </form>
-                                    <a class='btn btn-primary mx-3' href='{{ route('post.edit', $post->id) }}'
-                                        role='button'>Edit</a>
+                                    @can('delete', $post)
+                                        <form action='{{ route('post.destroy', $post->id) }}' method='post'>
+                                            @csrf
+                                            <button class="btn btn-danger" type=submit>Delete</button>
+                                        </form>
+                                    @endcan
+                                    @can('update', $post)
+                                        <a class='btn btn-primary mx-3' href='{{ route('post.edit', $post->id) }}'
+                                            role='button'>Edit</a>
+                                    @endcan
                                     <a class='btn btn-primary' href='{{ route('post.read', $post->id) }}'
                                         role='button'>Read</a>
                                 </div>

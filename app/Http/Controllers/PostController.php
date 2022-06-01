@@ -25,6 +25,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post;
+        $this->authorize('create', Post::class);
         $request->validate([
          'title'=> 'required',
          'text'=> 'required',
@@ -75,6 +76,7 @@ class PostController extends Controller
     public function update($id, Request $request)
     {
         $post = Post::find($id);
+        $this->authorize('update', $post);
         $request->validate([
          'title'=> 'required',
          'text'=> 'required',
@@ -108,9 +110,26 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        $this->authorize('delete', $post);
         $post->categories()->detach();
         $post->tags()->detach();
         $post->delete();
         return redirect()->back()->with('message', "Successful delete !");
+    }
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search in the title and body columns from the posts table
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        $news = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('text', 'LIKE', "%{$search}%")
+            ->get();
+    
+        // Return the search view with the resluts compacted
+        return view('front/pages/search', compact('news', 'categories', 'tags'));
     }
 }

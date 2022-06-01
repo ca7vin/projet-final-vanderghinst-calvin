@@ -18,7 +18,9 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('slider.create') }}' role='button'>Create</a>
+            @can('create', App\Slider::class)
+                <a class='btn btn-success' href='{{ route('slider.create') }}' role='button'>Create</a>
+            @endcan
             <table class='table'>
                 <thead>
                     <tr>
@@ -53,12 +55,16 @@
                             <td>{{ $slider->btnlink }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
-                                        @csrf
-                                        <button class='btn btn-danger' type=submit>Delete</button>
-                                    </form>
-                                    <a class='btn btn-primary mx-3' href='{{ route('slider.edit', $slider->id) }}'
-                                        role='button'>Edit</a>
+                                    @can('delete', $slider)
+                                        <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
+                                            @csrf
+                                            <button class='btn btn-danger' type=submit>Delete</button>
+                                        </form>
+                                    @endcan
+                                    @can('delete', $slider)
+                                        <a class='btn btn-primary mx-3' href='{{ route('slider.edit', $slider->id) }}'
+                                            role='button'>Edit</a>
+                                    @endcan
                                     <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
                                         role='button'>Read</a>
                                 </div>
