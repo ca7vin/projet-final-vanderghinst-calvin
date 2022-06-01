@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Icon;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ServiceController extends Controller
 {
@@ -17,6 +18,9 @@ class ServiceController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-service')) {
+            abort(403);
+        }
         $icons = Icon::all();
         return view("/back/services/create", compact("icons"));
     }
@@ -43,6 +47,9 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $service = Service::find($id);
+        if (! Gate::allows('update-service')) {
+            abort(403);
+        }
         $icons = Icon::all();
         return view("/back/services/edit",compact("service", "icons"));
     }

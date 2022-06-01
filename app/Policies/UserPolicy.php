@@ -51,9 +51,15 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, User $model)
+    public function update(User $user)
     {
-        return $user->role_id === 1 || $user->id === $model->id;
+        if ($user->role_id === 1) {
+            return true;
+        } else if ($user->id === $model->id) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -63,7 +69,7 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, User $model)
+    public function delete(User $user)
     {
         return $user->role_id === 1;
     }

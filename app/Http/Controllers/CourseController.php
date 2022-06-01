@@ -6,6 +6,7 @@ use App\Models\Categorie;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CourseController extends Controller
 {
@@ -18,6 +19,9 @@ class CourseController extends Controller
     public function create()
     {
         $categories = Categorie::all();
+        if (! Gate::allows('create-course')) {
+            abort(403);
+        }
         return view("/back/courses/create",compact("categories"));
     }
     public function store(Request $request)
@@ -84,6 +88,9 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
         $categories = Categorie::all();
+        if (! Gate::allows('update-course')) {
+            abort(403);
+        }
         return view("/back/courses/edit",compact("course", "categories"));
     }
     public function update($id, Request $request)

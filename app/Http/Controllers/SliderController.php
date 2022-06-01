@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
 
 class SliderController extends Controller
 {
@@ -21,6 +22,9 @@ class SliderController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-slider')) {
+            abort(403);
+        }
         return view("/back/sliders/create");
     }
     public function store(Request $request)
@@ -65,6 +69,9 @@ class SliderController extends Controller
     public function edit($id)
     {
         $slider = Slider::find($id);
+        if (! Gate::allows('update-slider')) {
+            abort(403);
+        }
         return view("/back/sliders/edit",compact("slider"));
     }
     public function update($id, Request $request)

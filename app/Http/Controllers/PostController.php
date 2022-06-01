@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -18,6 +19,9 @@ class PostController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-post')) {
+            abort(403);
+        }
         $categories = Categorie::all();
         $tags = Tag::all();
         return view("/back/posts/create", compact("categories","tags"));
@@ -69,6 +73,9 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+        if (! Gate::allows('update-post')) {
+            abort(403);
+        }
         $categories = Categorie::all();
         $tags = Tag::all();
         return view("/back/posts/edit",compact("post", "categories", "tags"));

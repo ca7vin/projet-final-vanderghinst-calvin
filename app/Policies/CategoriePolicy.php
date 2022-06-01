@@ -51,7 +51,7 @@ class CategoriePolicy
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Categorie $categorie)
+    public function update(User $user)
     {
                 return $user->role_id === 1;
     }
@@ -63,7 +63,7 @@ class CategoriePolicy
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Categorie $categorie)
+    public function delete(User $user)
     {
                 return $user->role_id === 1;
     }

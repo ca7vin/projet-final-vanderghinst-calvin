@@ -51,7 +51,7 @@ class ContactPolicy
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Contact $contact)
+    public function update(User $user)
     {
         return $user->role_id === 1;
     }
@@ -63,7 +63,7 @@ class ContactPolicy
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Contact $contact)
+    public function delete(User $user)
     {
         return $user->role_id === 1;
     }

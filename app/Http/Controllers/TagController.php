@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class TagController extends Controller
 {
@@ -15,6 +16,9 @@ class TagController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-tag')) {
+            abort(403);
+        }
         return view("/back/tags/create");
     }
     public function store(Request $request)
@@ -36,6 +40,9 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::find($id);
+        if (! Gate::allows('update-tag')) {
+            abort(403);
+        }
         return view("/back/tags/edit",compact("tag"));
     }
     public function update($id, Request $request)

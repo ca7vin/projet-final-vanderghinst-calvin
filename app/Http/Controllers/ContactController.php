@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ContactController extends Controller
 {
@@ -16,6 +17,9 @@ class ContactController extends Controller
     public function edit($id)
     {
         $contact = Contact::find($id);
+        if (! Gate::allows('update-contact')) {
+            abort(403);
+        }
         return view("/back/contacts/edit",compact("contact"));
     }
     public function update($id, Request $request)

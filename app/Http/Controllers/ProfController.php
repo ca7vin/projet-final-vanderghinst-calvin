@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Prof;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ProfController extends Controller
 {
@@ -15,6 +16,9 @@ class ProfController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-prof')) {
+            abort(403);
+        }
         return view("/back/profs/create");
     }
     public function store(Request $request)
@@ -49,6 +53,9 @@ class ProfController extends Controller
     public function edit($id)
     {
         $prof = Prof::find($id);
+        if (! Gate::allows('update-prof')) {
+            abort(403);
+        }
         return view("/back/profs/edit",compact("prof"));
     }
     public function update($id, Request $request)

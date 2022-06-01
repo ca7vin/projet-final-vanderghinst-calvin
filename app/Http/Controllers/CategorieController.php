@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CategorieController extends Controller
 {
@@ -15,6 +16,9 @@ class CategorieController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-categorie')) {
+            abort(403);
+        }
         return view("/back/categories/create");
     }
     public function store(Request $request)
@@ -36,6 +40,9 @@ class CategorieController extends Controller
     public function edit($id)
     {
         $categorie = Categorie::find($id);
+        if (! Gate::allows('update-categorie')) {
+            abort(403);
+        }
         return view("/back/categories/edit",compact("categorie"));
     }
     public function update($id, Request $request)

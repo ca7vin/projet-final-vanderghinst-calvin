@@ -51,7 +51,7 @@ class EmailPolicy
      * @param  \App\Models\Email  $email
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Email $email)
+    public function update(User $user)
     {
         return $user->role_id === 1;
     }
@@ -63,7 +63,7 @@ class EmailPolicy
      * @param  \App\Models\Email  $email
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Email $email)
+    public function delete(User $user)
     {
         return $user->role_id === 1;
     }

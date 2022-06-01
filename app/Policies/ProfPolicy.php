@@ -52,7 +52,7 @@ class ProfPolicy
      * @param  \App\Models\Prof  $prof
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Prof $prof)
+    public function update(User $user)
     {
         if (Auth::user()->role_id === 1) {
             return $user->role_id === 1;

@@ -7,6 +7,7 @@ use App\Models\Email;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
@@ -23,6 +24,9 @@ class EventController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-event')) {
+            abort(403);
+        }
         $categories = Categorie::all();
         return view("/back/events/create", compact("categories"));
     }
@@ -98,6 +102,9 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
+        if (! Gate::allows('update-event')) {
+            abort(403);
+        }
         $categories = Categorie::all();
         return view("/back/events/edit",compact("event", "categories"));
     }

@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -23,7 +24,9 @@ class UserController extends Controller
 
     public function create()
     {
-        $this->authorize('create', User::class);
+        if (! Gate::allows('create-user')) {
+            abort(403);
+        }
         $roles=Role::all();
         return view('/back/users/create', compact('roles'));
     }
@@ -31,6 +34,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
+        $this->authorize('create', User::class);
         $email = new Email();
         $input = $request->all(); 
         $request->validate([
@@ -93,6 +97,9 @@ class UserController extends Controller
     {
         $roles=Role::all();
         $user = User::find($id);
+        if (! Gate::allows('update-user')) {
+            abort(403);
+        }
         return view("/back/users/edit", compact('user', 'roles'));
     }
 

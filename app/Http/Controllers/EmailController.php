@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Email;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class EmailController extends Controller
 {
@@ -15,6 +16,9 @@ class EmailController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-email')) {
+            abort(403);
+        }
         return view("/back/emails/create");
     }
     public function store(Request $request)
@@ -36,6 +40,9 @@ class EmailController extends Controller
     public function edit($id)
     {
         $email = Email::find($id);
+        if (! Gate::allows('update-email')) {
+            abort(403);
+        }
         return view("/back/emails/edit",compact("email"));
     }
     public function update($id, Request $request)
