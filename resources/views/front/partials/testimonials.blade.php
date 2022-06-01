@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        @foreach ($lastnews as $lastnew)
+                        @foreach ($lastnews->where('status', "==", true) as $lastnew)
                             <div class="news-item">
                                 <a href="{{ Route('post.onepage', $lastnew->id) }}"><img width='175px' height="130px" src="{{ asset('images/' . $lastnew->image) }}" alt=""></a>
                                 <ul>

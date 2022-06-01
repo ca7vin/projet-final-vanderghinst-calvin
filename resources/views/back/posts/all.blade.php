@@ -24,6 +24,7 @@
                     <tr>
                         <th class='text-uppercase' scope='col'>#</th>
                         <th class='text-uppercase col-1' scope='col'>Image</th>
+                        <th class='text-uppercase' scope='col'>Status</th>
                         <th class='text-uppercase' scope='col'>Writer</th>
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase' scope='col'>text</th>
@@ -38,6 +39,13 @@
                             <th scope='row'>{{ $post->id }}</th>
                             <td>
                                 <img src="{{ asset('images/' . $post->image) }}" alt="">
+                            </td>
+                            <td>
+                                @if ($post->status == 1)
+                                    <span class='text-success'>Accepted</span>
+                                @else
+                                    <span class='text-danger'>Pending</span>
+                                @endif
                             </td>
                             <td>
                             @if ($post->redacteur)

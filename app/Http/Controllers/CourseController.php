@@ -122,6 +122,7 @@ class CourseController extends Controller
             $course->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
         }
+        // course status if admin
         if (Auth::user()->role_id === 2) {
             $course->status = $course->status;
         } else if (Auth::user()->role_id === 1) {

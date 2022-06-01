@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Email;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $event = new Event;
-        $users = User::all();
+        $emails = Email::all();
         $request->validate([
          'start_time'=> 'required',
          'end_time'=> 'required',
@@ -70,11 +71,11 @@ class EventController extends Controller
         $event->location = $request->location;
         $event->date = $request->date;
         $event->save(); // store_anchor
-        foreach ($users as $user) {
+        foreach ($emails as $email) {
             Mail::send('emails.event', array( 
-                'email' => $user->email, 
-            ), function($message) use ($user){ 
-                $message->to($user->email, 'Admin'); 
+                'email' => $email->email, 
+            ), function($message) use ($email){ 
+                $message->to($email->email, 'Admin'); 
                 $message->from('ca7vin@gmail.com');
             });
         }

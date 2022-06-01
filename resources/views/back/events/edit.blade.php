@@ -43,7 +43,7 @@
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>description</label>
                             <textarea rows="10" type='text' name='description'
-                                style='width:227.6px;'> value="{{ $event->description }}"</textarea>
+                                style='width:227.6px;'>{{ $event->description }}</textarea>
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>phone</label>

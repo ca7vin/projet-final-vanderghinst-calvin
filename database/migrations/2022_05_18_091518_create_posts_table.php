@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->boolean('status')->default(false);
             $table->string('title');
             $table->text('text');
             $table->text('quote');

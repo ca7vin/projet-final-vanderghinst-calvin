@@ -45,6 +45,7 @@ class PostController extends Controller
         } elseif (Auth::user()->role_id === 1) {
             $post->redacteur_id = null;
         }
+        $post->status = false;
         $post->save(); // store_anchor
         $post->categories()->attach($request->categories, [
             'post_id' => $post->id,
@@ -89,6 +90,12 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->text = $request->text;
         $post->quote = $request->quote;
+        // post status if admin
+        if (Auth::user()->role_id === 2) {
+            $post->status = $post->status;
+        } else if (Auth::user()->role_id === 1) {
+            $post->status = $request->status;
+        }
         $post->save(); // update_anchor
         $post->categories()->sync($request->categories, [
             'post_id' => $post->id,

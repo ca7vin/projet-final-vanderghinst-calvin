@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="classic-posts">
-                    @foreach ($news as $new)
+                    @foreach ($news->where('status', "==", true) as $new)
                         <div class="classic-item">
                             <a href="{{ Route('post.onepage', $new->id) }}"><img height='410px' width='770px'
                                     src="{{ asset('images/' . $new->image) }}" alt=""></a>

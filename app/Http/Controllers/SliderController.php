@@ -12,6 +12,11 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::all();
+        foreach ($sliders as $slide) {
+            $slide->title = str_replace("//", "<br>", $slide->title);
+            $slide->text = str_replace("//", "<br>", $slide->text);
+            
+        } 
         return view("/back/sliders/all",compact("sliders"));
     }
     public function create()

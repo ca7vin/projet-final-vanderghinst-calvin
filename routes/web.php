@@ -47,6 +47,11 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $slides = Slider::all();
+    foreach ($slides as $slide) {
+        $slide->title = str_replace("//", "<br>", $slide->title);
+        $slide->text = str_replace("//", "<br>", $slide->text);
+        
+    } 
     $services = Service::all();
     $popularcourses = Course::all()->where("favori", "==", 1)->random(4);
     $popularteachers = Prof::all();

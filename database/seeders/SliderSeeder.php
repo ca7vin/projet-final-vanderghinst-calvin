@@ -18,8 +18,8 @@ class SliderSeeder extends Seeder
         DB::table('sliders')->insert([
             'first' => true,
             'image' => 'wallpapercontact.jpg',
-            'title' => 'Are you ready to study ?<br>We have the',
-            'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',
+            'title' => 'Are you ready to study ? // We have the',
+            'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod // ornare. Nam congue nisi purus, sed luctus risus.',
             'textorange' => 'Solution',
             'btntext' => 'Buy now',
             'btnlink' => '#',
@@ -27,8 +27,8 @@ class SliderSeeder extends Seeder
         DB::table('sliders')->insert([
             'first' => false,
             'image' => 'wallpaperevents.jpg',
-            'title' => 'Next year more intresting!<br>Check next',
-            'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod<br>ornare. Nam congue nisi purus, sed luctus risus.',
+            'title' => 'Next year more intresting! // Check next',
+            'text' => 'Nunc eget tempor neque. Aenean non ex sed nibh euismod // ornare. Nam congue nisi purus, sed luctus risus.',
             'textorange' => 'Features',
             'btntext' => 'Buy now',
             'btnlink' => '#',

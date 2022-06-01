@@ -13,8 +13,29 @@
                     </ul>
                 </div>
             @endif
-            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('post.store') }}'
-                method='post' style='background-color:#A12C2F'> @csrf
+            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('post.update', $post->id) }}'
+                method='post' style='background-color:#A12C2F'>
+                @csrf
+                @if (auth()->user()->role->name == 'Administrateur')
+                    <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
+                        <label class='text-uppercase text-white mb-2 text-center' for=''>Status ?</label>
+                        <div class="d-flex align-items-center justify-content-around mb-3 px-5">
+                            <div class="form-check">
+                                <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault">
+                                <label class="form-check-label text-white" for="flexCheckDefault">
+                                    Accepted
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input name='status' class="form-check-input" type="radio" value=0 id="flexCheckChecked"
+                                    checked>
+                                <label class="form-check-label text-white" for="flexCheckChecked">
+                                    Pending
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-6 d-flex flex-column align-items-center justify-content-center">
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
@@ -23,7 +44,8 @@
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class='text-uppercase mb-2 text-white' for=''>text</label>
-                            <textarea style='width:227.6px;' class='form-control' cols="25" rows="10" type='text' name='text'>{{ $post->text }}</textarea>
+                            <textarea style='width:227.6px;' class='form-control' cols="25" rows="10" type='text'
+                                name='text'>{{ $post->text }}</textarea>
 
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
@@ -52,22 +74,21 @@
                         @endforeach
                         <label class='text-uppercase mb-2 text-white mt-5' for=''>tags</label>
                         @foreach ($tags as $tag)
-                        <div class='form-check'>
-                            @if ($post->tags->contains($tag))
-                                <input class='form-check-input' type='checkbox' name='tags[]'
-                                    value="{{ $tag->id }}" checked>
-                            @else
-                                <input class='form-check-input' type='checkbox' name='tags[]'
-                                    value="{{ $tag->id }}">
-                            @endif
-                            <label class='text-white'
-                                for='checkbox{{ $tag->id }}'>{{ $tag->name }}</label>
-                        </div>
+                            <div class='form-check'>
+                                @if ($post->tags->contains($tag))
+                                    <input class='form-check-input' type='checkbox' name='tags[]'
+                                        value="{{ $tag->id }}" checked>
+                                @else
+                                    <input class='form-check-input' type='checkbox' name='tags[]'
+                                        value="{{ $tag->id }}">
+                                @endif
+                                <label class='text-white' for='checkbox{{ $tag->id }}'>{{ $tag->name }}</label>
+                            </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="row mx-5">
-                    <button class='btn btn-dark mt-3 mb-2' type='submit'>Create</button> {{-- create_blade_anchor --}}
+                    <button class='btn btn-dark mt-3 mb-2' type='submit'>Update</button> {{-- create_blade_anchor --}}
                 </div>
             </form>
         </div>

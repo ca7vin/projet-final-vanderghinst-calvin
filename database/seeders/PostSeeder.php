@@ -17,6 +17,7 @@ class PostSeeder extends Seeder
     {
         DB::table('posts')->insert([
             'title' => 'Post #1',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -25,6 +26,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #2',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -33,6 +35,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #3',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -41,6 +44,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #4',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -49,6 +53,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #5',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -57,6 +62,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #6',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -65,6 +71,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #7',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
@@ -73,6 +80,7 @@ class PostSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             'title' => 'Post #8',
+            'status' => true,
             'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur architecto sunt ipsa accusamus et sed nisi assumenda eius molestiae non inventore quisquam unde, facere accusantium dolore sit sapiente dolorem. Culpa, voluptatem at odio fugit eum ullam cumque amet corrupti iste? Qui vel officia repellendus beatae eligendi ad quis.',
             'quote' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'image' => 'newImg.jpg',
