@@ -69,7 +69,7 @@ class SliderController extends Controller
     public function edit($id)
     {
         $slider = Slider::find($id);
-        if (! Gate::allows('update-slider')) {
+        if (! Gate::allows('update-slider', $slider)) {
             abort(403);
         }
         return view("/back/sliders/edit",compact("slider"));

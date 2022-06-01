@@ -28,7 +28,7 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, User $model)
+    public function view(User $user)
     {
         //
     }
@@ -51,13 +51,15 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, User $model)
+
     {
         if ($user->role_id === 1) {
             return true;
         } else if ($user->id === $model->id) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }

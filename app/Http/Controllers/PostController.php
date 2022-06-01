@@ -73,7 +73,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        if (! Gate::allows('update-post')) {
+        if (! Gate::allows('update-post', $post)) {
             abort(403);
         }
         $categories = Categorie::all();

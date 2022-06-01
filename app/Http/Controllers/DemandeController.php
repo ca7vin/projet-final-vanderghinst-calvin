@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Demande;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class DemandeController extends Controller
 {
@@ -58,6 +61,12 @@ class DemandeController extends Controller
         $demande->date = $request->date;
         $demande->status = true;
         $demande->save(); // update_anchor
+            // Mail::send('emails.rdv', array( 
+            //     'email' => $user->email, 
+            // ), function($message) use ($user){ 
+            //     $message->to($user->email, 'Admin'); 
+            //     $message->from(Auth::user()->email);
+            // });
         return redirect()->route("demande.index")->with('message', "Successful update !");
     }
     public function destroy($id)

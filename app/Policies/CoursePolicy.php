@@ -53,12 +53,15 @@ class CoursePolicy
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, Course $course)
+
     {
-        if (Auth::user()->role_id === 1) {
-            return $user->role_id === 1;
-        } elseif (Auth::user()->role_id === 2) {
-            return $user->role_id === 2 && $user->prof->id === $course->prof_id;
+        if ($user->role_id === 1) {
+            return true;
+        } else if ($user->role_id === 2 && $user->prof->id === $course->prof_id) {
+            return true;
+        } else {
+            return false;
         }
         
     }

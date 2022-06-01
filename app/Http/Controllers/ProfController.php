@@ -53,7 +53,7 @@ class ProfController extends Controller
     public function edit($id)
     {
         $prof = Prof::find($id);
-        if (! Gate::allows('update-prof')) {
+        if (! Gate::allows('update-prof', $prof)) {
             abort(403);
         }
         return view("/back/profs/edit",compact("prof"));

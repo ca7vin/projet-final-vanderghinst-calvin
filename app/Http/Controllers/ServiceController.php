@@ -47,7 +47,7 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $service = Service::find($id);
-        if (! Gate::allows('update-service')) {
+        if (! Gate::allows('update-service', $service)) {
             abort(403);
         }
         $icons = Icon::all();

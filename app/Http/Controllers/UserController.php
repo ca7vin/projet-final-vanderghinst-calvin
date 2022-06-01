@@ -97,7 +97,7 @@ class UserController extends Controller
     {
         $roles=Role::all();
         $user = User::find($id);
-        if (! Gate::allows('update-user')) {
+        if (! Gate::allows('update-user', $user)) {
             abort(403);
         }
         return view("/back/users/edit", compact('user', 'roles'));

@@ -40,7 +40,7 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::find($id);
-        if (! Gate::allows('update-tag')) {
+        if (! Gate::allows('update-tag', $tag)) {
             abort(403);
         }
         return view("/back/tags/edit",compact("tag"));

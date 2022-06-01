@@ -102,7 +102,7 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
-        if (! Gate::allows('update-event')) {
+        if (! Gate::allows('update-event', $event)) {
             abort(403);
         }
         $categories = Categorie::all();

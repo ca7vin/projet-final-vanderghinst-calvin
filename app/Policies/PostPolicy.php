@@ -53,7 +53,7 @@ class PostPolicy
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, Post $post)
     {
         if (Auth::user()->role_id === 1) {
             return $user->role_id === 1;

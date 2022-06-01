@@ -88,7 +88,7 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
         $categories = Categorie::all();
-        if (! Gate::allows('update-course')) {
+        if (! Gate::allows('update-course', $course)) {
             abort(403);
         }
         return view("/back/courses/edit",compact("course", "categories"));

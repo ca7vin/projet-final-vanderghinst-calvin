@@ -40,7 +40,7 @@ class CategorieController extends Controller
     public function edit($id)
     {
         $categorie = Categorie::find($id);
-        if (! Gate::allows('update-categorie')) {
+        if (! Gate::allows('update-categorie', $categorie)) {
             abort(403);
         }
         return view("/back/categories/edit",compact("categorie"));
