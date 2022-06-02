@@ -128,6 +128,10 @@ class UserController extends Controller
         // default image
         if ($request->image === null) {
             $user->image = $user->image;
+        } else if ($user->image != "default.jpg") {
+            File::delete("images/". $user->image);
+            $user->image = $request->image->hashName();
+            $request->file('image')->storePublicly('images', 'public');
         } else {
             $user->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
@@ -151,7 +155,9 @@ class UserController extends Controller
         } else {
             $user->delete();
             $destination = "img/" . $user ->image;
-            if (File::exists($destination)) 
+            if (File::exists($destination) && $user->image != "default.jpg") {
+                File::delete($destination);
+            }
             {
                 File::delete($destination);
             }
