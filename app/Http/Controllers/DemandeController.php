@@ -64,6 +64,9 @@ class DemandeController extends Controller
         $user_mail = User::select('email')->where('name', $demande->from)->first();
             Mail::send('emails.rdv', array( 
                 'email' => $user_mail->email, 
+                'from' => $demande->from,
+                'status' => $demande->status,
+                'date' => $demande->date,
             ), function($message) use ($user_mail){ 
                 $message->to($user_mail->email, 'Admin'); 
                 $message->from(Auth::user()->email);

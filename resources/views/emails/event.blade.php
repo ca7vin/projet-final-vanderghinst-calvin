@@ -107,7 +107,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       
 <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #e6d3d3;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-  <div style="background-color: #e6d3d3;width: 100% !important;">
+  <div style="background-color: #ffffff;width: 100% !important;">
   <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
   
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -119,7 +119,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="{{ asset('images/logo.png') }}" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 27%;max-width: 162px;" width="162" class="v-src-width v-src-max-width"/>
+      <img align="center" border="0" src="https://puriwp.com/cocotemplates/html/educa/assets/images/logo.png" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 27%;max-width: 162px;" width="162" class="v-src-width v-src-max-width"/>
       
     </td>
   </tr>
@@ -139,7 +139,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="{{ asset('images/event1.jpg') }}" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 88%;max-width: 528px;" width="528" class="v-src-width v-src-max-width"/>
+      {{-- <img align="center" border="0" src="{{ asset('images/event1.jpg') }}" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 88%;max-width: 528px;" width="528" class="v-src-width v-src-max-width"/> --}}
       
     </td>
   </tr>
@@ -177,7 +177,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <h1 class="v-font-size" style="margin: 0px; color: #df2e13; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 35px;">
-    <strong>&nbsp;WE HAVE</strong>
+    <strong>&nbsp;NEW EVENT</strong>
   </h1>
 
       </td>
@@ -191,7 +191,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <h1 class="v-font-size" style="margin: 0px; color: #387142; line-height: 130%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 35px;">
-    <strong>A NEW EVENT</strong>
+    <strong>{{ $title }}</strong>
   </h1>
 
       </td>
@@ -205,7 +205,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 35px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <div style="line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Montserrat, sans-serif; font-size: 14px; line-height: 19.6px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit quod sequi perspiciatis doloremque nobis, expedita dicta tenetur aspernatur, ut nulla, nostrum recusandae dolores. Maiores a modi quas aliquid repellat accusantium recusandae nulla unde? Distinctio, tenetur quisquam placeat quos facere aut pariatur incidunt quia dolorem ab veniam. Rem, at ab..</span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Montserrat, sans-serif; font-size: 14px; line-height: 19.6px;">{{ $description }}</span></p>
   </div>
 
       </td>
@@ -260,7 +260,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <h1 class="v-font-size" style="margin: 0px; color: #000000; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 35px;">
-    <strong>19th june 20xx</strong>
+    <strong>{{ $date }}</strong>
   </h1>
 
       </td>
@@ -274,7 +274,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:1px 80px 10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <div style="line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Montserrat, sans-serif; font-size: 14px; line-height: 19.6px;">&nbsp;2261 Market Street #4667 San Francisco, CA 94114</span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Montserrat, sans-serif; font-size: 14px; line-height: 19.6px;">&nbsp;{{ $location }}</span></p>
   </div>
 
       </td>
@@ -288,7 +288,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <h1 class="v-font-size" style="margin: 0px; color: #000000; line-height: 100%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 25px;">
-    14:00 - 19:00
+    {{ $start_time }} - {{ $end_time }}
   </h1>
 
       </td>
@@ -348,7 +348,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
         <a href="https://email.com/" title="Email" target="_blank">
-          <img src="images/image-1.png" alt="Email" title="Email" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+          {{-- <img src="images/image-1.png" alt="Email" title="Email" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> --}}
         </a>
       </td></tr>
     </tbody></table>
@@ -370,7 +370,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         
   <div style="line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;">This is a new Text block. Change the text.</p>
+    <p style="font-size: 14px; line-height: 140%;">{{ $email2 }}</p>
   </div>
 
       </td>

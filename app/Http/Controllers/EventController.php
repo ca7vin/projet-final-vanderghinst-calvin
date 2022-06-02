@@ -53,20 +53,20 @@ class EventController extends Controller
         $event->location = $request->location;
         $event->user_id = auth()->user()->id;
         // default image
-        if ($request->image1 === null) {
-            $event->image1 = "event1.jpeg";
+        if ($request->image1 == null) {
+            $event->image1 = "event1.jpg";
         } else {
             $event->image1 = $request->image1->hashName();;
             $request->file('image1')->storePublicly('images', 'public');
         }
-        if ($request->image2 === null) {
-            $event->image2 = "event2.jpeg";
+        if ($request->image2 == null) {
+            $event->image2 = "event2.jpg";
         } else {
             $event->image2 = $request->image2->hashName();;
             $request->file('image2')->storePublicly('images', 'public');
         }
-        if ($request->image3 === null) {
-            $event->image3 = "event3.jpeg";
+        if ($request->image3 == null) {
+            $event->image3 = "event3.jpg";
         } else {
             $event->image3 = $request->image3->hashName();;
             $request->file('image3')->storePublicly('images', 'public');
@@ -79,6 +79,14 @@ class EventController extends Controller
         foreach ($emails as $email) {
             Mail::send('emails.event', array( 
                 'email' => $email->email, 
+                'title' => $event->title,
+                'description' => $event->description,
+                'date' => $event->date,
+                'location' => $event->location,
+                'start_time' => $event->start_time,
+                'end_time' => $event->end_time,
+                'phone' => $event->phone,
+                'email2' => $event->email,
             ), function($message) use ($email){ 
                 $message->to($email->email, 'Admin'); 
                 $message->from('ca7vin@gmail.com');
