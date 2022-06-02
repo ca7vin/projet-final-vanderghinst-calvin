@@ -1,6 +1,7 @@
 @extends('front/layouts/app')
 @section('content')
     @include('front/partials/header')
+    @include('front/partials/news/heading')
 
     <section class="classic-news">
         <div class="container">

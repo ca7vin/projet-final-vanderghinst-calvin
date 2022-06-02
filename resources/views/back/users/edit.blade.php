@@ -28,7 +28,7 @@
                         </div>
                         <div class="d-flex flex-column align-items-start justify-content-center mb-3">
                             <label class="text-uppercase text-white mb-2" for=''>password</label>
-                            <input type='password' name='password' value="{{ $user->name }}">
+                            <input type='password' name='password' value="{{ $user->password }}">
                         </div>
                     </div>
                     <div class="col-6 d-flex flex-column align-items-center justify-content-center">

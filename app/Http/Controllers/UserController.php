@@ -114,7 +114,7 @@ class UserController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        if ($user->password == $request->password) {
+        if ($user->password === $request->password) {
             $user->password = $user->password;
         } else {
             $user->password = Hash::make($request->password);
@@ -128,11 +128,10 @@ class UserController extends Controller
         // default image
         if ($request->image === null) {
             $user->image = $user->image;
-        } else if ($user->image != "default.jpg") {
-            File::delete("images/". $user->image);
-            $user->image = $request->image->hashName();
-            $request->file('image')->storePublicly('images', 'public');
         } else {
+            if ($user->image != "default.jpg") {
+                File::delete("images/". $user->image);
+            }
             $user->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
         }

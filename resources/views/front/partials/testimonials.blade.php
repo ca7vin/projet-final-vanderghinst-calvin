@@ -45,7 +45,11 @@
                                 <a href="{{ Route('post.onepage', $lastnew->id) }}"><img width='175px' height="130px" src="{{ asset('images/' . $lastnew->image) }}" alt=""></a>
                                 <ul>
                                     <li>Posted : <em>{{ $lastnew->created_at->translatedFormat('d F Y') }}</em> </li>
-                                    <li>By <em>{{ $lastnew->redacteur->user->name }}</em></li>
+                                    @if ($lastnew->prof)
+                                        <li>By : <em>{{ $lastnew->prof->user->name }}</em></li>
+                                    @else
+                                        <li>By : <em>Admin</em></li>
+                                    @endif
                                     <li>2 Comments</li>
                                 </ul>
                                 <a href="{{ Route('post.onepage', $lastnew->id) }}">
