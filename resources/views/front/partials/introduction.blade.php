@@ -46,11 +46,11 @@
                                                 {{ session()->get('error') }}
                                             </div>
                                         @endif
-                                        <input type="text" name="from" placeholder="Full Name"
+                                        <input style='margin-bottom: 10px !important;' type="text" name="from" placeholder="Full Name"
                                             value="{{ Auth::user()->name }}">
                                         <input type="text" id="address" name="" placeholder="E-mail Address"
                                             value="{{ Auth::user()->email }}">
-                                        <div class="select">
+                                        <div class="select" style='margin-bottom: 10px !important;' >
                                             <select name="content" id="about">
                                                 <option value="-1">Categories</option>
                                                 @foreach ($categories as $categorie)
