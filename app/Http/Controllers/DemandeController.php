@@ -61,12 +61,13 @@ class DemandeController extends Controller
         $demande->date = $request->date;
         $demande->status = true;
         $demande->save(); // update_anchor
-            // Mail::send('emails.rdv', array( 
-            //     'email' => $user->email, 
-            // ), function($message) use ($user){ 
-            //     $message->to($user->email, 'Admin'); 
-            //     $message->from(Auth::user()->email);
-            // });
+        $user_mail = User::select('email')->where('name', $demande->from)->first();
+            Mail::send('emails.rdv', array( 
+                'email' => $user_mail->email, 
+            ), function($message) use ($user_mail){ 
+                $message->to($user_mail->email, 'Admin'); 
+                $message->from(Auth::user()->email);
+            });
         return redirect()->route("demande.index")->with('message', "Successful update !");
     }
     public function destroy($id)

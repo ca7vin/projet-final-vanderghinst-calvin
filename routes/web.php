@@ -84,6 +84,10 @@ Route::post('/events/findCat', function (Request $request) {
     $events = Event::whereHas('categories', function($element) use ($actualCatEvent) {
         $element->where('categories.id', $actualCatEvent);
     })->paginate(6);
+    foreach ($events as $event) {
+        $event->date = str_replace("[", "<span>", $event->date);
+        $event->date = str_replace("]", "</span>", $event->date);
+    } 
     return view('front/pages/classic-events', compact('events', 'categories', 'actualCatEvent'));
 })->name("filterCatEvent");
 

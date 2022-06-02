@@ -114,7 +114,7 @@ class UserController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        if ($user->password === $request->password) {
+        if ($user->password == $request->password) {
             $user->password = $user->password;
         } else {
             $user->password = Hash::make($request->password);

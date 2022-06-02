@@ -16,24 +16,7 @@
             <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('slider.store') }}'
                 method='post' style='background-color:#A12C2F'>
                 @csrf
-                <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
-                    <label class='text-uppercase text-white mb-2 text-center' for=''>Display in first ?</label>
-                    <div class="d-flex align-items-center justify-content-around mb-3 px-5">
-                        <div class="form-check">
-                            <input name='first' class="form-check-input" type="radio" value=1 id="flexCheckDefault">
-                            <label class="form-check-label text-white" for="flexCheckDefault">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input name='first' class="form-check-input" type="radio" value=0 id="flexCheckChecked" checked>
-                            <label class="form-check-label text-white" for="flexCheckChecked">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                @endif
+
                 <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
                     <label class='text-uppercase text-white mb-2 text-center' for=''>Display in first ?</label>
                     <div class="d-flex align-items-center justify-content-around mb-3 px-5">
