@@ -13,21 +13,23 @@
                 </ul>
             </div>
         @endif
-        <form class='d-flex flex-column align-items-center justify-content-center' action='{{ route('message.store2') }}' method='post'>
+        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('message.store') }}'
+            method='POST' enctype="multipart/form-data">
             @csrf
             <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                <label class="text-uppercase" for=''>from</label>
+                <label class="text-uppercase text-white mb-2" for=''>from</label>
                 <input type='text' name='from' value='{{ $message->to }}'>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                <label class="text-uppercase" for=''>to</label>
+                <label class="text-uppercase text-white mb-2" for=''>to</label>
                 <input type='text' name='to' value='{{ $message->from }}'>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center mb-3">
-                <label class="text-uppercase" for=''>content</label>
+                <label class="text-uppercase text-white mb-2" for=''>content</label>
                 <textarea cols="25" rows="10" type='text' name='content' value=''></textarea>
             </div>
-            <button class='btn btn-dark' type='submit'>Answer</button> {{-- update_blade_anchor --}}
-        </form>
+            <div class="row mx-5">
+                <button class="btn btn-dark mt-3 mb-2" type='submit'>Reply</button> {{-- create_blade_anchor --}}
+            </div>        </form>
     </div>
 @endsection

@@ -13,25 +13,29 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('demande.update' , $demande->id) }}' method='post'>
-            @csrf
-            <div>
-                <label for=''>from</label>
-                <input type='text' name='from' value='{{ $demande->from }}'>
-            </div>
-            <div>
-                <label for=''>to</label>
-                <input type='text' name='to' value='{{ $demande->to }}'>
-            </div>
-            <div>
-                <label for=''>content</label>
-                <input type='text' name='content' value='{{ $demande->content }}'>
-            </div>
-            <div>
-                <label for=''>date</label>
-                <input type='date' name='date' value='{{ $demande->date }}'>
-            </div>
-            <button class="btn btn-dark my-5" type='submit'>Update</button> {{-- update_blade_anchor --}}
+        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('demande.update', $demande->id) }}'
+            method='POST' enctype="multipart/form-data">
+                @csrf
+                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                    <label class='text-uppercase text-white mb-2' for=''>from</label>
+                    <input type='text' name='from' value='{{ $demande->from }}'>
+                </div>
+                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                    <label class='text-uppercase text-white mb-2' for=''>to</label>
+                    <input type='text' name='to' value='{{ $demande->to }}'>
+                </div>
+                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                    <label class='text-uppercase text-white mb-2' for=''>content</label>
+                    <input type='text' name='content' value='{{ $demande->content }}'>
+                </div>
+                <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
+                    <label class='text-uppercase text-white mb-2' for=''>date</label>
+                    <input type='date' name='date' value='{{ $demande->date }}'>
+                </div>
+                <div class="row mx-5">
+                    <button class="btn btn-dark mt-3 mb-2" type='submit'>Edit</button> {{-- create_blade_anchor --}}
+                </div>
         </form>
+    
     </div>
 @endsection
