@@ -19,15 +19,15 @@
             <div class="row">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
                     <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
-                        <label class='text-uppercase text-white' for=''>adress</label>
+                        <label class='text-uppercase text-white mb-2' for=''>adress</label>
                         <input type='text' name='adress' value='{{ $contact->adress }}'>
                     </div>
                     <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
-                        <label class='text-uppercase text-white' for=''>phone</label>
+                        <label class='text-uppercase text-white mb-2' for=''>phone</label>
                         <input type='text' name='phone' value='{{ $contact->phone }}'>
                     </div>
                     <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
-                        <label class='text-uppercase text-white' for=''>mail</label>
+                        <label class='text-uppercase text-white mb-2' for=''>mail</label>
                         <input type='text' name='mail' value='{{ $contact->mail }}'>
                     </div>
                 </div>
@@ -35,7 +35,6 @@
             <div class="row mx-5">
                 <button class="btn btn-dark mt-3 mb-2" type='submit'>Update</button> {{-- create_blade_anchor --}}
             </div>
-
         </form>
     </div>
 @endsection

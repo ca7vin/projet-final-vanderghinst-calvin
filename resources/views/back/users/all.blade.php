@@ -44,24 +44,28 @@
                             <td>{{ Illuminate\Support\Str::limit($user->password, 15) }}</td>
                             <td>{{ $user->role->name }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $user)
-                                        <form action='{{ route('user.destroy', $user->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $user)
-                                    <a class='btn btn-primary mx-3' href='{{ route('user.edit', $user->id) }}'
+                                @can('delete', $user)
+                                    <form action='{{ route('user.destroy', $user->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('update', $user)
+                                    <a class='btn btn-primary' href='{{ route('user.edit', $user->id) }}'
                                         role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
-                                        role='button'>Read</a>
-                                    @if ($user->role_id == 2)
-                                        <a class='btn btn-dark mx-3' href='{{ route('prof.read', $user->prof->id) }}'
-                                            role='button'>Teacher</a>
-                                    @endif
-                                </div>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
+                                    role='button'>Read</a>
+                            </td>
+                            <td>
+                                @if ($user->role_id == 2)
+                                    <a class='btn btn-dark' href='{{ route('prof.read', $user->prof->id) }}'
+                                        role='button'>Teacher</a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

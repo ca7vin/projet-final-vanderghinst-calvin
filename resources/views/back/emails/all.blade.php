@@ -34,20 +34,16 @@
                             <th scope='row'>{{ $email->id }}</th>
                             <td>{{ $email->email }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $email)
-                                        <form action='{{ route('email.destroy', $email->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $email)
-                                        <a class='btn btn-primary mx-3' href='{{ route('email.edit', $email->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('email.read', $email->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $email)
+                                    <form action='{{ route('email.destroy', $email->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('email.read', $email->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

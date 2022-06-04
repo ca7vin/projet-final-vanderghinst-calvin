@@ -59,25 +59,29 @@
                             <td>
                                 <ul>
                                     @foreach ($event->categories as $categorie)
-                                        <li>{{ $categorie->name }}</li>
+                                        <li style='background-color: #A12C2F !important; font-size: 10px !important;'
+                                            class='text-center text-white p-1 m-1 rounded-pill'>{{ $categorie->name }}
+                                        </li>
                                     @endforeach
                                 </ul>
                             </td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $event)
-                                        <form action='{{ route('event.destroy', $event->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $event)
-                                    <a class='btn btn-primary mx-3' href='{{ route('event.edit', $event->id) }}'
+                                @can('delete', $event)
+                                    <form action='{{ route('event.destroy', $event->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('update', $event)
+                                    <a class='btn btn-dark' href='{{ route('event.edit', $event->id) }}'
                                         role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('event.read', $event->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-dark' href='{{ route('event.read', $event->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

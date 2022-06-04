@@ -18,7 +18,7 @@
                     </ul>
                 </div>
             @endif
-            @can('create', App\Category::class)
+            @can('create', App\Categorie::class)
                 <a class='btn btn-success' href='{{ route('categorie.create') }}' role='button'>Create</a>
             @endcan <table class='table'>
                 <thead>
@@ -33,20 +33,22 @@
                             <th scope='row'>{{ $categorie->id }}</th>
                             <td>{{ $categorie->name }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
                                     @can('delete', $categorie)
                                         <form action='{{ route('categorie.destroy', $categorie->id) }}' method='post'>
                                             @csrf
                                             <button class='btn btn-danger' type=submit>Delete</button>
                                         </form>
                                     @endcan
-                                    @can('update', $categorie)
-                                        <a class='btn btn-primary mx-3' href='{{ route('categorie.edit', $categorie->id) }}'
+                            </td>
+                            <td>
+                                @can('update', $categorie)
+                                        <a class='btn btn-primary' href='{{ route('categorie.edit', $categorie->id) }}'
                                             role='button'>Edit</a>
                                     @endcan
-                                    <a class='btn btn-primary' href='{{ route('categorie.read', $categorie->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('categorie.read', $categorie->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

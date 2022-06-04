@@ -13,13 +13,20 @@
                 </ul>
             </div>
         @endif
-        <form class="d-flex flex-column align-items-center justify-content-center" action='{{ route('email.store') }}' method='post'>
-            @csrf
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <label for=''>mail</label>
-                <input type='text' name='mail'>
+        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('email.store') }}'
+        method='post' enctype="multipart/form-data">
+        @csrf
+        <div class="row">
+            <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+                <div class='d-flex flex-col align-items-start justify-content-center mb-3'>
+                    <label class='text-uppercase text-white mb-2' for=''>mail</label>
+                    <input type='text' name='mail' value=''>
+                </div>
             </div>
-            <button type='submit'>Create</button> {{-- create_blade_anchor --}} 
-        </form>
+        </div>
+        <div class="row mx-5">
+            <button class="btn btn-dark mt-3 mb-2" type='submit'>Create</button> {{-- create_blade_anchor --}}
+        </div>
+    </form>
     </div>
 @endsection

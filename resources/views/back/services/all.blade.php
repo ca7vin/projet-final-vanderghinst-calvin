@@ -38,20 +38,22 @@
                             <td>{{ $service->title }}</td>
                             <td>{{ $service->text }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $service)
-                                        <form action='{{ route('service.destroy', $service->id) }}' method='post'>
-                                            @csrf
-                                            <button class="btn btn-danger" type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $service)
-                                        <a class='btn btn-primary mx-3' href='{{ route('service.edit', $service->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('service.read', $service->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $service)
+                                    <form action='{{ route('service.destroy', $service->id) }}' method='post'>
+                                        @csrf
+                                        <button class="btn btn-danger" type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('update', $service)
+                                    <a class='btn btn-primary' href='{{ route('service.edit', $service->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('service.read', $service->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

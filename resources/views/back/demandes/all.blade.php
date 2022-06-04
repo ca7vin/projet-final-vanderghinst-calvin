@@ -90,14 +90,14 @@
                                 <td>{{ $demande->to }}</td>
                                 <td>{{ $demande->content }}</td>
                                 <td> {{-- all_td_anchor --}}
-                                    <div class='d-flex'>
-                                        <form action='{{ route('demande.destroy', $demande->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                        <a class='btn btn-dark ms-3' href='{{ route('demande.read', $demande->id) }}'
-                                            role='button'>Read</a>
-                                    </div>
+                                    <form action='{{ route('demande.destroy', $demande->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class='btn btn-dark' href='{{ route('demande.read', $demande->id) }}'
+                                        role='button'>Read</a>
                                 </td>
                             </tr>
                         @endforeach

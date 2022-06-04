@@ -54,20 +54,22 @@
                             <td>{{ $slider->btntext }}</td>
                             <td>{{ $slider->btnlink }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $slider)
-                                        <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('delete', $slider)
-                                        <a class='btn btn-primary mx-3' href='{{ route('slider.edit', $slider->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $slider)
+                                    <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('delete', $slider)
+                                    <a class='btn btn-primary' href='{{ route('slider.edit', $slider->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

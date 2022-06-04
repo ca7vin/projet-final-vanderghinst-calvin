@@ -34,20 +34,21 @@
                             <th scope='row'>{{ $tag->id }}</th>
                             <td>{{ $tag->name }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $tag)
-                                        <form action='{{ route('tag.destroy', $tag->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('delete', $tag)
-                                        <a class='btn btn-primary mx-3' href='{{ route('tag.edit', $tag->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('tag.read', $tag->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $tag)
+                                    <form action='{{ route('tag.destroy', $tag->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('delete', $tag)
+                                    <a class='btn btn-primary' href='{{ route('tag.edit', $tag->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' href='{{ route('tag.read', $tag->id) }}' role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

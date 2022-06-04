@@ -35,12 +35,10 @@
                             <td>{{ $contact->phone }}</td>
                             <td>{{ $contact->mail }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('update', $contact)
-                                        <a class='btn btn-primary' href='{{ route('contact.edit', $contact->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                </div>
+                                @can('update', $contact)
+                                    <a class='btn btn-primary' href='{{ route('contact.edit', $contact->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

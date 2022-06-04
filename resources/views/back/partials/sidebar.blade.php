@@ -11,7 +11,7 @@
           </li> --}}
           <li>
               <a href="{{ Route('dashboard') }}">
-                <i class='bx bxs-home'></i>
+                  <i class='bx bxs-home'></i>
                   <span class="links_name">Home</span>
               </a>
               <span class="tooltip">Home</span>
@@ -23,20 +23,22 @@
               </a>
               <span class="tooltip">User</span>
           </li>
-          <li>
-              <a href="{{ Route('slider.index') }}">
-                  <i class='bx bxs-image'></i>
-                  <span class="links_name">Banner</span>
-              </a>
-              <span class="tooltip">Banner</span>
-          </li>
-          <li>
-              <a href="{{ Route('event.index') }}">
-                  <i class='bx bxs-calendar-event'></i>
-                  <span class="links_name">Event</span>
-              </a>
-              <span class="tooltip">Event</span>
-          </li>
+          @if (Auth::user()->role_id == 1)
+              <li>
+                  <a href="{{ Route('slider.index') }}">
+                      <i class='bx bxs-image'></i>
+                      <span class="links_name">Banner</span>
+                  </a>
+                  <span class="tooltip">Banner</span>
+              </li>
+              <li>
+                  <a href="{{ Route('event.index') }}">
+                      <i class='bx bxs-calendar-event'></i>
+                      <span class="links_name">Event</span>
+                  </a>
+                  <span class="tooltip">Event</span>
+              </li>
+          @endif
           <li>
               <a href="{{ Route('course.index') }}">
                   <i class='bx bxl-discourse'></i>
@@ -46,47 +48,56 @@
           </li>
           <li>
               <a href="{{ Route('post.index') }}">
-                <i class='bx bxs-news'></i>
+                  <i class='bx bxs-news'></i>
                   <span class="links_name">News</span>
               </a>
               <span class="tooltip">News</span>
           </li>
-          <li>
-              <a href="{{ Route('email.index') }}">
-                <i class='bx bx-mail-send'></i>
-                  <span class="links_name">Email</span>
-              </a>
-              <span class="tooltip">Email</span>
-          </li>
-          <li>
-              <a href="{{ Route('service.index') }}">
-                <i class='bx bxs-bookmarks'></i>
-                  <span class="links_name">Services</span>
-              </a>
-              <span class="tooltip">Services</span>
-          </li>
-          <li>
-              <a href="{{ Route('tag.index') }}">
-                <i class='bx bxs-purchase-tag'></i>
-                  <span class="links_name">Tags</span>
-              </a>
-              <span class="tooltip">Tags</span>
-          </li>
-          <li>
-              <a href="{{ Route('categorie.index') }}">
-                <i class='bx bxs-category'></i>
-                  <span class="links_name">Categories</span>
-              </a>
-              <span class="tooltip">Categories</span>
-          </li>
-          <li>
-              <a href="{{ Route('contact.index') }}">
-                <i class='bx bxs-contact'></i>
-                  <span class="links_name">Contact</span>
-              </a>
-              <span class="tooltip">Contact</span>
-          </li>
-          
+          @if (Auth::user()->role_id == 1)
+              <li>
+                  <a href="{{ Route('email.index') }}">
+                      <i class='bx bx-mail-send'></i>
+                      <span class="links_name">Email</span>
+                  </a>
+                  <span class="tooltip">Email</span>
+              </li>
+              <li>
+                  <a href="{{ Route('service.index') }}">
+                      <i class='bx bxs-bookmarks'></i>
+                      <span class="links_name">Services</span>
+                  </a>
+                  <span class="tooltip">Services</span>
+              </li>
+              <li>
+                  <a href="{{ Route('tag.index') }}">
+                      <i class='bx bxs-purchase-tag'></i>
+                      <span class="links_name">Tags</span>
+                  </a>
+                  <span class="tooltip">Tags</span>
+              </li>
+              <li>
+                  <a href="{{ Route('categorie.index') }}">
+                      <i class='bx bxs-category'></i>
+                      <span class="links_name">Categories</span>
+                  </a>
+                  <span class="tooltip">Categories</span>
+              </li>
+              <li>
+                  <a href="{{ Route('contact.index') }}">
+                      <i class='bx bxs-contact'></i>
+                      <span class="links_name">Contact</span>
+                  </a>
+                  <span class="tooltip">Contact</span>
+              </li>
+              <li>
+                  <a href="{{ Route('commentaire.index') }}">
+                      <i class='bx bx-comment-detail'></i>
+                      <span class="links_name">Commentaire</span>
+                  </a>
+                  <span class="tooltip">Commentaire</span>
+              </li>
+          @endif
+
           <li class="profile">
               <div class="profile-details">
                   <!--<img src="profile.jpg" alt="profileImg">-->

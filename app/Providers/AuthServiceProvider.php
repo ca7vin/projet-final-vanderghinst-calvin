@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Policies\CategoriePolicy;
+use App\Policies\ContactPolicy;
 use App\Policies\CoursePolicy;
 use App\Policies\EmailPolicy;
 use App\Policies\EventPolicy;

@@ -79,25 +79,29 @@
                             <td>
                                 <ul>
                                     @foreach ($course->categories as $categorie)
-                                        <li>{{ $categorie->name }}</li>
+                                        <li style='background-color: #A12C2F !important; font-size: 10px !important;'
+                                            class='text-center text-white p-1 m-1 rounded-pill'>{{ $categorie->name }}
+                                        </li>
                                     @endforeach
                                 </ul>
                             </td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $course)
-                                        <form action='{{ route('course.destroy', $course->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $course)
-                                        <a class='btn btn-primary mx-3' href='{{ route('course.edit', $course->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('course.read', $course->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $course)
+                                    <form action='{{ route('course.destroy', $course->id) }}' method='post'>
+                                        @csrf
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('update', $course)
+                                    <a class='btn btn-dark' href='{{ route('course.edit', $course->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-dark' href='{{ route('course.read', $course->id) }}'
+                                    role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

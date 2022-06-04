@@ -62,32 +62,36 @@
                             <td>
                                 <ul>
                                     @foreach ($post->categories as $categorie)
-                                        <li>{{ $categorie->name }}</li>
+                                        <li style='background-color: #A12C2F !important; font-size: 10px !important;'
+                                            class='text-center text-white p-1 m-1 rounded-pill'>{{ $categorie->name }}
+                                        </li>
                                     @endforeach
                                 </ul>
                             </td>
                             <td>
                                 <ul>
                                     @foreach ($post->tags as $tag)
-                                        <li>{{ $tag->name }}</li>
+                                        <li style='background-color: #F5A425 !important; font-size: 10px !important;'
+                                            class='text-center text-white p-1 m-1 rounded-pill'>{{ $tag->name }}</li>
                                     @endforeach
                                 </ul>
                             </td>
                             <td> {{-- all_td_anchor --}}
-                                <div class='d-flex'>
-                                    @can('delete', $post)
-                                        <form action='{{ route('post.destroy', $post->id) }}' method='post'>
-                                            @csrf
-                                            <button class="btn btn-danger" type=submit>Delete</button>
-                                        </form>
-                                    @endcan
-                                    @can('update', $post)
-                                        <a class='btn btn-primary mx-3' href='{{ route('post.edit', $post->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
-                                    <a class='btn btn-primary' href='{{ route('post.read', $post->id) }}'
-                                        role='button'>Read</a>
-                                </div>
+                                @can('delete', $post)
+                                    <form action='{{ route('post.destroy', $post->id) }}' method='post'>
+                                        @csrf
+                                        <button class="btn btn-danger" type=submit>Delete</button>
+                                    </form>
+                                @endcan
+                            </td>
+                            <td>
+                                @can('update', $post)
+                                    <a class='btn btn-dark' href='{{ route('post.edit', $post->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
+                            </td>
+                            <td>
+                                <a class='btn btn-dark' href='{{ route('post.read', $post->id) }}' role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

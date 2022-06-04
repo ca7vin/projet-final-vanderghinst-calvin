@@ -48,7 +48,7 @@
                                     @csrf
                                     <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
-                                <a class='btn btn-dark ms-3' href='{{ route('message.reply', $message->id) }}' role='button'>Reply</a>
+                                <a class='btn btn-dark' href='{{ route('message.reply', $message->id) }}' role='button'>Reply</a>
                             </div>
                         </td>
                     </tr>

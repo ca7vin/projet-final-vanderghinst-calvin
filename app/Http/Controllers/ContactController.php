@@ -17,7 +17,7 @@ class ContactController extends Controller
     public function edit($id)
     {
         $contact = Contact::find($id);
-        if (! Gate::allows('update-contact')) {
+        if (! Gate::allows('update-contact', $contact)) {
             abort(403);
         }
         return view("/back/contacts/edit",compact("contact"));
