@@ -65,6 +65,7 @@ class DemandeController extends Controller
             Mail::send('emails.rdv', array( 
                 'email' => $user_mail->email, 
                 'from' => $demande->from,
+                'to' => $demande->to,
                 'status' => $demande->status,
                 'date' => $demande->date,
             ), function($message) use ($user_mail){ 

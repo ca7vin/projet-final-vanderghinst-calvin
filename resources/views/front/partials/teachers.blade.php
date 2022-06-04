@@ -12,7 +12,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="teacher-item">
                     <div class="thumb-holder">
-                        <a href="single-teacher.html"><img src="{{ asset("images/" . $popularteacher->user->image) }}" alt=""></a>
+                        <a href="{{ Route('prof.onepage', $popularteacher->id) }}"><img style='object-fit:cover !important; height: 262.5px !important;' src="{{ asset("images/" . $popularteacher->user->image) }}" alt=""></a>
                         <div class="hover-content">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -35,7 +35,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="teacher-item">
                     <div class="thumb-holder">
-                        <a href="single-teacher.html"><img src="{{ asset("images/" . $popularteachers[0]->user->image) }}" alt=""></a>
+                        <a href="single-teacher.html"><img  style='object-fit:cover !important; height: 262.5px !important;'  src="{{ asset("images/" . $popularteachers[0]->user->image) }}" alt=""></a>
                         <div class="hover-content">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -57,7 +57,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="teacher-item">
                     <div class="thumb-holder">
-                        <a href="single-teacher.html"><img src="{{ asset("images/" . $popularteachers[1]->user->image) }}" alt=""></a>
+                        <a href="single-teacher.html"><img style='object-fit:cover !important; height: 262.5px !important;'   src="{{ asset("images/" . $popularteachers[1]->user->image) }}" alt=""></a>
                         <div class="hover-content">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -80,7 +80,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="teacher-item">
                     <div class="thumb-holder">
-                        <a href="single-teacher.html"><img src="{{ asset("images/" . $popularteacher->user->image) }}" alt=""></a>
+                        <a href="single-teacher.html"><img style='object-fit:cover !important; height: 262.5px !important;'  src="{{ asset("images/" . $popularteacher->user->image) }}" alt=""></a>
                         <div class="hover-content">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
