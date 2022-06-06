@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Policies\CategoriePolicy;
+use App\Policies\CommentairePolicy;
 use App\Policies\ContactPolicy;
 use App\Policies\CoursePolicy;
 use App\Policies\EmailPolicy;
@@ -45,6 +46,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('create-slider', [SliderPolicy::class, 'create']);
         Gate::define('create-tag', [TagPolicy::class, 'create']);
         Gate::define('create-user', [UserPolicy::class, 'create']);
+        Gate::define('create-commentaire', [CommentairePolicy::class, 'create']);
         Gate::define('update-categorie', [CategoriePolicy::class, 'update']);
         Gate::define('update-contact', [ContactPolicy::class, 'update']);
         Gate::define('update-course', [CoursePolicy::class, 'update']);
@@ -56,5 +58,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('update-slider', [SliderPolicy::class, 'update']);
         Gate::define('update-tag', [TagPolicy::class, 'update']);
         Gate::define('update-user', [UserPolicy::class, 'update']);
+        Gate::define('update-commentaire', [CommentairePolicy::class, 'update']);
+
     }
 }

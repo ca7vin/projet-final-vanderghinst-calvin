@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CommentaireController extends Controller
 {
@@ -16,11 +17,15 @@ class CommentaireController extends Controller
     }
     public function create()
     {
+        if (! Gate::allows('create-commentaire')) {
+            abort(403);
+        }
         return view("/back/commentaires/create");
     }
     public function store(Request $request)
     {
         $commentaire = new Commentaire;
+        $this->authorize('create', Commentaire::class);
         $request->validate([
         //  'user_id'=> 'required',
          'content'=> 'required',
@@ -40,11 +45,15 @@ class CommentaireController extends Controller
     public function edit($id)
     {
         $commentaire = Commentaire::find($id);
+        if (! Gate::allows('update-commentaire', $commentaire)) {
+            abort(403);
+        }
         return view("/back/commentaires/edit",compact("commentaire"));
     }
     public function update($id, Request $request)
     {
         $commentaire = Commentaire::find($id);
+        $this->authorize('update', $commentaire);
         $request->validate([
          'user'=> 'required',
          'content'=> 'required',
@@ -58,6 +67,7 @@ class CommentaireController extends Controller
     public function destroy($id)
     {
         $commentaire = Commentaire::find($id);
+        $this->authorize('delete', $commentaire);
         $commentaire->delete();
         return redirect()->back()->with('message', "Successful delete !");
     }
