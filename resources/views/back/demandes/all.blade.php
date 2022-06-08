@@ -19,7 +19,7 @@
                 </div>
             @endif
             @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
-                <a class='btn btn-success' href='{{ route('demande.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('demandes.create') }}' role='button'>Create</a>
             @endif
             <table class='table'>
                 <thead>

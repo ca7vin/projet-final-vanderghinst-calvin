@@ -17,7 +17,7 @@
               <span class="tooltip">Home</span>
           </li>
           <li>
-              <a href="{{ Route('user.index') }}">
+              <a href="{{ Route('users.index') }}">
                   <i class='bx bx-user'></i>
                   <span class="links_name">User</span>
               </a>
@@ -25,14 +25,14 @@
           </li>
           @if (Auth::user()->role_id == 1)
               <li>
-                  <a href="{{ Route('slider.index') }}">
+                  <a href="{{ Route('sliders.index') }}">
                       <i class='bx bxs-image'></i>
                       <span class="links_name">Banner</span>
                   </a>
                   <span class="tooltip">Banner</span>
               </li>
               <li>
-                  <a href="{{ Route('event.index') }}">
+                  <a href="{{ Route('events.index') }}">
                       <i class='bx bxs-calendar-event'></i>
                       <span class="links_name">Event</span>
                   </a>
@@ -40,57 +40,59 @@
               </li>
           @endif
           <li>
-              <a href="{{ Route('course.index') }}">
+              <a href="{{ Route('courses.index') }}">
                   <i class='bx bxl-discourse'></i>
                   <span class="links_name">Courses</span>
               </a>
               <span class="tooltip">Courses</span>
           </li>
-          <li>
-              <a href="{{ Route('post.index') }}">
-                  <i class='bx bxs-news'></i>
-                  <span class="links_name">News</span>
-              </a>
-              <span class="tooltip">News</span>
-          </li>
+          @if (Auth::user()->role_id == 3)
+              <li>
+                  <a href="{{ Route('post.index') }}">
+                      <i class='bx bxs-news'></i>
+                      <span class="links_name">News</span>
+                  </a>
+                  <span class="tooltip">News</span>
+              </li>
+          @endif
           @if (Auth::user()->role_id == 1)
               <li>
-                  <a href="{{ Route('email.index') }}">
+                  <a href="{{ Route('emails.index') }}">
                       <i class='bx bx-mail-send'></i>
                       <span class="links_name">Email</span>
                   </a>
                   <span class="tooltip">Email</span>
               </li>
               <li>
-                  <a href="{{ Route('service.index') }}">
+                  <a href="{{ Route('services.index') }}">
                       <i class='bx bxs-bookmarks'></i>
                       <span class="links_name">Services</span>
                   </a>
                   <span class="tooltip">Services</span>
               </li>
               <li>
-                  <a href="{{ Route('tag.index') }}">
+                  <a href="{{ Route('tags.index') }}">
                       <i class='bx bxs-purchase-tag'></i>
                       <span class="links_name">Tags</span>
                   </a>
                   <span class="tooltip">Tags</span>
               </li>
               <li>
-                  <a href="{{ Route('categorie.index') }}">
+                  <a href="{{ Route('categories.index') }}">
                       <i class='bx bxs-category'></i>
                       <span class="links_name">Categories</span>
                   </a>
                   <span class="tooltip">Categories</span>
               </li>
               <li>
-                  <a href="{{ Route('contact.index') }}">
+                  <a href="{{ Route('contacts.index') }}">
                       <i class='bx bxs-contact'></i>
                       <span class="links_name">Contact</span>
                   </a>
                   <span class="tooltip">Contact</span>
               </li>
               <li>
-                  <a href="{{ Route('commentaire.index') }}">
+                  <a href="{{ Route('commentaires.index') }}">
                       <i class='bx bx-comment-detail'></i>
                       <span class="links_name">Commentaire</span>
                   </a>

@@ -1,9 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
-    @include('back/partials/sidebar')
-    <section class="home-section p-0">
-        <div class='container d-flex flex-column align-items-center justify-content-center'>
-            <div class="text">Rendez-vous</div>
+    <div class='container'>
+        <h1>ContactForms</h1>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -13,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('demandes.create') }}' method='post'>
+        <form action='{{ route('contactform.store') }}' method='post'>
             @csrf
             <div>
                 <label for=''>from</label>

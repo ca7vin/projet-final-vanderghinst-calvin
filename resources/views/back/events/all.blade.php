@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Event::class)
-                <a class='btn btn-success' href='{{ route('event.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('events.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -30,8 +30,6 @@
                         <th class='text-uppercase ' scope='col'>end</th>
                         <th class='text-uppercase' scope='col'>title</th>
                         <th class='text-uppercase col-2' scope='col'>description</th>
-                        {{-- <th class='text-uppercase col-1' scope='col'>image2</th> --}}
-                        {{-- <th class='text-uppercase col-1' scope='col'>image3</th> --}}
                         <th class='text-uppercase' scope='col'>phone</th>
                         <th class='text-uppercase' scope='col'>email</th>
                         <th class='text-uppercase col-1' scope='col'>categories</th>
@@ -67,7 +65,7 @@
                             </td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $event)
-                                    <form action='{{ route('event.destroy', $event->id) }}' method='post'>
+                                    <form action='{{ route('events.destroy', $event->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
@@ -75,12 +73,12 @@
                             </td>
                             <td>
                                 @can('update', $event)
-                                    <a class='btn btn-dark' href='{{ route('event.edit', $event->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('events.edit', $event->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('event.read', $event->id) }}'
+                                <a class='btn btn-dark' href='{{ route('events.show', $event->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

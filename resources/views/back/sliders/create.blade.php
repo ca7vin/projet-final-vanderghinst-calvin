@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif
-            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('slider.store') }}'
+            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('sliders.store') }}'
                 method='post' style='background-color:#A12C2F'>
                 @csrf
 

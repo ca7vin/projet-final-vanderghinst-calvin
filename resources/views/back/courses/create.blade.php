@@ -14,7 +14,7 @@
                 </div>
             @endif
             <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded'
-                action='{{ route('course.store') }}' method='post' style='background-color:#A12C2F'>
+                action='{{ route('courses.store') }}' method='post' style='background-color:#A12C2F'>
                 @csrf
                 <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
                     <label class='text-uppercase text-white mb-2 text-center' for=''>Favori ?</label>

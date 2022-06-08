@@ -38,7 +38,7 @@
                     <td>{{ $event->phone }}</td>
                     <td>{{ $event->email }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('event.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('events.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

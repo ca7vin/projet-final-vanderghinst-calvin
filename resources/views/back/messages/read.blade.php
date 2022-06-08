@@ -19,7 +19,7 @@
                     <td>{{ $message->to }}</td>
                     <td>{{ $message->content }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('message.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('messages.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

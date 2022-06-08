@@ -74,7 +74,7 @@ class CourseController extends Controller
         ]);
         return redirect()->route("course.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $course = Course::find($id);
         return view("/back/courses/read",compact("course"));

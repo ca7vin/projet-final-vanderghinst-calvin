@@ -35,7 +35,7 @@ class DemandeController extends Controller
         return redirect()->back()->with('message', "Demande bien envoyée !");
     }
 
-    public function read($id)
+    public function show($id)
     {
         $demande = Demande::find($id);
         return view("/back/demandes/read",compact("demande"));

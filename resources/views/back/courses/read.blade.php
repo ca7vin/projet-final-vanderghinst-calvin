@@ -30,7 +30,7 @@
                     <td>{{ $course->start }}</td>
                     <td>{{ $course->duration }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('course.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('courses.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

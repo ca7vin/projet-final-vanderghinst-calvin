@@ -36,7 +36,7 @@
                             <td>{{ $contact->mail }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('update', $contact)
-                                    <a class='btn btn-dark' href='{{ route('contact.edit', $contact->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('contacts.edit', $contact->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>

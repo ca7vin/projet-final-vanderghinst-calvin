@@ -23,9 +23,9 @@
                         : <br>{{ $prof->skype }}</li>
                 </ul>
                 <div class="card-body d-flex justify-content-around">
-                    <a class='btn btn-dark' href='{{ route('user.index') }}' role='button'>Back</a>
+                    <a class='btn btn-dark' href='{{ route('users.index') }}' role='button'>Back</a>
                     @can('update', $prof)
-                        <a class='btn btn-dark' href='{{ route('prof.edit', $prof->id) }}' role='button'>Edit</a>
+                        <a class='btn btn-dark' href='{{ route('profs.edit', $prof->id) }}' role='button'>Edit</a>
                     @endcan
                     {{-- @if ($user->role_id == 2)
                         <a class='btn btn-dark mx-3' href='{{ route('prof.read', $user->prof->id) }}'

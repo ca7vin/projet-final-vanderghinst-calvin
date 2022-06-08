@@ -17,7 +17,7 @@
                     <th scope='row'>{{ $tag->id }}</th>
                     <td>{{ $tag->name }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('tag.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('tags.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Tag::class)
-                <a class='btn btn-success' href='{{ route('tag.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('tags.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -35,7 +35,7 @@
                             <td>{{ $tag->name }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $tag)
-                                    <form action='{{ route('tag.destroy', $tag->id) }}' method='post'>
+                                    <form action='{{ route('tags.destroy', $tag->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
@@ -43,12 +43,12 @@
                             </td>
                             <td>
                                 @can('delete', $tag)
-                                    <a class='btn btn-dark' href='{{ route('tag.edit', $tag->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('tags.edit', $tag->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('tag.read', $tag->id) }}' role='button'>Read</a>
+                                <a class='btn btn-dark' href='{{ route('tags.show', $tag->id) }}' role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

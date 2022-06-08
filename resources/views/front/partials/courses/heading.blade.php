@@ -8,7 +8,7 @@
                     <ul>
                         <li><a href="{{ Route('home') }}">Home</a></li>
                         <li><i class="fa fa-angle-right"></i></li>
-                        <li class="active"><a href="{{ Route('courses') }}">Courses Categories</a></li>
+                        <li class="active"><a href="{{ Route('coursesMain') }}">Courses Categories</a></li>
                     </ul>
                 </div>
             </div>	

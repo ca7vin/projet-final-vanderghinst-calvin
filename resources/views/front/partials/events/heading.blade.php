@@ -8,7 +8,7 @@
                     <ul>
                         <li><a href="{{ Route('home') }}">Home</a></li>
                         <li><i class="fa fa-angle-right"></i></li>
-                        <li class="active"><a href="{{ Route('events') }}">Events</a></li>
+                        <li class="active"><a href="{{ Route('eventsMain') }}">Events</a></li>
                     </ul>
                 </div>
             </div>	

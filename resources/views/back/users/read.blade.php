@@ -17,9 +17,9 @@
                         : <br>{{ $user->email }}</li>
                 </ul>
                 <div class="card-body d-flex justify-content-around">
-                    <a class='btn btn-dark' href='{{ route('user.index') }}' role='button'>Back</a>
+                    <a class='btn btn-dark' href='{{ route('users.index') }}' role='button'>Back</a>
                     @if ($user->role_id == 2)
-                        <a class='btn btn-dark mx-3' href='{{ route('prof.read', $user->prof->id) }}'
+                        <a class='btn btn-dark mx-3' href='{{ route('profs.show', $user->prof->id) }}'
                             role='button'>Teacher</a>
                     @endif
                 </div>

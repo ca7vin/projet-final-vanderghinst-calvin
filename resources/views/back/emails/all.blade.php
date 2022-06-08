@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Email::class)
-                <a class='btn btn-success' href='{{ route('email.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('emails.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -35,14 +35,14 @@
                             <td>{{ $email->email }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $email)
-                                    <form action='{{ route('email.destroy', $email->id) }}' method='post'>
+                                    <form action='{{ route('emails.destroy', $email->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('email.read', $email->id) }}'
+                                <a class='btn btn-dark' href='{{ route('emails.show', $email->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

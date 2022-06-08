@@ -60,7 +60,7 @@ class PostController extends Controller
         ]);
         return redirect()->route("post.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $post = Post::find($id);
         return view("/back/posts/read",compact("post"));

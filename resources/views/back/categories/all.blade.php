@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Categorie::class)
-                <a class='btn btn-success' href='{{ route('categorie.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('categories.create') }}' role='button'>Create</a>
             @endcan <table class='table'>
                 <thead>
                     <tr>
@@ -34,7 +34,7 @@
                             <td>{{ $categorie->name }}</td>
                             <td> {{-- all_td_anchor --}}
                                     @can('delete', $categorie)
-                                        <form action='{{ route('categorie.destroy', $categorie->id) }}' method='post'>
+                                        <form action='{{ route('categories.destroy', $categorie->id) }}' method='post'>
                                             @csrf
                                             <button class='btn btn-danger' type=submit>Delete</button>
                                         </form>
@@ -42,12 +42,12 @@
                             </td>
                             <td>
                                 @can('update', $categorie)
-                                        <a class='btn btn-dark' href='{{ route('categorie.edit', $categorie->id) }}'
+                                        <a class='btn btn-dark' href='{{ route('categories.edit', $categorie->id) }}'
                                             role='button'>Edit</a>
                                     @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('categorie.read', $categorie->id) }}'
+                                <a class='btn btn-dark' href='{{ route('categories.show', $categorie->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

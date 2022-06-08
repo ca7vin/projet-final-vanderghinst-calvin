@@ -136,10 +136,10 @@ class UserController extends Controller
             $request->file('image')->storePublicly('images', 'public');
         }
         $user->save();
-        return redirect()->route("user.index")->with('message', "Successful update !");
+        return redirect()->route("users.index")->with('message', "Successful update !");
     }
 
-    public function read($id)
+    public function show($id)
     {
         $user = User::find($id);
         return view("/back/users/read", compact('user'));
@@ -151,7 +151,7 @@ class UserController extends Controller
         $user->courses()->detach();
         $this->authorize('delete', $user);
         if ($user->id === Auth::user()->id) {
-            return redirect()->route("user.index")->with('error', "You cannot delete your own account !");
+            return redirect()->route("users.index")->with('error', "You cannot delete your own account !");
         } else {
             $user->delete();
             $destination = "img/" . $user ->image;
@@ -168,7 +168,7 @@ class UserController extends Controller
                 $redacteur = Redacteur::find($user->redacteur_id);
                 $redacteur->delete();
             }
-            return redirect()->route("user.index")->with('message', "Successful delete !");
+            return redirect()->route("users.index")->with('message', "Successful delete !");
         }
     }
 

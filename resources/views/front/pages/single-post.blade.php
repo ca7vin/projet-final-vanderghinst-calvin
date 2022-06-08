@@ -86,7 +86,7 @@
                                                 <h2>Leave a comment</h2>
                                             </div>
                                             <div class="comment-form">
-                                                <form action="{{ route('commentaire.store') }}" method='POST'>
+                                                <form action="{{ route('commentaires.store') }}" method='POST'>
                                                     @csrf
                                                     <div class="row">
                                                         <div class="col-md-6" style='display:none !important;'>

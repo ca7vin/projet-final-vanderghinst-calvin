@@ -25,7 +25,7 @@ class RedacteurController extends Controller
         $redacteur->save(); // store_anchor
         return redirect()->route("redacteur.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $redacteur = Redacteur::find($id);
         return view("/back/redacteurs/read",compact("redacteur"));

@@ -17,7 +17,7 @@
                     <th scope='row'>{{ $categorie->id }}</th>
                     <td>{{ $categorie->name }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('categorie.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('categories.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

@@ -97,7 +97,7 @@ class EventController extends Controller
         ]);
         return redirect()->route("event.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $event = Event::find($id);
         return view("/back/events/read",compact("event"));

@@ -14,7 +14,7 @@
                 </div>
             @endif
             <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded'
-                action='{{ route('slider.update', $slider->id) }}' method='POST' style='background-color:#A12C2F'>
+                action='{{ route('sliders.update', $slider->id) }}' method='POST' style='background-color:#A12C2F'>
                 @csrf
                 @if ($slider->first == 1)
                     <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>

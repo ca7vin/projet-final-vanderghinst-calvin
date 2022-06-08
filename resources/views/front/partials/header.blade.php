@@ -27,9 +27,9 @@
             <nav class="main-navigation text-left hidden-xs hidden-sm">
                 <ul>
                     <li><a href="{{ Route('home') }}" class="">Home</a></li>
-                    <li><a href="{{ Route('courses') }}" class="">Courses</a></li>
-                    <li><a href="{{ Route('events') }}" class="">Events</a></li>
-                    <li><a href="{{ Route('news') }}" class="">News</a></li>
+                    <li><a href="{{ Route('coursesMain') }}" class="">Courses</a></li>
+                    <li><a href="{{ Route('eventsMain') }}" class="">Events</a></li>
+                    <li><a href="{{ Route('newsMain') }}" class="">News</a></li>
                     <li><a href="{{ Route('contact') }}" class="">Contact</a></li>
                 </ul>
             </nav>

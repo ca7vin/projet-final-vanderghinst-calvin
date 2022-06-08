@@ -13,7 +13,7 @@ class RoleController extends Controller
         $roles = Role::all();
         return view("/back/roles/all",compact("roles"));
     }
-    public function read($id)
+    public function show($id)
     {
         $role = Role::find($id);
         return view("/back/roles/read",compact("role"));

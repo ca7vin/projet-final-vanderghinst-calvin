@@ -3,7 +3,7 @@
     @include('back/partials/sidebar')
     <section class="home-section p-0">
         <div class='container d-flex flex-column align-items-center justify-content-center'>
-            <div class="text">Teachers</div>
+            <div class="text">Contact Forms</div>
             @if (session()->has('message'))
                 <div class='alert alert-success'>
                     {{ session()->get('message') }}
@@ -18,41 +18,35 @@
                     </ul>
                 </div>
             @endif
-            <a class='btn btn-success' href='{{ route('prof.create') }}' role='button'>Create</a>
+            {{-- <a class='btn btn-success' href='{{ route('contactform.create') }}' role='button'>Create</a> --}}
             <table class='table'>
                 <thead>
                     <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>name</th>
-                        <th scope='col'>subject</th>
-                        <th scope='col'>bio short</th>
-                        <th scope='col'>bio long</th>
-                        <th scope='col'>phone</th>
-                        <th scope='col'>skype</th>
+                        <th class='text-uppercase' scope='col'>#</th>
+                        <th class='text-uppercase' scope='col'>from</th>
+                        <th class='text-uppercase' scope='col'>to</th>
+                        <th class='text-uppercase' scope='col'>content</th>
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
-                    @foreach ($profs as $prof)
+                    @foreach ($contactforms as $contactform)
                         <tr>
-                            <th scope='row'>{{ $prof->id }}</th>
-                            <td>{{ $prof->user->name }}</td>
-                            <td>{{ $prof->subject }}</td>
-                            <td>{!! Str::words($prof->bio_short, '12') !!}</td>
-                            <td>{!! Str::words($prof->bio_long, '12') !!}</td>
-                            <td>{{ $prof->phone }}</td>
-                            <td>{{ $prof->skype }}</td>
+                            <th scope='row'>{{ $contactform->id }}</th>
+                            <td>{{ $contactform->from }}</td>
+                            <td>{{ $contactform->to }}</td>
+                            <td>{{ $contactform->content }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <form action='{{ route('prof.destroy', $prof->id) }}' method='post'>
+                                <form action='{{ route('contactform.destroy', $contactform->id) }}' method='post'>
                                     @csrf
                                     <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('profs.edit', $prof->id) }}'
-                                    role='button'>Edit</a>
+                                <a class='btn btn-primary' href='{{ route('contactform.reply', $contactform->id) }}'
+                                    role='button'>Reply</a>
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('profs.show', $prof->id) }}'
+                                <a class='btn btn-primary' href='{{ route('contactform.read', $contactform->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>
@@ -60,5 +54,4 @@
                 </tbody>
             </table>
         </div>
-    </section>
-@endsection
+    @endsection

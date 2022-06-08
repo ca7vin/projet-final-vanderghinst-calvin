@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Service::class)
-                <a class='btn btn-success' href='{{ route('service.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('services.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -39,7 +39,7 @@
                             <td>{{ $service->text }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $service)
-                                    <form action='{{ route('service.destroy', $service->id) }}' method='post'>
+                                    <form action='{{ route('services.destroy', $service->id) }}' method='post'>
                                         @csrf
                                         <button class="btn btn-danger" type=submit>Delete</button>
                                     </form>
@@ -47,12 +47,12 @@
                             </td>
                             <td>
                                 @can('update', $service)
-                                    <a class='btn btn-dark' href='{{ route('service.edit', $service->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('services.edit', $service->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('service.read', $service->id) }}'
+                                <a class='btn btn-dark' href='{{ route('services.show', $service->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

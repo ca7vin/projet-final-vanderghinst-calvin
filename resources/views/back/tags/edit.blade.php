@@ -14,7 +14,7 @@
                 </div>
             @endif
             <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F'
-                action='{{ route('tag.update', $tag->id) }}' method='post' enctype="multipart/form-data">
+                action='{{ route('tags.update', $tag->id) }}' method='post' enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12 d-flex flex-column align-items-center justify-content-center">

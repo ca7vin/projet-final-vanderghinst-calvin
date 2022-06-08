@@ -41,9 +41,9 @@ class MessageController extends Controller
         $message->to = $request->to;
         $message->content = $request->content;
         $message->save(); // store_anchor
-        return redirect()->route('message.index')->with('message', "Message bien envoyé !");
+        return redirect()->route('messages.index')->with('message', "Message bien envoyé !");
     }
-    public function read($id)
+    public function show($id)
     {
         $message = Message::find($id);
         return view("/back/messages/read",compact("message"));

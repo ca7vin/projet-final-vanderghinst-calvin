@@ -20,22 +20,41 @@
                     <div class="widget-heading">
                         <h4>Contact Us</h4>
                     </div>
+                    @if (session()->has('message'))
+                        <div class='alert alert-success'>
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class='alert alert-danger'>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="message-content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" id="name" name="" placeholder="Full Name" value="">
+                        <form action="{{ Route('contactform.store') }}" method='POST'>
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="name" name="" placeholder="Full Name" value="">
+                                </div>
+                                <div class="col-md-6" style='display:none !important'>
+                                    <input type="text" id="name" name="to" placeholder="" value="Administrateur">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="address" name="from" placeholder="E-mail Address" value="">
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea id="message" class="message" name="content" placeholder="Write message"></textarea>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <input type="text" id="address" name="" placeholder="E-mail Address"
-                                    value="">
+                            <div class="accent-button">
+                                <button type="submit" style='border: none !important;'>Submit Message</button>
                             </div>
-                            <div class="col-md-12">
-                                <textarea id="message" class="message" name="message" placeholder="Write message"></textarea>
-                            </div>
-                        </div>
-                        <div class="accent-button">
-                            <a href="#">Submit Message</a>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

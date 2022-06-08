@@ -1,9 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
-    @include('back/partials/sidebar')
-    <section class="home-section p-0">
-        <div class='container d-flex flex-column align-items-center justify-content-center'>
-            <div class="text">Rendez-vous</div>
+    <div class='container'>
+        <h1>ContactForms</h1>
         @if ($errors->any())
             <div class='alert alert-danger'>
                 <ul>
@@ -13,21 +11,21 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('demandes.create') }}' method='post'>
+        <form action='{{ route('contactform.update' , $contactform->id) }}' method='post'>
             @csrf
             <div>
                 <label for=''>from</label>
-                <input type='text' name='from'>
+                <input type='text' name='from' value='{{ $contactform->from }}'>
             </div>
             <div>
                 <label for=''>to</label>
-                <input type='text' name='to'>
+                <input type='text' name='to' value='{{ $contactform->to }}'>
             </div>
             <div>
                 <label for=''>content</label>
-                <input type='text' name='content'>
+                <input type='text' name='content' value='{{ $contactform->content }}'>
             </div>
-            <button type='submit'>Create</button> {{-- create_blade_anchor --}} 
+            <button type='submit'>Update</button> {{-- update_blade_anchor --}}
         </form>
     </div>
 @endsection

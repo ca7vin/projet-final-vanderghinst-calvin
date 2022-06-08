@@ -32,7 +32,7 @@ class EmailController extends Controller
         $email->save(); // store_anchor
         return redirect()->route("email.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $email = Email::find($id);
         return view("/back/emails/read",compact("email"));

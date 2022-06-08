@@ -39,7 +39,7 @@ class ServiceController extends Controller
         $service->save(); // store_anchor
         return redirect()->route("service.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $service = Service::find($id);
         return view("/back/services/read",compact("service"));

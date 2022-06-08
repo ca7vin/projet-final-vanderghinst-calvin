@@ -22,7 +22,7 @@
                     <td>{{ $service->title }}</td>
                     <td>{{ $service->text }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('service.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('services.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

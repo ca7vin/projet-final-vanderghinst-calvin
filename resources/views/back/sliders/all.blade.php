@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Slider::class)
-                <a class='btn btn-success' href='{{ route('slider.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('sliders.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -55,7 +55,7 @@
                             <td>{{ $slider->btnlink }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $slider)
-                                    <form action='{{ route('slider.destroy', $slider->id) }}' method='post'>
+                                    <form action='{{ route('sliders.destroy', $slider->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
@@ -63,12 +63,12 @@
                             </td>
                             <td>
                                 @can('delete', $slider)
-                                    <a class='btn btn-dark' href='{{ route('slider.edit', $slider->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('sliders.edit', $slider->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('slider.read', $slider->id) }}'
+                                <a class='btn btn-dark' href='{{ route('sliders.show', $slider->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

@@ -36,7 +36,7 @@
                             <td>{{ $commentaire->post->title }}</td>
                             <td> {{-- all_td_anchor --}}
                                 @can('delete', $commentaire)
-                                    <form action='{{ route('commentaire.destroy', $commentaire->id) }}' method='post'>
+                                    <form action='{{ route('commentaires.destroy', $commentaire->id) }}' method='post'>
                                         @csrf
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
@@ -44,12 +44,12 @@
                             </td>
                             <td>
                                 @can('update', $commentaire)
-                                    <a class='btn btn-dark' href='{{ route('commentaire.edit', $commentaire->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('commentaires.edit', $commentaire->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-dark' href='{{ route('commentaire.read', $commentaire->id) }}'
+                                <a class='btn btn-dark' href='{{ route('commentaires.show', $commentaire->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

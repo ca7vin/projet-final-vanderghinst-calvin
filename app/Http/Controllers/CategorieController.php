@@ -32,7 +32,7 @@ class CategorieController extends Controller
         $categorie->save(); // store_anchor
         return redirect()->route("categorie.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $categorie = Categorie::find($id);
         return view("/back/categories/read",compact("categorie"));

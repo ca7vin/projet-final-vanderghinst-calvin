@@ -61,7 +61,7 @@ class SliderController extends Controller
         $slider->save(); // update_anchor
         return redirect()->route("slider.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $slider = Slider::find($id);
         return view("/back/sliders/read",compact("slider"));

@@ -37,7 +37,7 @@ class CommentaireController extends Controller
         $commentaire->save(); // store_anchor
         return redirect()->back();
     }
-    public function read($id)
+    public function show($id)
     {
         $commentaire = Commentaire::find($id);
         return view("/back/commentaires/read",compact("commentaire"));
@@ -62,7 +62,7 @@ class CommentaireController extends Controller
         $commentaire->content = $request->content;
         $commentaire->post_id = $request->post_id;
         $commentaire->save(); // update_anchor
-        return redirect()->route("commentaire.index")->with('message', "Successful update !");
+        return redirect()->route("commentaires.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

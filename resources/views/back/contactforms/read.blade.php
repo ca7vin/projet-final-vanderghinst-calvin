@@ -1,9 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
-    @include('back/partials/sidebar')
-    <section class="home-section p-0">
-        <div class='container d-flex flex-column align-items-center justify-content-center'>
-            <div class="text">Rendez-vous</div>
+    <div class='container'>
+        <h1 class='my-5'>ContactForms</h1>
         <table class='table'>
             <thead>
                 <tr>
@@ -16,12 +14,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope='row'>{{ $demande->id }}</th>
-                    <td>{{ $demande->from }}</td>
-                    <td>{{ $demande->to }}</td>
-                    <td>{{ $demande->content }}</td>
+                    <th scope='row'>{{ $contactform->id }}</th>
+                    <td>{{ $contactform->from }}</td>
+                    <td>{{ $contactform->to }}</td>
+                    <td>{{ $contactform->content }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('demandes.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('contactform.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

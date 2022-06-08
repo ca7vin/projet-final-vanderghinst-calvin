@@ -32,7 +32,7 @@ class TagController extends Controller
         $tag->save(); // store_anchor
         return redirect()->route("tag.index")->with('message', "Successful storage !");
     }
-    public function read($id)
+    public function show($id)
     {
         $tag = Tag::find($id);
         return view("/back/tags/read",compact("tag"));

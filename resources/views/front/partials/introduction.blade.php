@@ -31,7 +31,7 @@
                                 <div class="widget-heading">
                                     <h4>Request Information</h4>
                                 </div>
-                                <form action="{{ Route('demande.store') }}" method='POST'>
+                                <form action="{{ Route('demandes.create') }}" method='POST'>
                                     @csrf
                                     <div class="search-form">
                                         @if (session()->has('message'))

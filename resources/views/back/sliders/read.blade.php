@@ -28,7 +28,7 @@
                         <td>{{ $slider->btntext }}</td>
                         <td>{{ $slider->btnlink }}</td>
                         <td> {{-- read_td_anchor --}}
-                            <a class='btn btn-primary' href='{{ route('slider.index') }}' role='button'>Back</a>
+                            <a class='btn btn-primary' href='{{ route('sliders.index') }}' role='button'>Back</a>
                         </td>
                     </tr>
                 </tbody>
