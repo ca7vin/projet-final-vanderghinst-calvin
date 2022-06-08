@@ -42,7 +42,7 @@
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('email.read', $email->id) }}'
+                                <a class='btn btn-dark' href='{{ route('email.read', $email->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

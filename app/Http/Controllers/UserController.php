@@ -148,6 +148,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $user->courses()->detach();
         $this->authorize('delete', $user);
         if ($user->id === Auth::user()->id) {
             return redirect()->route("user.index")->with('error', "You cannot delete your own account !");

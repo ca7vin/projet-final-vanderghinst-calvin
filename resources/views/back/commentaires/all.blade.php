@@ -44,12 +44,12 @@
                             </td>
                             <td>
                                 @can('update', $commentaire)
-                                    <a class='btn btn-primary' href='{{ route('commentaire.edit', $commentaire->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('commentaire.edit', $commentaire->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('commentaire.read', $commentaire->id) }}'
+                                <a class='btn btn-dark' href='{{ route('commentaire.read', $commentaire->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

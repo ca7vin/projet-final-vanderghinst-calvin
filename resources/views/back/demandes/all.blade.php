@@ -60,7 +60,7 @@
                                             @csrf
                                             <button class='btn btn-danger' type=submit>Delete</button>
                                         </form>
-                                        <a class='btn btn-dark mx-3' href='{{ route('demande.edit', $demande->id) }}'
+                                        <a class='btn btn-dark' href='{{ route('demande.edit', $demande->id) }}'
                                             role='button'>Edit</a>
                                         <a class='btn btn-dark' href='{{ route('demande.read', $demande->id) }}'
                                             role='button'>Read</a>

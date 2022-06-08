@@ -43,12 +43,12 @@
                             </td>
                             <td>
                                 @can('delete', $tag)
-                                    <a class='btn btn-primary' href='{{ route('tag.edit', $tag->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('tag.edit', $tag->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('tag.read', $tag->id) }}' role='button'>Read</a>
+                                <a class='btn btn-dark' href='{{ route('tag.read', $tag->id) }}' role='button'>Read</a>
                             </td>
                         </tr>
                     @endforeach

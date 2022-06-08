@@ -31,7 +31,7 @@
                         <td>{{ $role->name }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <a class='btn btn-primary' href='{{ route('role.read', $role->id) }}' role='button'>Read</a>
+                                <a class='btn btn-dark' href='{{ route('role.read', $role->id) }}' role='button'>Read</a>
                             </div>
                         </td>
                     </tr>

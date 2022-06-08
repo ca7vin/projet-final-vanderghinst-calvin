@@ -53,12 +53,12 @@
                             </td>
                             <td>
                                 @can('update', $user)
-                                    <a class='btn btn-primary' href='{{ route('user.edit', $user->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('user.edit', $user->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}'
+                                <a class='btn btn-dark' href='{{ route('user.read', $user->id) }}'
                                     role='button'>Read</a>
                             </td>
                             <td>

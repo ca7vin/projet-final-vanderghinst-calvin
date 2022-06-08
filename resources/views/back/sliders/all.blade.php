@@ -63,12 +63,12 @@
                             </td>
                             <td>
                                 @can('delete', $slider)
-                                    <a class='btn btn-primary' href='{{ route('slider.edit', $slider->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('slider.edit', $slider->id) }}'
                                         role='button'>Edit</a>
                                 @endcan
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('slider.read', $slider->id) }}'
+                                <a class='btn btn-dark' href='{{ route('slider.read', $slider->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

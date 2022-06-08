@@ -66,7 +66,7 @@
                                                     <option value="{{ $course->prof->user->name }}">{{ $course->title }}
                                                     </option>
                                                     @else
-                                                    <option value="Administrateur">{{ $course->title }}
+                                                    <option value="Administrateur">{{ $course->title }}</option>
                                                     @endif
                                                 @endforeach
                                             </select>

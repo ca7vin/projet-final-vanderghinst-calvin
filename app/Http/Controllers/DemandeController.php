@@ -60,6 +60,14 @@ class DemandeController extends Controller
         $demande->content = $request->content;
         $demande->date = $request->date;
         $demande->status = true;
+        // COURS ETUDIANT
+        $user = User::where('name', $demande->from)->first();
+        $userTo = User::where('name', $demande->to)->first();
+        $user->save();
+        $userTo->save();
+        $user->courses()->sync($userTo->prof->courses, [
+            'user_id' => $user->id,
+        ]);
         $demande->save(); // update_anchor
         $user_mail = User::select('email')->where('name', $demande->from)->first();
             Mail::send('emails.rdv', array( 
