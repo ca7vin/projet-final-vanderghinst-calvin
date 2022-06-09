@@ -23,7 +23,7 @@ class RedacteurController extends Controller
         $request->validate([
         ]); // store_validated_anchor;
         $redacteur->save(); // store_anchor
-        return redirect()->route("redacteur.index")->with('message', "Successful storage !");
+        return redirect()->route("redacteurs.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -41,7 +41,7 @@ class RedacteurController extends Controller
         $request->validate([
         ]); // update_validated_anchor;
         $redacteur->save(); // update_anchor
-        return redirect()->route("redacteur.index")->with('message', "Successful update !");
+        return redirect()->route("redacteurs.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

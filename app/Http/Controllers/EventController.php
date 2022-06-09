@@ -95,7 +95,7 @@ class EventController extends Controller
         $event->categories()->attach($request->categories, [
             'event_id' => $event->id,
         ]);
-        return redirect()->route("event.index")->with('message', "Successful storage !");
+        return redirect()->route("events.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -171,7 +171,7 @@ class EventController extends Controller
         $event->categories()->sync($request->categories, [
             'event_id' => $event->id,
         ]);
-        return redirect()->route("event.index")->with('message', "Successful update !");
+        return redirect()->route("events.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

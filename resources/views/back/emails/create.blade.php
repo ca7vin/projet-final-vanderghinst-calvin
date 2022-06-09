@@ -13,14 +13,15 @@
                 </ul>
             </div>
         @endif
-        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('email.store') }}'
+        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('emails.store') }}'
         method='post' enctype="multipart/form-data">
         @csrf
+        @method('POST')
         <div class="row">
             <div class="col-12 d-flex flex-column align-items-center justify-content-center">
                 <div class='d-flex flex-col align-items-start justify-content-center mb-3'>
                     <label class='text-uppercase text-white mb-2' for=''>mail</label>
-                    <input type='text' name='mail' value=''>
+                    <input type='text' name='email' value=''>
                 </div>
             </div>
         </div>

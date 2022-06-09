@@ -13,6 +13,7 @@
         @endif
         <form action='{{ route('message.update' , $message->id) }}' method='post'>
             @csrf
+            @method('PUT')
             <div>
                 <label for=''>from</label>
                 <input type='text' name='from' value='{{ $message->from }}'>

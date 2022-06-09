@@ -30,7 +30,7 @@ class TagController extends Controller
         ]); // store_validated_anchor;
         $tag->name = $request->name;
         $tag->save(); // store_anchor
-        return redirect()->route("tag.index")->with('message', "Successful storage !");
+        return redirect()->route("tags.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -54,7 +54,7 @@ class TagController extends Controller
         ]); // update_validated_anchor;
         $tag->name = $request->name;
         $tag->save(); // update_anchor
-        return redirect()->route("tag.index")->with('message', "Successful update !");
+        return redirect()->route("tags.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

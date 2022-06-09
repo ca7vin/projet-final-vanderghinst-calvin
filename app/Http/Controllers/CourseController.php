@@ -72,7 +72,7 @@ class CourseController extends Controller
         $course->categories()->attach($request->categories, [
             'course_id' => $course->id,
         ]);
-        return redirect()->route("course.index")->with('message', "Successful storage !");
+        return redirect()->route("courses.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -141,7 +141,7 @@ class CourseController extends Controller
         $course->categories()->sync($request->categories, [
             'course_id' => $course->id,
         ]);
-        return redirect()->route("course.index")->with('message', "Successful update !");
+        return redirect()->route("courses.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

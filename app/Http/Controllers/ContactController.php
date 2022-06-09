@@ -35,6 +35,6 @@ class ContactController extends Controller
         $contact->phone = $request->phone;
         $contact->mail = $request->mail;
         $contact->save(); // update_anchor
-        return redirect()->route("contact.index")->with('message', "Successful update !");
+        return redirect()->route("contacts.index")->with('message', "Successful update !");
     }
 }

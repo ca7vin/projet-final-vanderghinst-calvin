@@ -55,12 +55,12 @@ class CommentaireController extends Controller
         $commentaire = Commentaire::find($id);
         $this->authorize('update', $commentaire);
         $request->validate([
-         'user'=> 'required',
+        //  'user'=> 'required',
          'content'=> 'required',
         ]); // update_validated_anchor;
-        $commentaire->user = $request->user;
+        $commentaire->user_id = $commentaire->user_id;
         $commentaire->content = $request->content;
-        $commentaire->post_id = $request->post_id;
+        $commentaire->post_id = $commentaire->post_id;
         $commentaire->save(); // update_anchor
         return redirect()->route("commentaires.index")->with('message', "Successful update !");
     }

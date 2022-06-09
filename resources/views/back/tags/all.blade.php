@@ -37,12 +37,13 @@
                                 @can('delete', $tag)
                                     <form action='{{ route('tags.destroy', $tag->id) }}' method='post'>
                                         @csrf
+                                        @method('DELETE')
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 @endcan
                             </td>
                             <td>
-                                @can('delete', $tag)
+                                @can('update', $tag)
                                     <a class='btn btn-dark' href='{{ route('tags.edit', $tag->id) }}'
                                         role='button'>Edit</a>
                                 @endcan

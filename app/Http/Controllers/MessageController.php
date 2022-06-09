@@ -72,7 +72,7 @@ class MessageController extends Controller
         $message->to = $request->to;
         $message->content = $request->content;
         $message->save(); // update_anchor
-        return redirect()->route("message.index")->with('message', "Successful update !");
+        return redirect()->route("messages.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

@@ -80,7 +80,7 @@ class DemandeController extends Controller
                 $message->to($user_mail->email, 'Admin'); 
                 $message->from(Auth::user()->email);
             });
-        return redirect()->route("demande.index")->with('message', "Successful update !");
+        return redirect()->route("demandes.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

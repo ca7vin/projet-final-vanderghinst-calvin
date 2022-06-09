@@ -13,6 +13,7 @@
         @endif
         <form action='{{ route('contactform.update' , $contactform->id) }}' method='post'>
             @csrf
+            @method('PUT')
             <div>
                 <label for=''>from</label>
                 <input type='text' name='from' value='{{ $contactform->from }}'>

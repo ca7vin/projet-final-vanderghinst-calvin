@@ -46,6 +46,7 @@
                                 <div class='d-flex'>
                                     <form action='{{ route('message.destroy', $message->id) }}' method='post'>
                                         @csrf
+                                        @method('DELETE')
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 </div>

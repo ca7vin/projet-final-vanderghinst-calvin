@@ -33,18 +33,19 @@
                             <th scope='row'>{{ $categorie->id }}</th>
                             <td>{{ $categorie->name }}</td>
                             <td> {{-- all_td_anchor --}}
-                                    @can('delete', $categorie)
-                                        <form action='{{ route('categories.destroy', $categorie->id) }}' method='post'>
-                                            @csrf
-                                            <button class='btn btn-danger' type=submit>Delete</button>
-                                        </form>
-                                    @endcan
+                                @can('delete', $categorie)
+                                    <form action='{{ route('categories.destroy', $categorie->id) }}' method='post'>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class='btn btn-danger' type=submit>Delete</button>
+                                    </form>
+                                @endcan
                             </td>
                             <td>
                                 @can('update', $categorie)
-                                        <a class='btn btn-dark' href='{{ route('categories.edit', $categorie->id) }}'
-                                            role='button'>Edit</a>
-                                    @endcan
+                                    <a class='btn btn-dark' href='{{ route('categories.edit', $categorie->id) }}'
+                                        role='button'>Edit</a>
+                                @endcan
                             </td>
                             <td>
                                 <a class='btn btn-dark' href='{{ route('categories.show', $categorie->id) }}'

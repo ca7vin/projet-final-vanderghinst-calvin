@@ -41,6 +41,7 @@
                                 @can('delete', $service)
                                     <form action='{{ route('services.destroy', $service->id) }}' method='post'>
                                         @csrf
+                                        @method('DELETE')
                                         <button class="btn btn-danger" type=submit>Delete</button>
                                     </form>
                                 @endcan

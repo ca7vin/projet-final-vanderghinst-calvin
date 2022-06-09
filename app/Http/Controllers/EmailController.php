@@ -30,7 +30,7 @@ class EmailController extends Controller
         ]); // store_validated_anchor;
         $email->email = $request->email;
         $email->save(); // store_anchor
-        return redirect()->route("email.index")->with('message', "Successful storage !");
+        return redirect()->route("emails.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -54,7 +54,7 @@ class EmailController extends Controller
         ]); // update_validated_anchor;
         $email->email = $request->email;
         $email->save(); // update_anchor
-        return redirect()->route("email.index")->with('message', "Successful update !");
+        return redirect()->route("emails.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

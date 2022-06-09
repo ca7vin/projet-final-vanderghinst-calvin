@@ -13,6 +13,7 @@
         @endif
         <form action='{{ route('contactform.store') }}' method='post'>
             @csrf
+            @method('POST')
             <div>
                 <label for=''>from</label>
                 <input type='text' name='from'>

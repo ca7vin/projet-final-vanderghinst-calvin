@@ -37,6 +37,7 @@
                                 @can('delete', $email)
                                     <form action='{{ route('emails.destroy', $email->id) }}' method='post'>
                                         @csrf
+                                        @method('DELETE')
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 @endcan

@@ -59,7 +59,7 @@ class SliderController extends Controller
             $request->file('image')->storePublicly('images', 'public');
         }
         $slider->save(); // update_anchor
-        return redirect()->route("slider.index")->with('message', "Successful storage !");
+        return redirect()->route("sliders.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -106,7 +106,7 @@ class SliderController extends Controller
             $request->file('image')->storePublicly('images', 'public');
         }
         $slider->save(); // update_anchor
-        return redirect()->route("slider.index")->with('message', "Successful update !");
+        return redirect()->route("sliders.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

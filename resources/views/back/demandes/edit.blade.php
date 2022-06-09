@@ -16,6 +16,7 @@
         <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('demande.update', $demande->id) }}'
             method='POST' enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class='d-flex flex-column align-items-center justify-content-center mb-3'>
                     <label class='text-uppercase text-white mb-2' for=''>from</label>
                     <input type='text' name='from' value='{{ $demande->from }}'>

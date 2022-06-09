@@ -13,9 +13,10 @@
                     </ul>
                 </div>
             @endif
-            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('events.store') }}'
-                method='post' style='background-color:#A12C2F'>
+            <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('events.update', $event->id) }}'
+                method='POST' style='background-color:#A12C2F'>
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-4 d-flex flex-column align-items-center justify-content-center">
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
@@ -84,7 +85,7 @@
                     </div>
                 </div>
                 <div class="row mx-5">
-                    <button class='btn btn-dark mt-3 mb-2' type='submit'>Create</button> {{-- create_blade_anchor --}}
+                    <button class='btn btn-dark mt-3 mb-2' type='submit'>Update</button> {{-- create_blade_anchor --}}
                 </div>
             </form>
         </div>

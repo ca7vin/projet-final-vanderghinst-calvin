@@ -38,6 +38,7 @@
                             <td> {{-- all_td_anchor --}}
                                 <form action='{{ route('contactform.destroy', $contactform->id) }}' method='post'>
                                     @csrf
+                                    @method('DELETE')
                                     <button class='btn btn-danger' type=submit>Delete</button>
                                 </form>
                             </td>

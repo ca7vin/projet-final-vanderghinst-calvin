@@ -183,7 +183,7 @@ Route::resource('tags', TagController::class);
 Route::resource('categories', CategorieController::class);
 // Email
 Route::resource('emails', EmailController::class);
-// MAIL
+// Newsletter
 Route::post('/contact-form', [NewsletterController::class, 'storeContactForm'])->name('contact-form.store');
 // Demande
 Route::post('/back/demandes/store2', [DemandeController::class, 'store2'])->name('demande.store2');

@@ -58,7 +58,7 @@ class PostController extends Controller
         $post->tags()->attach($request->tags, [
             'post_id' => $post->id,
         ]);
-        return redirect()->route("post.index")->with('message', "Successful storage !");
+        return redirect()->route("posts.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -112,7 +112,7 @@ class PostController extends Controller
         $post->tags()->sync($request->tags, [
             'post_id' => $post->id,
         ]);
-        return redirect()->route("post.index")->with('message', "Successful update !");
+        return redirect()->route("posts.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

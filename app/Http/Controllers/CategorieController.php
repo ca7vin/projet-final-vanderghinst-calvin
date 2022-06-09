@@ -30,7 +30,7 @@ class CategorieController extends Controller
         ]); // store_validated_anchor;
         $categorie->name = $request->name;
         $categorie->save(); // store_anchor
-        return redirect()->route("categorie.index")->with('message', "Successful storage !");
+        return redirect()->route("categories.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -54,7 +54,7 @@ class CategorieController extends Controller
         ]); // update_validated_anchor;
         $categorie->name = $request->name;
         $categorie->save(); // update_anchor
-        return redirect()->route("categorie.index")->with('message', "Successful update !");
+        return redirect()->route("categories.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

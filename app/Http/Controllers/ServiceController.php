@@ -37,7 +37,7 @@ class ServiceController extends Controller
         $service->title = $request->title;
         $service->text = $request->text;
         $service->save(); // store_anchor
-        return redirect()->route("service.index")->with('message', "Successful storage !");
+        return redirect()->route("services.index")->with('message', "Successful storage !");
     }
     public function show($id)
     {
@@ -66,7 +66,7 @@ class ServiceController extends Controller
         $service->title = $request->title;
         $service->text = $request->text;
         $service->save(); // update_anchor
-        return redirect()->route("service.index")->with('message', "Successful update !");
+        return redirect()->route("services.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

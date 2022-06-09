@@ -16,7 +16,7 @@
             <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded' action='{{ route('sliders.store') }}'
                 method='post' style='background-color:#A12C2F'>
                 @csrf
-
+                @method('POST')
                 <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
                     <label class='text-uppercase text-white mb-2 text-center' for=''>Display in first ?</label>
                     <div class="d-flex align-items-center justify-content-around mb-3 px-5">

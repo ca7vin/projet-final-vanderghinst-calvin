@@ -13,17 +13,18 @@
                     </ul>
                 </div>
             @endif
-            <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('users.store') }}'
-                method='post' enctype="multipart/form-data">
+            <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('services.update', $service->id) }}'
+                method='POST' enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="d-flex flex-column align-items-center justify-content-center mb-3">
                         <label class="text-uppercase text-white mb-3" for=''>title</label>
-                        <input type='text' name='title'>
+                        <input type='text' name='title' value={{ $service->title }}>
                     </div>
                     <div class="d-flex flex-column align-items-center justify-content-center mb-3">
                         <label class="text-uppercase text-white mb-3" for=''>text</label>
-                        <input type='text' name='text'>
+                        <input type='text' name='text' value={{ $service->text }}>
                     </div>
                 </div>
                 <div class="row bg-light mx-5 p-3 rounded">
@@ -48,7 +49,7 @@
                     </div>
                 </div>
                 <div class="row mx-5">
-                    <button class="btn btn-dark mt-3 mb-2" type='submit'>Create</button> {{-- create_blade_anchor --}}
+                    <button class="btn btn-dark mt-3 mb-2" type='submit'>Update</button> {{-- create_blade_anchor --}}
                 </div>
             </form>
         </div>

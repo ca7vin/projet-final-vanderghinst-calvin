@@ -13,9 +13,10 @@
                     </ul>
                 </div>
             @endif
-            <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('users.store') }}'
+            <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('services.store') }}'
                 method='post' enctype="multipart/form-data">
                 @csrf
+                @method('POST')
                 <div class="row">
                     <div class="d-flex flex-column align-items-center justify-content-center mb-3">
                         <label class="text-uppercase text-white mb-3" for=''>title</label>

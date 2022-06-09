@@ -59,7 +59,7 @@ class ContactFormController extends Controller
         $contactform->to = $request->to;
         $contactform->content = $request->content;
         $contactform->save(); // update_anchor
-        return redirect()->route("contactform.index")->with('message', "Successful update !");
+        return redirect()->route("contactforms.index")->with('message', "Successful update !");
     }
     public function mail($id, Request $request)
     {
@@ -81,7 +81,7 @@ class ContactFormController extends Controller
             $message->to($request->to); 
             $message->from('ca7vin@gmail.com');
         });
-        return redirect()->route("contactform.index")->with('message', "Réponse bien envoyée !");
+        return redirect()->route("contactforms.index")->with('message', "Réponse bien envoyée !");
     }
 
     public function destroy($id)
