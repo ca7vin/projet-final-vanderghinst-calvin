@@ -18,7 +18,7 @@ class ContactPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class ContactPolicy
      */
     public function view(User $user, Contact $contact)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

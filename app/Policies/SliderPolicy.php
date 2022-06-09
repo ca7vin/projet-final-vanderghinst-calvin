@@ -18,7 +18,7 @@ class SliderPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class SliderPolicy
      */
     public function view(User $user, Slider $slider)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

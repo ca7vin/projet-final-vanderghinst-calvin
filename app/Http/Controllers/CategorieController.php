@@ -12,6 +12,7 @@ class CategorieController extends Controller
     public function index()
     {
         $categories = Categorie::all();
+        $this->authorize('viewAny', Categorie::class);
         return view("/back/categories/all",compact("categories"));
     }
     public function create()
@@ -35,6 +36,7 @@ class CategorieController extends Controller
     public function show($id)
     {
         $categorie = Categorie::find($id);
+        $this->authorize('view', $categorie);
         return view("/back/categories/read",compact("categorie"));
     }
     public function edit($id)

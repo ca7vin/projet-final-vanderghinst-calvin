@@ -18,7 +18,7 @@ class EventPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class EventPolicy
      */
     public function view(User $user, Event $event)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

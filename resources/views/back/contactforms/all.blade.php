@@ -36,7 +36,7 @@
                             <td>{{ $contactform->to }}</td>
                             <td>{{ $contactform->content }}</td>
                             <td> {{-- all_td_anchor --}}
-                                <form action='{{ route('contactform.destroy', $contactform->id) }}' method='post'>
+                                <form action='{{ route('contactforms.destroy', $contactform->id) }}' method='post'>
                                     @csrf
                                     @method('DELETE')
                                     <button class='btn btn-danger' type=submit>Delete</button>
@@ -47,7 +47,7 @@
                                     role='button'>Reply</a>
                             </td>
                             <td>
-                                <a class='btn btn-primary' href='{{ route('contactform.read', $contactform->id) }}'
+                                <a class='btn btn-primary' href='{{ route('contactforms.show', $contactform->id) }}'
                                     role='button'>Read</a>
                             </td>
                         </tr>

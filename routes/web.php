@@ -5,7 +5,6 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\DemandeController;
-use App\Http\Controllers\RdvCourseController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\TagController;
@@ -15,26 +14,17 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\RedacteurController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfController;
-use App\Http\Controllers\RequestCourseController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Categorie;
-use App\Models\Contact;
-use App\Models\ContactForm;
 use App\Models\Course;
-use App\Models\Demande;
 use App\Models\Event;
-use App\Models\Message;
 use App\Models\Post;
-use App\Models\Prof;
-use App\Models\Service;
-use App\Models\Slider;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 /*
@@ -47,29 +37,6 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    $slides = Slider::all();
-    foreach ($slides as $slide) {
-        $slide->title = str_replace("//", "<br>", $slide->title);
-        $slide->text = str_replace("//", "<br>", $slide->text);
-    } 
-    $services = Service::all();
-    $popularcourses = Course::where('status', true)->where("favori", 1)->get();
-    $popularteachers = Prof::all();
-    $lastnews = Post::orderBy('created_at', 'desc')->take(2)->get();
-    $categories = Categorie::all();
-    $courses = Course::where('status', true)->get();
-    return view('index', compact('slides', 'services', 'popularcourses', 'popularteachers', 'lastnews', 'categories', 'courses'));
-})->name("home");
-
-
-Route::get('/coursesMain', function () {
-    $courses = Course::where("status", true)->paginate(9);
-    $categories = Categorie::all();
-    return view('front/pages/courses-grid', compact('courses', 'categories'));
-})->name("coursesMain");
-
 global $actualCatCourse;
 Route::post('/courses/findCat', function (Request $request) {
     $actualCatCourse = $request->category;
@@ -115,39 +82,16 @@ Route::post('/posts/findTag', function (Request $request) {
     })->paginate(4);
     return view('front/pages/classic-news', compact('news', 'tags', 'actualTagPost', 'categories'));
 })->name("filterTagPost");
-// Route
 
-Route::get('eventsMain', function () {
-    $events = Event::paginate(6);
-    $categories = Categorie::all();
-    foreach ($events as $event) {
-            $event->date = str_replace("[", "<span>", $event->date);
-            $event->date = str_replace("]", "</span>", $event->date);
-        } 
-    return view('front/pages/classic-events', compact('events', 'categories'));
-})->name("eventsMain");
-
-Route::get('newsMain', function () {
-    $news = Post::where('status', true)->paginate(4);
-    $categories = Categorie::all();
-    $tags = Tag::all();
-    return view('front/pages/classic-news', compact('news', 'categories', 'tags'));
-})->name("newsMain");
-
-Route::get('contact', function () {
-    $contact = Contact::all();
-    return view('front/pages/contact', compact('contact'));
-})->name("contact");
-
-Route::get('/dashboard', function () {
-    $messages = Message::All();
-    $demandes = Demande::all();
-    $contactforms = ContactForm::all();
-    return view('dashboard', compact('messages', 'demandes', 'contactforms'));
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
+// HOME
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/coursesMain', [HomeController::class, 'coursesMain'])->name('coursesMain');
+Route::get('/eventsMain', [HomeController::class, 'eventsMain'])->name('eventsMain');
+Route::get('/newsMain', [HomeController::class, 'newsMain'])->name('newsMain');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 // Slider
 Route::resource('sliders', SliderController::class);
 // Service
@@ -194,12 +138,6 @@ Route::resource('commentaires', CommentaireController::class);
 // Contact
 Route::resource('contacts', ContactController::class);
 // ContactForm
-Route::get('/back/contactforms', [ContactFormController::class, 'index'])->name('contactform.index');
-Route::get('/back/contactforms/create', [ContactFormController::class, 'create'])->name('contactform.create');
-Route::post('/back/contactforms/store', [ContactFormController::class, 'store'])->name('contactform.store');
-Route::get('/back/contactforms/{id}/read', [ContactFormController::class, 'read'])->name('contactform.read');
-Route::get('/back/contactforms/{id}/edit', [ContactFormController::class, 'edit'])->name('contactform.edit');
 Route::get('/back/contactforms/{id}/reply', [ContactFormController::class, 'reply'])->name('contactform.reply');
 Route::post('/back/contactforms/{id}/mail', [ContactFormController::class, 'mail'])->name('contactform.mail');
-Route::post('/back/contactforms/{id}/update', [ContactFormController::class, 'update'])->name('contactform.update');
-Route::post('/back/contactforms/{id}/delete', [ContactFormController::class, 'destroy'])->name('contactform.destroy');
+Route::resource('contactforms', ContactFormController::class);

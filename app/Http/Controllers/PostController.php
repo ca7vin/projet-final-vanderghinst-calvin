@@ -63,6 +63,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        $this->authorize('view', $post);
         return view("/back/posts/read",compact("post"));
     }
     public function onepage($id)

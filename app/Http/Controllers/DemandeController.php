@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Demande;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -63,9 +64,11 @@ class DemandeController extends Controller
         // COURS ETUDIANT
         $user = User::where('name', $demande->from)->first();
         $userTo = User::where('name', $demande->to)->first();
+        $course = Course::where('title', $demande->content)->first();
         $user->save();
         $userTo->save();
-        $user->courses()->sync($userTo->prof->courses, [
+        $course->save();
+        $user->courses()->sync($course, [
             'user_id' => $user->id,
         ]);
         $demande->save(); // update_anchor

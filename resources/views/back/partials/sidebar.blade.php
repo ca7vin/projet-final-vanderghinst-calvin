@@ -48,7 +48,7 @@
           </li>
           @if (Auth::user()->role_id == 3)
               <li>
-                  <a href="{{ Route('post.index') }}">
+                  <a href="{{ Route('posts.index') }}">
                       <i class='bx bxs-news'></i>
                       <span class="links_name">News</span>
                   </a>
@@ -56,6 +56,13 @@
               </li>
           @endif
           @if (Auth::user()->role_id == 1)
+              <li>
+                  <a href="{{ Route('posts.index') }}">
+                      <i class='bx bxs-news'></i>
+                      <span class="links_name">News</span>
+                  </a>
+                  <span class="tooltip">News</span>
+              </li>
               <li>
                   <a href="{{ Route('emails.index') }}">
                       <i class='bx bx-mail-send'></i>

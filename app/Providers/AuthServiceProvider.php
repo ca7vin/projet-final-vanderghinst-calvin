@@ -59,6 +59,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('update-tag', [TagPolicy::class, 'update']);
         Gate::define('update-user', [UserPolicy::class, 'update']);
         Gate::define('update-commentaire', [CommentairePolicy::class, 'update']);
+        //
+        
 
     }
 }

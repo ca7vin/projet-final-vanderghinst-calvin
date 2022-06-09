@@ -20,7 +20,7 @@
                     <td>{{ $post->text }}</td>
                     <td>{{ $post->quote }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('post.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('posts.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

@@ -18,7 +18,7 @@ class CommentairePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class CommentairePolicy
      */
     public function view(User $user, Commentaire $commentaire)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

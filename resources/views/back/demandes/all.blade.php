@@ -55,17 +55,19 @@
                                 <td>{{ $demande->to }}</td>
                                 <td>{{ $demande->content }}</td>
                                 <td> {{-- all_td_anchor --}}
-                                    <div class='d-flex'>
-                                        <form action='{{ route('demande.destroy', $demande->id) }}' method='post'>
+                                        <form action='{{ route('demandes.destroy', $demande->id) }}' method='post'>
                                             @csrf
                                             @method('DELETE')
                                             <button class='btn btn-danger' type=submit>Delete</button>
                                         </form>
-                                        <a class='btn btn-dark' href='{{ route('demande.edit', $demande->id) }}'
-                                            role='button'>Edit</a>
-                                        <a class='btn btn-dark' href='{{ route('demande.read', $demande->id) }}'
-                                            role='button'>Read</a>
-                                    </div>
+                                </td>
+                                <td>
+                                    <a class='btn btn-dark' href='{{ route('demandes.edit', $demande->id) }}'
+                                        role='button'>Edit</a>
+                                </td>
+                                <td>
+                                    <a class='btn btn-dark' href='{{ route('demandes.show', $demande->id) }}'
+                                        role='button'>Read</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -91,14 +93,20 @@
                                 <td>{{ $demande->to }}</td>
                                 <td>{{ $demande->content }}</td>
                                 <td> {{-- all_td_anchor --}}
-                                    <form action='{{ route('demande.destroy', $demande->id) }}' method='post'>
+                                    <form action='{{ route('demandes.destroy', $demande->id) }}' method='post'>
                                         @csrf
                                         @method('DELETE')
                                         <button class='btn btn-danger' type=submit>Delete</button>
                                     </form>
                                 </td>
+                                @if (auth()->user()->role_id == 1)
+                                    <td> {{-- all_td_anchor --}}
+                                        <a class='btn btn-dark' href='{{ route('demandes.edit', $demande->id) }}'
+                                            role='button'>Edit</a>
+                                    </td>
+                                @endif
                                 <td>
-                                    <a class='btn btn-dark' href='{{ route('demande.read', $demande->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('demandes.show', $demande->id) }}'
                                         role='button'>Read</a>
                                 </td>
                             </tr>

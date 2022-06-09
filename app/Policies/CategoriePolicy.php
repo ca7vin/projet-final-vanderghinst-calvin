@@ -18,7 +18,7 @@ class CategoriePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoriePolicy
      */
     public function view(User $user, Categorie $categorie)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

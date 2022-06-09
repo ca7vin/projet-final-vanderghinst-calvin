@@ -19,7 +19,7 @@
                 </div>
             @endif
             @can('create', App\Models\Post::class)
-                <a class='btn btn-success' href='{{ route('post.create') }}' role='button'>Create</a>
+                <a class='btn btn-success' href='{{ route('posts.create') }}' role='button'>Create</a>
             @endcan
             <table class='table'>
                 <thead>
@@ -79,7 +79,7 @@
                                 </td>
                                 <td> {{-- all_td_anchor --}}
                                     @can('delete', $post)
-                                        <form action='{{ route('post.destroy', $post->id) }}' method='post'>
+                                        <form action='{{ route('posts.destroy', $post->id) }}' method='post'>
                                             @csrf
                                             <button class="btn btn-danger" type=submit>Delete</button>
                                         </form>
@@ -87,12 +87,12 @@
                                 </td>
                                 <td>
                                     @can('update', $post)
-                                        <a class='btn btn-dark' href='{{ route('post.edit', $post->id) }}'
+                                        <a class='btn btn-dark' href='{{ route('posts.edit', $post->id) }}'
                                             role='button'>Edit</a>
                                     @endcan
                                 </td>
                                 <td>
-                                    <a class='btn btn-dark' href='{{ route('post.read', $post->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('posts.show', $post->id) }}'
                                         role='button'>Read</a>
                                 </td>
                             </tr>
@@ -141,7 +141,7 @@
                                 </td>
                                 <td> {{-- all_td_anchor --}}
                                     @can('delete', $post)
-                                        <form action='{{ route('post.destroy', $post->id) }}' method='post'>
+                                        <form action='{{ route('posts.destroy', $post->id) }}' method='post'>
                                             @csrf
                                             <button class="btn btn-danger" type=submit>Delete</button>
                                         </form>
@@ -149,12 +149,12 @@
                                 </td>
                                 <td>
                                     @can('update', $post)
-                                        <a class='btn btn-dark' href='{{ route('post.edit', $post->id) }}'
+                                        <a class='btn btn-dark' href='{{ route('posts.edit', $post->id) }}'
                                             role='button'>Edit</a>
                                     @endcan
                                 </td>
                                 <td>
-                                    <a class='btn btn-dark' href='{{ route('post.read', $post->id) }}'
+                                    <a class='btn btn-dark' href='{{ route('posts.show', $post->id) }}'
                                         role='button'>Read</a>
                                 </td>
                             </tr>

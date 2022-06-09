@@ -13,7 +13,7 @@
                 </ul>
             </div>
         @endif
-        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('demande.update', $demande->id) }}'
+        <form class='w-100 p-3 mt-5 rounded' style='background-color:#A12C2F' action='{{ route('demandes.update', $demande->id) }}'
             method='POST' enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

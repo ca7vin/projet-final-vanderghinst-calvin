@@ -20,6 +20,7 @@ class EventController extends Controller
             $event->date = str_replace("[", "<span>", $event->date);
             $event->date = str_replace("]", "</span>", $event->date);
         } 
+        
         return view("/back/events/all",compact("events"));
     }
     public function create()
@@ -100,6 +101,9 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
+        if (! Gate::allows('show-event', $event)) {
+            abort(403);
+        }
         return view("/back/events/read",compact("event"));
     }
     public function onepage($id)

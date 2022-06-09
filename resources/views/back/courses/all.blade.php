@@ -166,6 +166,16 @@
                                         @endforeach
                                     </ul>
                                 </td>
+                                <td>
+                                    <ul>
+                                        @foreach ($course->users as $user)
+                                            <li style='background-color: #5f5f5f !important; font-size: 8px !important;'
+                                                class='text-center text-white p-1 m-1 rounded-pill'>
+                                                {{ $user->name }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
                                 <td> {{-- all_td_anchor --}}
                                     @can('delete', $course)
                                         <form action='{{ route('courses.destroy', $course->id) }}' method='post'>
@@ -230,6 +240,16 @@
                                                 <li style='background-color: #A12C2F !important; font-size: 10px !important;'
                                                     class='text-center text-white p-1 m-1 rounded-pill'>
                                                     {{ $categorie->name }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            @foreach ($course->users as $user)
+                                                <li style='background-color: #5f5f5f !important; font-size: 8px !important;'
+                                                    class='text-center text-white p-1 m-1 rounded-pill'>
+                                                    {{ $user->name }}
                                                 </li>
                                             @endforeach
                                         </ul>

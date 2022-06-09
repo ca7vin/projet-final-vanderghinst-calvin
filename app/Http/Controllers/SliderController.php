@@ -18,6 +18,7 @@ class SliderController extends Controller
             $slide->text = str_replace("//", "<br>", $slide->text);
             
         } 
+        $this->authorize('viewAny', Slider::class);
         return view("/back/sliders/all",compact("sliders"));
     }
     public function create()
@@ -64,6 +65,7 @@ class SliderController extends Controller
     public function show($id)
     {
         $slider = Slider::find($id);
+        $this->authorize('view', $slider);
         return view("/back/sliders/read",compact("slider"));
     }
     public function edit($id)

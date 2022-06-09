@@ -12,6 +12,7 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
+        $this->authorize('viewAny', Tag::class);
         return view("/back/tags/all",compact("tags"));
     }
     public function create()
@@ -35,6 +36,7 @@ class TagController extends Controller
     public function show($id)
     {
         $tag = Tag::find($id);
+        $this->authorize('view', $tag);
         return view("/back/tags/read",compact("tag"));
     }
     public function edit($id)

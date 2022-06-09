@@ -18,7 +18,7 @@ class TagPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class TagPolicy
      */
     public function view(User $user, Tag $tag)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**

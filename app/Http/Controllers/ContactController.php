@@ -12,6 +12,7 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
+        $this->authorize('viewAny', Contact::class);
         return view("/back/contacts/all",compact("contacts"));
     }
     public function edit($id)

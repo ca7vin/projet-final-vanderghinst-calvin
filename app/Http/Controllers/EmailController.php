@@ -12,6 +12,7 @@ class EmailController extends Controller
     public function index()
     {
         $emails = Email::all();
+        $this->authorize('viewAny', Email::class);
         return view("/back/emails/all",compact("emails"));
     }
     public function create()
@@ -35,6 +36,7 @@ class EmailController extends Controller
     public function show($id)
     {
         $email = Email::find($id);
+        $this->authorize('view', $email);
         return view("/back/emails/read",compact("email"));
     }
     public function edit($id)

@@ -13,6 +13,7 @@ class CommentaireController extends Controller
     public function index()
     {
         $commentaires = Commentaire::all();
+        $this->authorize('viewAny', Commentaire::class);
         return view("/back/commentaires/all",compact("commentaires"));
     }
     public function create()
@@ -40,6 +41,7 @@ class CommentaireController extends Controller
     public function show($id)
     {
         $commentaire = Commentaire::find($id);
+        $this->authorize('view', $commentaire);
         return view("/back/commentaires/read",compact("commentaire"));
     }
     public function edit($id)

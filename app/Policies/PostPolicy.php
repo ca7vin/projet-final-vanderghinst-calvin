@@ -18,9 +18,7 @@ class PostPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function viewAny(User $user)
-    {
-        return in_array($user->role_id, [1, 2, 3, 4]);
-        
+    {   
     }
 
     /**

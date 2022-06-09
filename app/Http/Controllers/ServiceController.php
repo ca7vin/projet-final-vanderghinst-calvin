@@ -14,6 +14,7 @@ class ServiceController extends Controller
     {
         $services = Service::all();
         $icons = Icon::all();
+        $this->authorize('viewAny', Service::class);
         return view("/back/services/all",compact("services", "icons"));
     }
     public function create()
@@ -42,6 +43,7 @@ class ServiceController extends Controller
     public function show($id)
     {
         $service = Service::find($id);
+        $this->authorize('view', $service);
         return view("/back/services/read",compact("service"));
     }
     public function edit($id)

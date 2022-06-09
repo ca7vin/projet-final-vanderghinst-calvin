@@ -77,6 +77,7 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = Course::find($id);
+        $this->authorize('view', $course);
         return view("/back/courses/read",compact("course"));
     }
     public function onepage($id)

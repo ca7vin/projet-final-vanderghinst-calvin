@@ -31,8 +31,9 @@
                                 <div class="widget-heading">
                                     <h4>Request Information</h4>
                                 </div>
-                                <form action="{{ Route('demandes.create') }}" method='POST'>
+                                <form action="{{ Route('demandes.store') }}" method='POST'>
                                     @csrf
+                                    @method('POST')
                                     <div class="search-form">
                                         @if (session()->has('message'))
                                             <div class='alert alert-success'
@@ -46,33 +47,33 @@
                                                 {{ session()->get('error') }}
                                             </div>
                                         @endif
-                                        <input style='margin-bottom: 10px !important;' type="text" name="from" placeholder="Full Name"
-                                            value="{{ Auth::user()->name }}">
+                                        <input style='margin-bottom: 10px !important;' type="text" name="from"
+                                            placeholder="Full Name" value="{{ Auth::user()->name }}">
                                         <input type="text" id="address" name="" placeholder="E-mail Address"
                                             value="{{ Auth::user()->email }}">
-                                        <div class="select" style='margin-bottom: 10px !important;' >
-                                            <select name="content" id="about">
-                                                <option value="-1">Categories</option>
-                                                @foreach ($categories as $categorie)
-                                                    <option value="{{ $categorie->name }}">{{ $categorie->name }}</option>
+                                        <div class="select" style='margin-bottom: 10px !important;'>
+                                            <select name="to" id="to">
+                                                <option value="-1">Teachers</option>
+                                                @foreach ($profs as $prof)
+                                                    <option value="{{ $prof->user->name }}">{{ $prof->user->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="select">
-                                            <select name="to" id="to">
+                                            <select name="content" id="content">
                                                 <option value="-1">Courses</option>
                                                 @foreach ($courses as $course)
-                                                    @if ($course->prof)
-                                                    <option value="{{ $course->prof->user->name }}">{{ $course->title }}
+                                                    <option value="{{ $course->title }}">
+                                                        {{ $course->title }}
                                                     </option>
-                                                    @else
-                                                    <option value="Administrateur">{{ $course->title }}</option>
-                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="accent-button">
-                                            <button type="submit" style='border: none !important; margin-top: 20px !important;'>Submit Request</button>
+                                            <button type="submit"
+                                                style='border: none !important; margin-top: 20px !important;'>Submit
+                                                Request</button>
                                         </div>
                                     </div>
                                 </form>

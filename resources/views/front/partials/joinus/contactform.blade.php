@@ -35,7 +35,7 @@
                         </div>
                     @endif
                     <div class="message-content">
-                        <form action="{{ Route('contactform.store') }}" method='POST'>
+                        <form action="{{ Route('contactforms.store') }}" method='POST'>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">

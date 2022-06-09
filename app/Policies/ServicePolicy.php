@@ -18,7 +18,8 @@ class ServicePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->role_id === 1;
+        
     }
 
     /**
@@ -30,7 +31,7 @@ class ServicePolicy
      */
     public function view(User $user, Service $service)
     {
-        //
+        return $user->role_id === 1;
     }
 
     /**
