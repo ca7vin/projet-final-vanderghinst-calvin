@@ -37,53 +37,6 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-global $actualCatCourse;
-Route::post('/courses/findCat', function (Request $request) {
-    $actualCatCourse = $request->category;
-    $categories = Categorie::all();
-    $courses = Course::whereHas('categories', function($element) use ($actualCatCourse) {
-        $element->where('categories.id', $actualCatCourse);
-    })->paginate(9);
-    return view('front/pages/courses-grid', compact('courses', 'categories', 'actualCatCourse'));
-})->name("filterCatCourse");
-
-global $actualCatEvent;
-Route::post('/events/findCat', function (Request $request) {
-    $actualCatEvent = $request->category;
-    $categories = Categorie::all();
-    $events = Event::whereHas('categories', function($element) use ($actualCatEvent) {
-        $element->where('categories.id', $actualCatEvent);
-    })->paginate(6);
-    foreach ($events as $event) {
-        $event->date = str_replace("[", "<span>", $event->date);
-        $event->date = str_replace("]", "</span>", $event->date);
-    } 
-    return view('front/pages/classic-events', compact('events', 'categories', 'actualCatEvent'));
-})->name("filterCatEvent");
-
-global $actualCatPost;
-Route::post('/posts/findCat', function (Request $request) {
-    $actualCatPost = $request->category;
-    $categories = Categorie::all();
-    $tags = Tag::all();
-    $news = Post::whereHas('categories', function($element) use ($actualCatPost) {
-        $element->where('categories.id', $actualCatPost);
-    })->paginate(4);
-    return view('front/pages/classic-news', compact('news', 'categories', 'actualCatPost', 'tags'));
-})->name("filterCatPost");
-
-global $actualTagPost;
-Route::post('/posts/findTag', function (Request $request) {
-    $actualTagPost = $request->tag;
-    $categories = Categorie::all();
-    $tags = Tag::all();
-    $news = Post::whereHas('tags', function($element) use ($actualTagPost) {
-        $element->where('tags.id', $actualTagPost);
-    })->paginate(4);
-    return view('front/pages/classic-news', compact('news', 'tags', 'actualTagPost', 'categories'));
-})->name("filterTagPost");
-
-
 require __DIR__.'/auth.php';
 // HOME
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -92,6 +45,11 @@ Route::get('/eventsMain', [HomeController::class, 'eventsMain'])->name('eventsMa
 Route::get('/newsMain', [HomeController::class, 'newsMain'])->name('newsMain');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+// filters
+Route::post('/courses/findCat', [HomeController::class, 'filterCatCourse'])->name('filterCatCourse');
+Route::post('/events/findCat', [HomeController::class, 'filterCatEvent'])->name('filterCatEvent');
+Route::post('/posts/findCat', [HomeController::class, 'filterCatPost'])->name('filterCatPost');
+Route::post('/posts/findTag', [HomeController::class, 'filterTagPost'])->name('filterTagPost');
 // Slider
 Route::resource('sliders', SliderController::class);
 // Service

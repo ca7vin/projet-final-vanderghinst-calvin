@@ -73,6 +73,54 @@ class HomeController extends Controller
             $demandes = Demande::all();
             $contactforms = ContactForm::all();
             return view('dashboard', compact('messages', 'demandes', 'contactforms'));
-        // })->middleware(['auth'])->name('dashboard');
+    }
+
+    public function filterCatCourse(Request $request)
+    {
+        global $actualCatCourse;
+            $actualCatCourse = $request->category;
+            $categories = Categorie::all();
+            $courses = Course::whereHas('categories', function($element) use ($actualCatCourse) {
+                $element->where('categories.id', $actualCatCourse);
+            })->paginate(9);
+            return view('front/pages/courses-grid', compact('courses', 'categories', 'actualCatCourse'));
+    }
+
+    public function filterCatEvent(Request $request)
+    {
+        global $actualCatEvent;
+            $actualCatEvent = $request->category;
+            $categories = Categorie::all();
+            $events = Event::whereHas('categories', function($element) use ($actualCatEvent) {
+                $element->where('categories.id', $actualCatEvent);
+            })->paginate(6);
+            foreach ($events as $event) {
+                $event->date = str_replace("[", "<span>", $event->date);
+                $event->date = str_replace("]", "</span>", $event->date);
+            } 
+            return view('front/pages/classic-events', compact('events', 'categories', 'actualCatEvent'));
+    }
+
+    public function filterCatPost(Request $request)
+    {
+        global $actualCatPost;
+        $actualCatPost = $request->category;
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        $news = Post::whereHas('categories', function($element) use ($actualCatPost) {
+            $element->where('categories.id', $actualCatPost);
+        })->paginate(4);
+        return view('front/pages/classic-news', compact('news', 'categories', 'actualCatPost', 'tags'));
+    }
+    public function filterTagPost(Request $request)
+    {
+        global $actualTagPost;
+        $actualTagPost = $request->tag;
+        $categories = Categorie::all();
+        $tags = Tag::all();
+        $news = Post::whereHas('tags', function($element) use ($actualTagPost) {
+        $element->where('tags.id', $actualTagPost);
+        })->paginate(4);
+        return view('front/pages/classic-news', compact('news', 'tags', 'actualTagPost', 'categories'));
     }
 }

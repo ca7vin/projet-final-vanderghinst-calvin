@@ -89,12 +89,11 @@
                         <div class="col-md-6">
                             <div class="menu">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">Future Students</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Pages</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{{ Route('home') }}">Home</a></li>
+                                    <li><a href="{{ Route('coursesMain') }}">Courses</a></li>
+                                    <li><a href="{{ Route('eventsMain') }}">Events</a></li>
+                                    <li><a href="{{ Route('newsMain') }}">News</a></li>
+                                    <li><a href="{{ Route('contact') }}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
