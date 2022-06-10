@@ -81,6 +81,7 @@
                                     @can('delete', $post)
                                         <form action='{{ route('posts.destroy', $post->id) }}' method='post'>
                                             @csrf
+                                            @method('DELETE')
                                             <button class="btn btn-danger" type=submit>Delete</button>
                                         </form>
                                     @endcan
@@ -143,6 +144,7 @@
                                     @can('delete', $post)
                                         <form action='{{ route('posts.destroy', $post->id) }}' method='post'>
                                             @csrf
+                                            @method('DELETE')
                                             <button class="btn btn-danger" type=submit>Delete</button>
                                         </form>
                                     @endcan

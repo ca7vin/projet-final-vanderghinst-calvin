@@ -56,16 +56,16 @@
                                             @if (Route::has('login'))
                                                 @auth
                                                     <form class='d-flex flex-column align-items-center justify-content-center'
-                                                        action='{{ route('message.store') }}' method='post'>
+                                                        action='{{ route('messages.store') }}' method='post'>
                                                         @csrf
                                                         <div class="contact-form">
                                                             <h4>Contact me</h4>
                                                             <input style='display: none !important;' type="text" id="name"
                                                                 name="to" placeholder="Full Name"
-                                                                value="{{ $prof->user->email }}">
-                                                            <input type="text" id="name" name="user" placeholder="Full Name"
+                                                                value="{{ $prof->user->name }}">
+                                                            <input type="text" id="name" name='from' name="user" placeholder="Full Name"
                                                                 value="{{ Auth::user()->name }}">
-                                                            <input type="text" id="address" name="from"
+                                                            <input type="text" id="address"
                                                                 placeholder="E-mail Address"
                                                                 value="{{ Auth::user()->email }}">
                                                             <textarea id="message" class="message" name="content" placeholder="Write message"></textarea>

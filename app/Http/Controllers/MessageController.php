@@ -28,7 +28,7 @@ class MessageController extends Controller
         $message->to = $request->to;
         $message->content = $request->content;
         $message->save(); // store_anchor
-        return redirect()->back()->with('message', "Message bien envoyé !");
+        return redirect()->route('messages.index')->with('message', "Message bien envoyé !");
     }
     public function store2(Request $request)
     {

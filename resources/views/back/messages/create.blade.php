@@ -11,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('message.store') }}' method='post'>
+        <form action='{{ route('messages.store') }}' method='post'>
             @csrf
             @method('POST')
             <div>

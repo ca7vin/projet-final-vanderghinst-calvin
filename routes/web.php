@@ -76,8 +76,8 @@ Route::get('/back/icons', [IconController::class, 'index'])->name('icon.index');
 // // User
 Route::resource('users', UserController::class);
 // Message
-Route::post('/back/messages/store2', [MessageController::class, 'store2'])->name('message.store2');
-Route::post('/back/messages/{id}/updateReply', [MessageController::class, 'updateReply'])->name('message.updateReply');
+Route::post('/back/messages/store2', [MessageController::class, 'store2'])->name('messages.store2');
+Route::get('/back/messages/{id}/reply', [MessageController::class, 'reply'])->name('message.reply');
 Route::resource('messages', MessageController::class);
 // Tag
 Route::resource('tags', TagController::class);
@@ -89,7 +89,7 @@ Route::resource('emails', EmailController::class);
 Route::post('/contact-form', [NewsletterController::class, 'storeContactForm'])->name('contact-form.store');
 // Demande
 Route::post('/back/demandes/store2', [DemandeController::class, 'store2'])->name('demande.store2');
-Route::get('/back/demandes/{id}/reply', [DemandeController::class, 'reply'])->name('demande.reply');
+Route::post('/back/demandes/{id}/reply', [DemandeController::class, 'reply'])->name('demande.reply');
 Route::resource('demandes', DemandeController::class);
 // Commentaire
 Route::resource('commentaires', CommentaireController::class);

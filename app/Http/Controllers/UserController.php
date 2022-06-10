@@ -89,7 +89,7 @@ class UserController extends Controller
             }); 
         $email->save();
         $user->save();
-        return redirect('/back/users')->with('success', 'User created successfully');
+        return redirect()->route('users.index')->with(['success' => 'User created successfully !']);
     }
     }
 
@@ -134,6 +134,24 @@ class UserController extends Controller
             }
             $user->image = $request->image->hashName();
             $request->file('image')->storePublicly('images', 'public');
+        }
+        // si role id = 2 alors créer un professeur
+        if ($user->role_id == 2  && $user->prof_id === null) {
+            $prof = new Prof();
+            $prof->subject = "write here";
+            $prof->bio_short = "write here";
+            $prof->bio_long = "write here";
+            $prof->phone = "write here";
+            $prof->skype = "write here";
+            $prof->save();
+            $user->prof_id = $prof->id;
+        }
+        // si role id = 3 alors créer un redacteur
+        if ($user->role_id == 3) {
+            $redacteur = new Redacteur();
+            $redacteur->name = $request->name;
+            $redacteur->save();
+            $user->redacteur_id = $redacteur->id;
         }
         $user->save();
         return redirect()->route("users.index")->with('message', "Successful update !");

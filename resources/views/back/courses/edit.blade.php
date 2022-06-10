@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif
-            <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded'
+            <form enctype="multipart/form-data" class='w-100 p-3 mt-5 rounded mb-3'
                 action='{{ route('courses.update', $course->id) }}' method='post' style='background-color:#A12C2F'>
                 @csrf
                 @method('PUT')
@@ -23,7 +23,8 @@
                         <div class="d-flex align-items-center justify-content-around mb-3 px-5">
                             @if ($course->status == 1)
                                 <div class="form-check">
-                                    <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault" checked>
+                                    <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault"
+                                        checked>
                                     <label class="form-check-label text-white" for="flexCheckDefault">
                                         Accepted
                                     </label>
@@ -48,6 +49,7 @@
                                     <label class="form-check-label text-white" for="flexCheckChecked">
                                         Pending
                                     </label>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -63,7 +65,8 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input name='favori' class="form-check-input" type="radio" value=0 id="flexCheckChecked" checked>
+                            <input name='favori' class="form-check-input" type="radio" value=0 id="flexCheckChecked"
+                                checked>
                             <label class="form-check-label text-white" for="flexCheckChecked">
                                 No
                             </label>
@@ -112,18 +115,22 @@
                         @foreach ($categories as $categorie)
                             <div class='form-check'>
                                 @if ($course->categories->contains($categorie))
-                                    <input class='form-check-input' type='checkbox' name='categories[]' value="{{ $categorie->id }}" checked>
+                                    <input class='form-check-input' type='checkbox' name='categories[]'
+                                        value="{{ $categorie->id }}" checked>
                                 @else
-                                    <input class='form-check-input' type='checkbox' name='categories[]' value="{{ $categorie->id }}">
+                                    <input class='form-check-input' type='checkbox' name='categories[]'
+                                        value="{{ $categorie->id }}">
                                 @endif
-                                <label class='text-white' for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
+                                <label class='text-white'
+                                    for='checkbox{{ $categorie->id }}'>{{ $categorie->name }}</label>
                             </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="row mx-5">
-                    <button class='btn btn-dark mx-5 mt-3 mb-2' type='submit'>Update</button> {{-- create_blade_anchor --}}
+                    <button class='btn btn-dark mb-2' type='submit'>Update</button> {{-- create_blade_anchor --}}
                 </div>
             </form>
+        </div>
     </section>
 @endsection

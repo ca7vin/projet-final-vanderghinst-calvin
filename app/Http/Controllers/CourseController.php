@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Course;
+use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -72,6 +74,12 @@ class CourseController extends Controller
         $course->categories()->attach($request->categories, [
             'course_id' => $course->id,
         ]);
+        $confirm = new Message();
+        $admin = User::where('role_id', 1)->first();
+        $confirm->from = Auth::user()->email;	
+        $confirm->to = $admin->email;
+        $confirm->content = "Un nouveau cours a été créé et est en attente de validation";
+        $confirm->save();
         return redirect()->route("courses.index")->with('message', "Successful storage !");
     }
     public function show($id)

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Message;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -58,6 +60,12 @@ class PostController extends Controller
         $post->tags()->attach($request->tags, [
             'post_id' => $post->id,
         ]);
+        $confirm = new Message();
+        $admin = User::where('role_id', 1)->first();
+        $confirm->from = Auth::user()->email;	
+        $confirm->to = $admin->email;
+        $confirm->content = "Un nouveau post a été créé et est en attente de validation";
+        $confirm->save();
         return redirect()->route("posts.index")->with('message', "Successful storage !");
     }
     public function show($id)

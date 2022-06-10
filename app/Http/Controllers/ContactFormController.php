@@ -77,6 +77,8 @@ class ContactFormController extends Controller
         Mail::send('emails.message', array( 
             'email' => $request->to, 
             'content' => $request->content,
+            'from' => $request->from,
+            'to' => $request->to,
         ), function($message) use ($request){ 
             $message->to($request->to); 
             $message->from('ca7vin@gmail.com');

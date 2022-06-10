@@ -29,7 +29,7 @@
                     </tr> {{-- all_tr_anchor --}}
                 </thead>
                 <tbody>
-                    @foreach ($messages->where('to', '==', auth()->user()->email) as $message)
+                    @foreach ($messages->where('to', '==', auth()->user()->name || 'to', '==', auth()->user()->email) as $message)
                         <tr>
                             <th scope='row'>{{ $message->id }}</th>
                             <td>
@@ -44,7 +44,7 @@
                             <td>{{ $message->content }}</td>
                             <td> {{-- all_td_anchor --}}
                                 <div class='d-flex'>
-                                    <form action='{{ route('message.destroy', $message->id) }}' method='post'>
+                                    <form action='{{ route('messages.destroy', $message->id) }}' method='post'>
                                         @csrf
                                         @method('DELETE')
                                         <button class='btn btn-danger' type=submit>Delete</button>

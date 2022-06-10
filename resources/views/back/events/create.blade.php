@@ -25,11 +25,11 @@
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>start time</label>
-                            <input type='text' name='start_time'>
+                            <input type='time' name='start_time'>
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>end time</label>
-                            <input type='text' name='end_time'>
+                            <input type='time' name='end_time'>
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>date</label>
@@ -51,7 +51,7 @@
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class="text-uppercase text-white mb-2" for=''>email</label>
-                            <input type='text' name='email'>
+                            <input type='email' name='email'>
                         </div>
                     </div>
                     <div class="col-4 d-flex flex-column align-items-start justify-content-center">

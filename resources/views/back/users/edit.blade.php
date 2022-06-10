@@ -25,7 +25,7 @@
                         </div>
                         <div class="d-flex flex-column align-items-start justify-content-center mb-3">
                             <label class="text-uppercase text-white mb-2" for=''>email</label>
-                            <input type='text' name='email' value="{{ $user->email }}">
+                            <input type='email' name='email' value="{{ $user->email }}">
                         </div>
                         <div class="d-flex flex-column align-items-start justify-content-center mb-3">
                             <label class="text-uppercase text-white mb-2" for=''>password</label>
@@ -33,6 +33,7 @@
                         </div>
                     </div>
                     <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                        @if (Auth::user()->role_id == 1)
                         <div class="d-flex flex-column align-items-center justify-content-center mb-3">
                             <label class="text-uppercase text-white mb-2" for="inputGroupSelect01">Role</label>
                             <select name='role_id' class="form-select" id="inputGroupSelect01">
@@ -42,6 +43,7 @@
                                 @endforeach
                             </select>
                         </div>
+                        @endif
                         <div class='d-flex flex-column align-items-center justify-content-center'>
                             <label class='text-uppercase text-white mb-2' for=''>image</label>
                             <input class='text-white' type="file" name='image'>

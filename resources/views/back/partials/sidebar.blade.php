@@ -39,13 +39,15 @@
                   <span class="tooltip">Event</span>
               </li>
           @endif
-          <li>
-              <a href="{{ Route('courses.index') }}">
-                  <i class='bx bxl-discourse'></i>
-                  <span class="links_name">Courses</span>
-              </a>
-              <span class="tooltip">Courses</span>
-          </li>
+          @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 4 || Auth::user()->role_id == 2)
+              <li>
+                  <a href="{{ Route('courses.index') }}">
+                      <i class='bx bxl-discourse'></i>
+                      <span class="links_name">Courses</span>
+                  </a>
+                  <span class="tooltip">Courses</span>
+              </li>
+          @endif
           @if (Auth::user()->role_id == 3)
               <li>
                   <a href="{{ Route('posts.index') }}">
