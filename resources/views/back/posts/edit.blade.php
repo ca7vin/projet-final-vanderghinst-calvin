@@ -14,15 +14,17 @@
                 </div>
             @endif
             <form enctype="multipart/form-data" class='w-100 p-3 my-5 rounded'
-                action='{{ route('post.update', $post->id) }}' method='post' style='background-color:#A12C2F'>
+                action='{{ route('posts.update', $post->id) }}' method='post' style='background-color:#A12C2F'>
                 @csrf
+                @method('PUT')
                 @if (auth()->user()->role->name == 'Administrateur')
                     <div class="row mx-5 p-2 rounded mb-3" style='background-color:#741f21'>
                         <label class='text-uppercase text-white mb-2 text-center' for=''>Status ?</label>
                         <div class="d-flex align-items-center justify-content-around mb-3 px-5">
                             @if ($post->status == 1)
                                 <div class="form-check">
-                                    <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault" checked>
+                                    <input name='status' class="form-check-input" type="radio" value=1 id="flexCheckDefault"
+                                        checked>
                                     <label class="form-check-label text-white" for="flexCheckDefault">
                                         Accepted
                                     </label>
@@ -47,6 +49,7 @@
                                     <label class="form-check-label text-white" for="flexCheckChecked">
                                         Pending
                                     </label>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -59,8 +62,7 @@
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>
                             <label class='text-uppercase mb-2 text-white' for=''>text</label>
-                            <textarea style='width:227.6px;' class='form-control' cols="25" rows="10" type='text'
-                                name='text'>{{ $post->text }}</textarea>
+                            <textarea style='width:227.6px;' class='form-control' cols="25" rows="10" type='text' name='text'>{{ $post->text }}</textarea>
 
                         </div>
                         <div class='d-flex flex-column align-items-start justify-content-center mb-3'>

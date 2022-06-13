@@ -74,7 +74,12 @@ class ServiceController extends Controller
     {
         $service = Service::find($id);
         $this->authorize('delete', $service);
-        $service->delete();
-        return redirect()->back()->with('message', "Successful delete !");
+        if (Service::all()->count() <= 1) {
+            return redirect()->route("services.index")->with('alert', "You can't delete the last service !");
+        } else {
+            $service->delete();
+            return redirect()->route("services.index")->with('message', "Successful delete !");
+        }
+        // return redirect()->back()->with('message', "Successful delete !");
     }
 }

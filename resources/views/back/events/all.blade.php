@@ -45,7 +45,7 @@
                             <td>{{ $event->start_time }}</td>
                             <td>{{ $event->end_time }}</td>
                             <td>{{ $event->title }}</td>
-                            <td>{!! Str::words($event->description, '12') !!}</td>
+                            <td>{{ Illuminate\Support\Str::limit($event->description, 40) }}</td>
                             {{-- <td>
                             <img src="{{ asset('images/' . $event->image2) }}" alt="">
                         </td> --}}

@@ -58,7 +58,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $post->title }}</td>
-                                <td>{!! Str::words($post->text, '12') !!}</td>
+                                <td>{{ Illuminate\Support\Str::limit($post->text, 40) }}</td>
                                 <td>{{ $post->quote }}</td>
                                 <td>
                                     <ul>
@@ -121,7 +121,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $post->title }}</td>
-                                <td>{!! Str::words($post->text, '12') !!}</td>
+                                <td>{{ Illuminate\Support\Str::limit($post->text, 40) }}</td>
                                 <td>{{ $post->quote }}</td>
                                 <td>
                                     <ul>

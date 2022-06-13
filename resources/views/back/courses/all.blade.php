@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back/partials/sidebar')
-    <section class="home-section p-0">
+    <section class="home-section p-0" style='width: auto !important;'>
         <div class='container d-flex flex-column align-items-center justify-content-center'>
             <div class="text">Courses</div>
             @if (session()->has('message'))
@@ -72,7 +72,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $course->title }}</td>
-                                <td>{!! Str::words($course->description, '12') !!}</td>
+                                <td>{{ Illuminate\Support\Str::limit($course->description, 40) }}</td>
                                 <td>{{ $course->discipline }}</td>
                                 <td>{{ $course->price }}</td>
                                 <td>{{ $course->level }}</td>
@@ -150,7 +150,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $course->title }}</td>
-                                <td>{!! Str::words($course->description, '12') !!}</td>
+                                <td>{{ Illuminate\Support\Str::limit($course->description, 40) }}</td>
                                 <td>{{ $course->discipline }}</td>
                                 <td>{{ $course->price }}</td>
                                 <td>{{ $course->level }}</td>
@@ -228,7 +228,7 @@
                                         @endif
                                     </td>
                                     <td>{{ $course->title }}</td>
-                                    <td>{!! Str::words($course->description, '12') !!}</td>
+                                    <td>{{ Illuminate\Support\Str::limit($course->description, 40) }}</td>
                                     <td>{{ $course->discipline }}</td>
                                     <td>{{ $course->price }}</td>
                                     <td>{{ $course->level }}</td>

@@ -52,8 +52,18 @@
                                         <div class="tags-share">
                                             <div class="tag">
                                                 <i class="fa fa-tags"></i>
-                                                <p>Tags:</p><span><a href="#">School</a>, <a href="#">Students</a>, <a
-                                                        href="#">Classrooms</a></span>
+                                                <p>Tags:</p><span>
+                                                    <form style='display:flex !important;' action="{{ Route('filterCatPost') }}" method="POST">
+                                                    @foreach ($post->tags as $tag)
+                                                        {{-- <a href="#">{{ $tag->name }}</a>, --}}
+                                                            @csrf
+                                                            <input name='category' type="text" class="hidden"
+                                                                value={{ $tag->id }}>
+                                                            <button class='btn'
+                                                                style='background-color:transparent !important;'>{{ $tag->name }}</button>
+                                                                @endforeach
+                                                        </form>
+                                                </span>
                                             </div>
                                             <div class="share">
                                                 <div class="second-button">
@@ -69,7 +79,8 @@
                                     </div>
                                     @foreach ($post->commentaires as $commentaire)
                                         <div class="comment-item">
-                                            <img style='width:54px !important;' src="{{ asset('images/' . $commentaire->user->image) }}" alt="">
+                                            <img style='width:54px !important;'
+                                                src="{{ asset('images/' . $commentaire->user->image) }}" alt="">
                                             <h4>{{ $commentaire->user->name }}</h4>
                                             <span>{{ \Carbon\Carbon::parse($commentaire->created_at)->diffForHumans() }}</span>
                                             <div class="reply-button">
@@ -157,8 +168,7 @@
                                                     @csrf
                                                     <input name='tag' type="text" class="hidden"
                                                         value={{ $tag->id }}>
-                                                    <li><button class='btn' style='background-color:#F5A425 !important;'><i
-                                                                class="fa fa-angle-right"></i>{{ $tag->name }}</button>
+                                                    <li><button class='btn' style='background-color:#F5A425 !important;'>{{ $tag->name }}</button>
                                                     </li>
                                                 </form>
                                             @endforeach
