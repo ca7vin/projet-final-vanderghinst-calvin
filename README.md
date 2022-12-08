@@ -1,64 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<!-- PROJECT SHIELDS -->
+<!--
+*** This template uses markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]
 
-## About Laravel
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `github_repo`, `twitter_handle`, `email`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Then you can delete these lines !
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[![Product Name Screen Shot][product-screenshot]](https://zupimages.net/up/22/49/d472.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Here you can describe the project, why you made it and **for who you made it**, but mostly don't forget to add a screenshot like the image above AND a link to the demo like this : https://NicolasBrondin.github.io/basic-readme-template/
 
-## Learning Laravel
+### Built With
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* 🖊️ Markdown
+* 🐙 Github
+* 💻 VS Code
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Laravel Sponsors
+To get a local copy up and running follow these simple steps.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Prerequisites
 
-### Premium Partners
+This is an example of how to list things you need to use the software and how to install them.
+* Git
+```sh
+sudo apt-get install git
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Installation
+ 
+1. Clone the repo
+```sh
+git clone https://github.com/NicolasBrondin/basic-readme-template
+```
+2. Open VS Code
+3. Install Markdown Preview Enhancement plugin
+3. Open the README.md file and execute the following command
+```sh
+ctrl+k v
+```
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<!-- USAGE EXAMPLES -->
+## Usage
 
-## Code of Conduct
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+_For more examples, please refer to the [Documentation](https://example.com)_
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<!-- CONTACT -->
+## Contact
 
-## License
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Project Link: [https://github.com/github_username/github_repo](https://github.com/github_username/github_repo)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* This readme version is a simplified version of this [github repository](https://github.com/othneildrew/Best-README-Template) by Othneildrew
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/NicolasBrondin/basic-readme-template.svg?style=flat-square
+[contributors-url]: https://github.com/NicolasBrondin/basic-readme-template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/NicolasBrondin/basic-readme-template.svg?style=flat-square
+[forks-url]: https://github.com/NicolasBrondin/basic-readme-template/network/members
+[stars-shield]: https://img.shields.io/github/stars/NicolasBrondin/basic-readme-template.svg?style=flat-square
+[stars-url]: https://github.com/NicolasBrondin/basic-readme-template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/NicolasBrondin/basic-readme-template.svg?style=flat-square
+[issues-url]: https://github.com/NicolasBrondin/basic-readme-template/issues
+[license-shield]: https://img.shields.io/github/license/NicolasBrondin/basic-readme-template.svg?style=flat-square
+[license-url]: https://github.com/NicolasBrondin/basic-readme-template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: docs/cover.jpg
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+D
